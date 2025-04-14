@@ -1,0 +1,157 @@
+---
+title: "concatenate_trial_measures"
+author: "Savannah McNair"
+date: "2025-01-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+necessary packages
+```{r}
+library(dplyr)
+```
+
+Load in your paths:
+directory_path is where you have saved your summary stats or trial measures data (the folder where the original data is downloaded to)
+output_path is where you would like the outputs to get saved
+```{r}
+#SM set to the location you downloaded the EEG files to. If you are using a Windows computer, you will need to change the direction of the slashes from '\' to '/'
+directory_path <- "X:/Projects/hbcd/EEG/Main_Study/Lasso output/bids/derivatives/made/"
+output_path <- "Z:/Dropboxes/SMcNair/SMcNair_Playground/HBCD/Data Release/DataRelease_Githhub/test_lasso_deid/"
+```
+
+set cwd (current working directory) to file path, get a list of IDs 
+```{r}
+setwd(directory_path)
+cwd <- directory_path
+dccids <- list.files()
+```
+
+create sheets - these are the sheets this script will output
+```{r}
+FACE_trialmeasures <- NULL
+MMN_trialmeasures <- NULL
+VEP_trialmeasures <- NULL
+```
+
+for each folder (ID), pull trial stats by task and condition
+By Task:
+
+FACE: 
+```{r}
+#for x (each ID), pull out the trial measure data (by task) and paste it into a new sheet, storing ID in a new column
+for (x in dccids) {
+  processed_data <- paste(x, "/ses-V03/eeg/processed_data", sep="")
+  
+  FACE_trialmeasures_file <- paste(cwd, processed_data, "/", x, "_ses-V03_task-FACE_ERPTrialMeasures.csv", sep="")
+  if (file.exists(FACE_trialmeasures_file)) {
+    FACE_trialmeasures_sheet <- read.csv(FACE_trialmeasures_file)
+    message(paste("Compiling", x))
+    for (i in 1:nrow(FACE_trialmeasures_sheet)) {
+      #FACE_trialmeasures_sheet$ID <- x
+      FACE_trialmeasures_sheet <- FACE_trialmeasures_sheet %>%
+        rename(MeanAmp_N290_p8 = 1,
+               Peak_N290_p8 = 2,
+               Latency_N290_p8 = 3, 
+               MeanAmp_P1_Oz = 7,               
+               Peak_P1_Oz = 8,
+               Latency_P1_Oz = 9,
+               MeanAmp_N290_Oz = 10,
+               Peak_N290_Oz = 11,
+               Latency_N290_Oz = 12, 
+               MeanAmp_P400_Oz = 13,
+               Peak_P400_Oz = 14,
+               Latency_P400_oz = 15, 
+               MeanAmp_Nc_fcz = 16,
+               Peak_Nc_fcz = 17,
+               Latency_Nc_fcz = 18)
+      row <- FACE_trialmeasures_sheet[i, , drop = FALSE]
+      FACE_trialmeasures <- rbind(FACE_trialmeasures, row)
+    }
+  } else {
+    message(paste("FACE file not found for", x))
+  }
+}
+```
+
+MMN: 
+```{r}
+#for x (each ID), pull out the trial measure data (by task) and paste it into a new sheet, storing ID in a new column
+for (x in dccids) {
+  processed_data <- paste(x, "/ses-V03/eeg/processed_data", sep="")
+  MMN_trialmeasures_file <- paste(cwd, processed_data, "/", x, "_ses-V03_task-MMN_ERPTrialMeasures.csv", sep="")
+  if (file.exists(MMN_trialmeasures_file)) {
+    MMN_trialmeasures_sheet <- read.csv(MMN_trialmeasures_file)
+    message(paste("Compiling", x))
+    for (i in 1:nrow(MMN_trialmeasures_sheet)) {
+      #MMN_trialmeasures_sheet$ID <- x
+      MMN_trialmeasures_sheet <- MMN_trialmeasures_sheet %>%
+        rename(MeanAmp_MMR_t7t8 = 1,
+               Peak_MMR_t7t8 = 2,
+               Latency_MMR_t7t8 = 3,
+               MeanAmp_MMR_f7f8 = 7,
+               Peak_MMR_f7f8 = 8,
+               Latency_MMR_f7f8 = 9,
+               MeanAmp_MMR_fcz = 10,
+               Peak_MMR_fcz = 11,
+               Latency_MMR_fcz = 12)
+      row <- MMN_trialmeasures_sheet[i, , drop = FALSE]
+      MMN_trialmeasures <- rbind(MMN_trialmeasures, row)
+    }
+  } else {
+    message(paste("MMN file not found for", x))
+  }
+}
+```
+
+VEP: 
+```{r}
+#for x (each ID), pull out the trial measure data (by task) and paste it into a new sheet, storing ID in a new column
+for (x in dccids) {
+  processed_data <- paste(x, "/ses-V03/eeg/processed_data", sep="")
+  VEP_trialmeasures_file <- paste(cwd, processed_data, "/", x, "_ses-V03_task-VEP_ERPTrialMeasures.csv", sep="")
+  if (file.exists(VEP_trialmeasures_file)) {
+    VEP_trialmeasures_sheet <- read.csv(VEP_trialmeasures_file)
+    message(paste("Compiling", x))
+    for (i in 1:nrow(VEP_trialmeasures_sheet)) {
+      #VEP_trialmeasures_sheet$ID <- x
+      VEP_trialmeasures_sheet <- VEP_trialmeasures_sheet %>%
+        rename(MeanAmp_N1_t7t8 = 1,
+               Peak_N1_oz = 2,
+               Latency_N1_oz = 3,
+               MeanAmp_P1_oz = 7,
+               Peak_P1_oz = 8,
+               Latency_P1_oz = 9,
+               MeanAmp_N2_oz = 10,
+               Peak_N2_oz = 11,
+               Latency_N2_oz = 12)
+      row <- VEP_trialmeasures_sheet[i, , drop = FALSE]
+      VEP_trialmeasures <- rbind(VEP_trialmeasures, row)
+    }
+  } else {
+    message(paste("VEP file not found for", x))
+  }
+}
+```
+
+reorder columns
+```{r}
+FACE_trialmeasures <- FACE_trialmeasures[, c(4,5,6,1,2,3,7,8,9,10,11,12,13,14,15,16,17,18)]
+MMN_trialmeasures <- MMN_trialmeasures[, c(4,5,6,1,2,3,7,8,9,10,11,12)]
+VEP_trialmeasures <- VEP_trialmeasures[, c(4,5,6,1,2,3,7,8,9,10,11,12)]
+```
+
+
+output the dataframes containing concatenated trial measures as a csv
+```{r}
+#pull date as st 
+st=format(Sys.time(), "%Y-%m-%d")
+
+#output dfs
+write.csv(FACE_trialmeasures, paste(output_path, "FACE_trialMeasures_V03_", st, ".csv", sep = ""), row.names=FALSE) 
+write.csv(MMN_trialmeasures, paste(output_path, "MMN_trialMeasures_V03_", st, ".csv", sep = ""), row.names=FALSE)
+write.csv(VEP_trialmeasures, paste(output_path, "VEP_trialMeasures_V03_", st, ".csv", sep = ""), row.names=FALSE)
+```
