@@ -1,7 +1,9 @@
 # Help
 
-Please direct any inquiries regarding this repository, use of the associated scripts, or the HBCD EEG data release to eegdata@umd.edu. 
+Please direct any inquiries regarding these utilities by posting an issue to the [GitHub Repository](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/issues). Questions about the HBCD EEG data release can be sent by creating a help desk ticket on the Lasso platform - see instructions [here](https://docs.hbcdstudy.org/reportissue/) (will be available once data is officially released).
+
 Authorship for this repository is as follows: 
+
 - Savannah McNair, smcnair1@umd.edu, @savmcnair (GitHub username)
 - Trisha Maheshwari, tmahesh@umd.edu, @trisham16 (GitHub username)
 - Whitney Kasenetz, kasenetz@umd.edu, @kasenetz (GitHub username) 
