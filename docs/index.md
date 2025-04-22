@@ -1,6 +1,6 @@
 # HBCD EEG Utilities
 
-The HBCD EEG Utilities repository contains scripts to compute EEG derivatives including mean amplitude, peak amplitude, and peak latency from EEG .set files released as part of HBCD.
+The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities). repository contains scripts to compute EEG derivatives including mean amplitude, peak amplitude, and peak latency from EEG .set files released as part of HBCD.
 
 These instructions will allow the user to extract a full derivative dataset (of summary statistics and trial measures) from the subject-level file based download, found under "Query Data" > "Download File Based Data" on the Lasso interface. For instructions on how to download data on the Lasso interface, please visit https://docs.hbcdstudy.org/ (This link will be updated when the data release is live) .
 
