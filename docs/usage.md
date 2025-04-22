@@ -1,11 +1,11 @@
 # Usage
 
 ## concatenate_files_summary.Rmd
-This script concatenate all summary statistics (SME, and power for RS) across participants and outputs a sheet for the Resting State, FACE, MMN, and VEP Tasks. The output relabels these statistics to reflect the ERP components and ROIs of interest, and is separated by task.
+This script concatenates all summary statistics (SME, and power for RS) across participants and writes a spreadsheet for each of the Resting State, FACE, MMN, and VEP Tasks. The output relabels these statistics to reflect the ERP components and ROIs of interest, and is separated by task.
 
 To use this script: 
 1. Open the script using RStudio. 
-2. Provide a directory path (the path to the folder where the downloaded EEG data is stored; instructions for how to navigate to this folder are above) on line 18. *Be sure your directory path ends in a '/', to ensure the files are out put to the correct location with the correct file name*
+2. Provide a directory path (the path to the folder where the downloaded EEG data is stored; instructions for how to navigate to this folder are on the installation page) on line 18. *Be sure your directory path ends in a '/', to ensure the files are written to the correct location with the correct file name*
 
 NOTE: if you are using this script on a Windows computer, you will need to change the direction of the slashes from '\\' to '/'.
 
@@ -23,7 +23,7 @@ This script concatenates all ERP relevant mean amplitudes at the individual tria
 
 To use this script: 
 1. Open the script using RStudio. 
-2. Provide a directory path (the path to the folder where the downloaded EEG data is stored; instructions for how to navigate to this folder are above) on line 22. *Be sure your directory path ends in a '/', to ensure the files are out put to the correct location with the correct file name*
+2. Provide a directory path (the path to the folder where the downloaded EEG data is stored; instructions for how to navigate to this folder are on the installation page) on line 22. *Be sure your directory path ends in a '/', to ensure the files are out put to the correct location with the correct file name*
 
 NOTE: if you are using this script on a Windows computer, you will need to change the direction of the slashes from '\\' to '/'.
 
@@ -37,7 +37,7 @@ NOTE: if you are using this script on a Windows computer, you will need to chang
 
 
 
-Descriptions of each task's ERP components, time windows (by age), and ROI are available in the excel file on the GitHub repository, and below: 
+Descriptions of each task's ERP components, time windows (by age), and ROIs are available in the excel file on the GitHub repository, and below: 
 
 | Task | Component | Time window | ROI  | Age |
 |------|-----------|-------------|------|-----|
