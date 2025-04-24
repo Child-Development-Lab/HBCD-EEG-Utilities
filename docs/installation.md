@@ -51,4 +51,3 @@ Downloading the GitHub repository:
 ## Navigating Folder Structure
 Now, we will outline how to navigate your folder structure. The EEG data will be downloaded to a folder within a folder of all other outputs you download off of Lasso. To navigate to the EEG data to be used in the below scripts, in your Lasso download, navigate to the "bids > derivatives > made" folder. This should be a folder with folders named "sub-{unique ID}". Use the path to this folder as the directory path in each of the provided R Studio scripts.
 
-Now, you're ready to The following are instructions on how to run each of the provided scripts. 
