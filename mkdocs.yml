@@ -16,4 +16,5 @@ nav:
   - About: index.md
   - Installation: installation.md
   - Usage: usage.md
+  - Expected outputs: expected_outputs.md
   - Help: help.md
