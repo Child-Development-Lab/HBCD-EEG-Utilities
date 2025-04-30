@@ -8,6 +8,8 @@
 
 % Ongoing Contributors:
 % Trisha Maheshwari (tmahesh@umd.edu)
+% Whitney Kasenetz (kazenetz@umd.edu)
+% Savannah McNair (smcnair1@umd.edu)
 % For specific questions, contact eeghelp@umd.edu
 
 
@@ -18,7 +20,7 @@
 
 %% Set your paths here!
 %Downloadable from the Github page, you can change this path to be wherever you have saved it!
-json_settings_file = 'C:\Users\tmahesh\Desktop\HBCD-MADE\proc_settings_HBCD.json'; 
+json_settings_file = 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities2\supplemental files\proc_settings_HBCD.json'; 
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
