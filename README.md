@@ -7,6 +7,7 @@ These instructions will allow the user to extract a full derivative dataset (of 
 This repository contains 2 scripts: 
 1. **concatenate_files_summary.Rmd**: This script will pull the summary statistics (or power, for RS) .csv for each subject and concatenate them into a single, task specific summary statistics/power .csv. 
 2. **concatenate_files_trialmeasures.Rmd**: This script will pull the trial measures .csv for each subject and concatenate them into a single, task specific trial level .csv.
+3. **Generate_csvs.m**: This script computes ERP derivatives for the FACE, MMN, and VEP tasks and writes the output to .csv files. See ‘(link) Expected Outputs’ for a description of the ERP derivatives. Generate_csvs.m calls two functions:
 
 The user will need RStatistics and RStudio to be able to run these scripts. Below are instructions for downloading these interfaces. 
 
