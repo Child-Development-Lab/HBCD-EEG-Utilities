@@ -1,6 +1,6 @@
-# Expected Outputs from `script_name.m`
+# Expected Outputs from `HBCD-EEG-Utilities.m`
 
-`script_name.m` will write the following output files: 
+`HBCD-EEG-Utilities.m` will write the following output files: 
 
  
         `|__ outputdir/
