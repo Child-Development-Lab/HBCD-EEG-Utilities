@@ -29,7 +29,7 @@
  
 ## ERP specifications
 
-# ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs. 
+ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs:
 
 ### MMN ERPs
 | Task | Component | Time window | ROI  | Age |
