@@ -6,19 +6,19 @@
         `|__ outputdir/
             |
             | # FACE
-            |__ sub<###>_ses-V03_task-FACE-ERPSummaryStats.csv
-            |__ sub<###>_ses-V03_task-FACE-ERPTrialMeasures.csv
+            |__ sub-<ID>_ses-V03_task-FACE-ERPSummaryStats.csv
+            |__ sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv
             |
             | # MMN
-            |__ sub<###>_ses-V03_task-MMN-ERPSummaryStats.csv
-            |__ sub<###>_ses-V03_task-MMN-ERPTrialMeasures.csv
+            |__ sub-<ID>_ses-V03_task-MMN-ERPSummaryStats.csv
+            |__ sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv
             |
             | # VEP
-            |__ sub<###>_ses-V03_task-VEP-SummaryStats.csv
-            |__ sub<###>_ses-V03_task-VEP-ERPTrialMeasures.csv
+            |__ sub-<ID>_ses-V03_task-VEP-SummaryStats.csv
+            |__ sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv
             |
             | # RS
-            |__ sub<###>_ses-V03_task-RS-PowerSummaryStats.csv`
+            |__ sub-<ID>_ses-V03_task-RS-PowerSummaryStats.csv`
 
 ## Output file descriptions
 
@@ -33,7 +33,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 ### FACE 
 
 FACE Trial Measures Output
-`sub<###>_ses-V03_task-FACE-ERPTrialMeasures.csv`
+`sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -43,7 +43,7 @@ FACE Trial Measures Output
 
 
 FACE Summary Statistics Output
-`sub<###>_ses-V03_task-FACE-ERPSummaryStatistics.csv`
+`sub-<ID>_ses-V03_task-FACE-ERPSummaryStatistics.csv`
  
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -55,7 +55,7 @@ FACE Summary Statistics Output
 ### MMN
 
 MMN Trial Measures Output
-`sub<###>_ses-V03_task-MMN-ERPTrialMeasures.csv`
+`sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -66,7 +66,7 @@ MMN Trial Measures Output
 | Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
 MMN Summary Statistics Output
-`sub<###>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
+`sub-<ID>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -78,7 +78,7 @@ MMN Summary Statistics Output
 ### Visual Evoked Potential  
 
 VEP Trial Measures Output
-`sub<###>_ses-V03_task-VEP-ERPTrialMeasures.csv`
+`sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -89,7 +89,7 @@ VEP Trial Measures Output
 | Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
 VEP Summary Statistics Output
-`sub<###>_ses-V03_task-VEP-ERPSummaryStatistics.csv`
+`sub-<ID>_ses-V03_task-VEP-ERPSummaryStatistics.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -100,7 +100,7 @@ VEP Summary Statistics Output
 ### Resting State 
 
 RS Summary Statistics Output
-`sub<###>_ses-V03_task-RS-PowerSummaryStats.csv`
+`sub-<ID>_ses-V03_task-RS-PowerSummaryStats.csv`
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
