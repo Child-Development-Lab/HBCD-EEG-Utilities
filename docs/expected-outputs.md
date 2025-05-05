@@ -1,8 +1,8 @@
- Expected Outputs
+# Expected Outputs from `script_name.m`
 
 ## Derivatives
 
-# The following derivatives are provided for each task
+The following derivatives are provided for each task
 
 | Task | Derivative     |
 |------|----------------|
@@ -46,101 +46,94 @@
 | VEP  | N1        | 40-79 ms      | oz   | 6-9 |
 | VEP  | P1        | 80-120 ms     | oz   | 6-9 |
 | VEP  | N2        | 121-170 ms    | oz   | 6-9 |
-| RS   | N/A       | 1000 ms epochs| all channels   | 3-9 | power |
+| RS   | N/A       | 1000 ms epochs| all channels   | 3-9 |
 
 
-## Output files
+## Output file descriptions
 
-For each task, two .csv files are automatically produced by MADE: a trial measures file and a summary statistics file.
+Visit https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary.csv to download a data dictionary defining the fields in each .csv output file. 
 
-Click :download:`here <csv_data_dictionary.csv>` to download a data dictionary defining the fields in each .csv output file. 
+- ``trialMeasures.csv`` files are created for MMN, VEP, and FACE and contain the following output variables for each trial retained after processing: 
 
-### ``trialMeasures.csv`` files are created for MMN, VEP, and FACE and contain the following output variables for each trial retained after processing: 
+- **MeanAmplitude**: Mean amplitude during specified measurement window
 
-MeanAmplitude
-: Mean amplitude during specified measurement window
+- **AvgPeak**: The average peak, or adaptive mean ampltide, is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
 
-AvgPeak
-: The average peak, or adaptive mean peak, is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
+- **Latency**: Latency in ms to the peak amplitude during the specified time window
 
-Latency
-: Latency in ms to the peak amplitude during the specified time window
+- ``summaryStats.csv`` files are created for each task and contain the following output variables: 
 
-	
-### ``summaryStats.csv`` files are created for each task and contain the following output variables: 
+- **SME**: Standard Measurement error. The SME is a universal measure of data quality for ERP data. See [Luck2021]_ for more information.
 
-SME
-: Standard Measurement error. The SME is a universal measure of data quality for ERP data. See [Luck2021]_ for more information.
-
-Mean_Power
-: mean power at each frequency bin ranging from 1-50Hz
+- Mean_Power
+ mean power at each frequency bin ranging from 1-50Hz
 
 # Output by task 
 
-## FACE 
+### FACE 
 
-### FACE Trial Measures Output: `filename.csv`
+FACE Trial Measures Output: `filename.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | TrialNum | number of trials retained per condition |
-| MeanAmplitude_<WindowStart-WindowEnd>_<ROI> | Mean amplitude within specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 
 
- ### FACE Summary Statistics Output: `filename.csv`
+FACE Summary Statistics Output: `filename.csv`
  
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | NTrials | number of trials retained per condition |
-| SME_<WindowStart-WindowEnd>_<ROI> | Standard measurement error during specified time window at specified ROI |
+| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
 
-## MMN
+### MMN
 
-### MMN Trial Measures Output: `filename.csv`
+MMN Trial Measures Output: `filename.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | TrialNum | number of trials retained per condition |
-| MeanAmplitude_<WindowStart-WindowEnd>_<ROI> | Mean amplitude within specified time window at specified ROI |
-| Peak_<WindowStart-WindowEnd>_<ROI> | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_<WindowStart-WindowEnd>_<ROI> | Latency to peak within specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
-### MMN Summary Statistics Output: `filename.csv`
+MMN Summary Statistics Output: `filename.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | NTrials | number of trials retained per condition |
-| SME_<WindowStart-WindowEnd>_<ROI> | Standard measurement error during specified time window at specified ROI |
+| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
 
-## Visual Evoked Potential  
+### Visual Evoked Potential  
 
-### VEP Trial Measures Output: `filename.csv`
+VEP Trial Measures Output: `filename.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | VEP |
 | TrialNum | number of trials retained per condition |
-| MeanAmplitude_<WindowStart-WindowEnd>_<ROI> | Mean amplitude within specified time window at specified ROI |
-| Peak_<WindowStart-WindowEnd>_<ROI> | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_<WindowStart-WindowEnd>_<ROI> | Latency to peak within specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
-## VEP Summary Statistics Output: `filename.csv`
+VEP Summary Statistics Output: `filename.csv`
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | VEP |
 | NTrials | number of trials retained per condition |
-| SME_<WindowStart-WindowEnd>_<ROI> | Standard measurement error during specified time window at specified ROI |
+| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
-## Resting State 
+### Resting State 
 
-### RS Summary Statistics Output: `rs_SummaryStats.csv`
+RS Summary Statistics Output: `rs_SummaryStats.csv`
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
