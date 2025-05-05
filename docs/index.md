@@ -6,8 +6,8 @@ The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utili
 
 ### Contents 
 
-[Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
-[Usage](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/usage/)
-[Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
-[Expected Outputs](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
-[Help](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
+- [Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
+- [Usage](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/usage/)
+- [Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
+- [Expected Outputs](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
+- [Help](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
