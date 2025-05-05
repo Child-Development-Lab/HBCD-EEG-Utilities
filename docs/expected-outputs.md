@@ -170,18 +170,12 @@ Output files ending in ``summaryStats.csv`` are created for each task and contai
    * - SME_200-400_fcz
      - SME during 200-400 ms at FCz cluster
 
-.. list-table:: RS Summary Statistics Output
-   :widths: 31 50
-   :header-rows: 1
-
-   * - Variable Name
-     - Description
-   * - Frequency
-     - 1 Hz bins from 1-50 Hz
-   * - SME
-     - SME in each frequency bin
-   * - Mean_Power
-     - Mean power in each frequency bin
-   * - ID
-     - subject ID
+## Resting State Summary Statistics Output: `rs_SummaryStats.csv`
+   
+| Variable Name | Description                              |
+|---------------|------------------------------------------|
+| Frequency | 1 Hz bins from 1-50 Hz |
+| SME | standard measurement error in each frequency bin |
+| Mean_Power | Global average power in each frequency bin |
+| ID | subject ID |
 
