@@ -19,7 +19,7 @@
 
 - **MeanAmplitude**: Mean amplitude during specified measurement window 
 
-- **AdaptiveMean**: The average peak, or adaptive mean ampltide, is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
+- **AdaptiveMean**: Adaptive mean amplitude is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
 
 - **Latency**: Latency in ms to the peak amplitude during the specified time window
 
@@ -37,9 +37,9 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | MMN  | MMR       | 200-400 ms    | t7t8 | 3-9 |
 | MMN  | MMR       | 200-400 ms    | f7f8 | 3-9 |
 | MMN  | MMR       | 200-400 ms    | fcz  | 3-9 |
-| MMN  | N1        | 40-79 ms      | t7t8 | 3-9 |
-| MMN  | P1        | 80-100 ms     | t7t8 | 3-9 |
-| MMN  | N2        | 100-180 ms    | t7t8 | 3-9 |
+| MMN  | N1 (?)        | 40-79 ms      | t7t8 | 3-9 |
+| MMN  | P1 (?)       | 80-100 ms     | t7t8 | 3-9 |
+| MMN  | N2 (?)       | 100-180 ms    | t7t8 | 3-9 |
 
 ### FACE ERPs
 | Task | Component | Time window | ROI  | Age |

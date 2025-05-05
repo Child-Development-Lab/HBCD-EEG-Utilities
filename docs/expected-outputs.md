@@ -24,9 +24,9 @@
 
 Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
 
-- ``trialMeasures.csv`` files are created for MMN, VEP, and FACE
+- ``trialMeasures.csv`` Derivatives are provided for each trial in MMN, VEP, and FACE.
 
-- ``summaryStats.csv`` files are created for all tasks
+- ``summaryStats.csv`` Derivatives are provided as subject-level averages for each task. For tasks with multiple conditions, values are averaged by condition. 
           
 # Output by task 
 
@@ -49,6 +49,7 @@ FACE Summary Statistics Output
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | NTrials | number of trials retained per condition |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 | SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
 
@@ -62,8 +63,6 @@ MMN Trial Measures Output
 | Condition | deviant, predeviant, standard |
 | TrialNum | trial index |
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
 MMN Summary Statistics Output
 `sub-<ID>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
@@ -72,6 +71,7 @@ MMN Summary Statistics Output
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | NTrials | number of trials retained per condition |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 | SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
 
@@ -96,6 +96,9 @@ VEP Summary Statistics Output
 | Condition | VEP |
 | NTrials | number of trials retained per condition |
 | SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
 ### Resting State 
 
