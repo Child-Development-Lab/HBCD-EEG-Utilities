@@ -1,5 +1,34 @@
 # Expected Outputs from `script_name.m`
 
+Outputs will be formatted as follows: 
+
+test chunk: 
+`r1.0/
+|__ hbcd/
+    |__ rawdata/ 
+        |__ phenotype/
+            | # Visit Data
+            |__ par_visit_data.tsv
+            |__ par_visit_data.json
+            |__ par_visit_data_shadow.tsv
+            |__ par_visit_data.parquet
+            |__ par_visit_data_shadow.parquet
+            |
+            | # Demographics Data
+            |__ sed_basic_demographics.tsv
+            |__ sed_basic_demographics.json
+            |__ sed_basic_demographics_shadow.tsv
+            |__ sed_basic_demographics.parquet
+            |__ sed_basic_demographics_shadow.parquet
+            |
+            | # Instruments
+            |__ <instrument_name>.tsv
+            |__ <instrument_name>.json
+            |__ <instrument_name>_shadow.tsv
+            |__ <instrument_name>.parquet
+            |__ <instrument_name>_shadow.parquet`
+
+
 ## Derivatives
 
 The following derivatives are provided for each task
