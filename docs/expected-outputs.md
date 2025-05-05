@@ -38,7 +38,7 @@ FACE Trial Measures Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
-| TrialNum | number of trials retained per condition |
+| TrialNum | trial index |
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 
 
@@ -60,7 +60,7 @@ MMN Trial Measures Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
-| TrialNum | number of trials retained per condition |
+| TrialNum | trial index |
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 | Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
 | Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
@@ -83,7 +83,7 @@ VEP Trial Measures Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | VEP |
-| TrialNum | number of trials retained per condition |
+| TrialNum | trial index |
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 | Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
 | Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
