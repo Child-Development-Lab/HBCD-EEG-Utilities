@@ -22,31 +22,30 @@
 
 # ERP derivatives contain the following components at the specified time windows and ROIs. 
 
-| Task | Component | Time window | ROI  | Age | Available derivatives                              |
-|------|-----------|-------------|------|-----|----------------------------------------------------|
-| MMN  | MMR       | 200-400 ms    | t7t8 | 3-9 | mean amplitude, adaptive mean, peak latency, SME |
-| MMN  | MMR       | 200-400 ms    | f7f8 | 3-9 | mean amplitude, adaptive mean, peak latency, SME |
-| MMN  | MMR       | 200-400 ms    | fcz  | 3-9 | mean amplitude, adaptive mean, peak latency, SME |
-| MMN  | N1        | 40-79 ms      | t7t8 | 3-9 | mean amplitude, adaptive mean, peak latency, SME |
-| MMN  | P1        | 80-100 ms     | t7t8 | 3-9 | mean amplitude, adaptive mean, peak latency, SME |
-| MMN  | N2        | 100-180 ms    | t7t8 | 3-9 | mean amplitude, adaptive mean, peak latency, SME |
-| FACE | N290      | 200-390 ms    | p8   | 3-6 | mean amplitude, SME                              |
-| FACE | N290      | 200-390 ms    | p7   | 3-6 | mean amplitude, SME                              |
-| FACE | P1        | 75-125 ms     | oz   | 3-6 | mean amplitude, SME                              |
-| FACE | N290      | 400-600 ms    | oz   | 3-6 | mean amplitude, SME                              |
-| FACE | P400      | 355-625 ms    | oz   | 3-6 | mean amplitude, SME                              |
-| FACE | N290      | 200-340 ms    | p8   | 6-9 | mean amplitude, SME                              |
-| FACE | N290      | 200-340 ms    | p7   | 6-9 | mean amplitude, SME                              |
-| FACE | P1        | 75-125 ms     | oz   | 6-9 | mean amplitude, SME                              |
-| FACE | N290      | 200-340 ms    | oz   | 6-9 | mean amplitude, SME                              |
-| FACE | P400      | 350-600 ms    | oz   | 6-9 | mean amplitude, SME                              |
-| FACE | Nc        | 300-650 ms    | FCz  | 3-9 | mean amplitude, SME                              |
-| VEP  | N1        | 40-79 ms      | oz   | 3-6 | mean amplitude, adaptive mean, peak latency, SME |
-| VEP  | P1        | 80-140 ms     | oz   | 3-6 | mean amplitude, adaptive mean, peak latency, SME |
-| VEP  | N2        | 141-300 ms    | oz   | 3-6 | mean amplitude, adaptive mean, peak latency, SME |
-| VEP  | N1        | 40-79 ms      | oz   | 6-9 | mean amplitude, adaptive mean, peak latency, SME |
-| VEP  | P1        | 80-120 ms     | oz   | 6-9 | mean amplitude, adaptive mean, peak latency, SME |
-| VEP  | N2        | 121-170 ms    | oz   | 6-9 | mean amplitude, adaptive mean, peak latency, SME |
+| Task | Component | Time window | ROI  | Age |
+|------|-----------|-------------|------|-----|
+| MMN  | MMR       | 200-400 ms    | t7t8 | 3-9 |
+| MMN  | MMR       | 200-400 ms    | f7f8 | 3-9 |
+| MMN  | MMR       | 200-400 ms    | fcz  | 3-9 |
+| MMN  | N1        | 40-79 ms      | t7t8 | 3-9 |
+| MMN  | P1        | 80-100 ms     | t7t8 | 3-9 |
+| MMN  | N2        | 100-180 ms    | t7t8 | 3-9 |
+| FACE | N290      | 200-390 ms    | p8   | 3-6 |
+| FACE | N290      | 200-390 ms    | p7   | 3-6 |
+| FACE | N290      | 400-600 ms    | oz   | 3-6 |                              
+| FACE | P400      | 355-625 ms    | oz   | 3-6 |                              
+| FACE | N290      | 200-340 ms    | p8   | 6-9 |                           
+| FACE | N290      | 200-340 ms    | p7   | 6-9 |                             
+| FACE | P1        | 75-125 ms     | oz   | 6-9 |
+| FACE | N290      | 200-340 ms    | oz   | 6-9 |
+| FACE | P400      | 350-600 ms    | oz   | 6-9 |
+| FACE | Nc        | 300-650 ms    | FCz  | 3-9 |
+| VEP  | N1        | 40-79 ms      | oz   | 3-6 |
+| VEP  | P1        | 80-140 ms     | oz   | 3-6 | 
+| VEP  | N2        | 141-300 ms    | oz   | 3-6 |
+| VEP  | N1        | 40-79 ms      | oz   | 6-9 |
+| VEP  | P1        | 80-120 ms     | oz   | 6-9 |
+| VEP  | N2        | 121-170 ms    | oz   | 6-9 |
 | RS   | N/A       | 1000 ms epochs| all channels   | 3-9 | power |
 
 
@@ -89,7 +88,7 @@ Mean_Power
 | MeanAmplitude_<WindowStart-WindowEnd>_<ROI> | Mean amplitude within specified time window at specified ROI |
 
 
- ### FACE Summary Statistics Output
+ ### FACE Summary Statistics Output: `filename.csv`
  
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
