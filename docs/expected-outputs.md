@@ -51,7 +51,7 @@ The following derivatives are provided for each task
 
 ## Output file descriptions
 
-Visit https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary.csv to download a data dictionary defining the fields in each .csv output file. 
+Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary.csv) to see a data dictionary defining the fields in each .csv output file. 
 
 - ``trialMeasures.csv`` files are created for MMN, VEP, and FACE and contain the following output variables for each trial retained after processing: 
 
