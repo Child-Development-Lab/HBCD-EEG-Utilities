@@ -51,8 +51,8 @@
 
 
 
-b. CSV data files (``.csv``)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+## Output files (`.csv`)
+
 
 For each task, two .csv files are automatically produced by MADE: a trial measures file and a summary statistics file.
 
@@ -62,11 +62,14 @@ Click :download:`here <csv_data_dictionary.csv>` to download a data dictionary d
 
 Output files ending in ``trialMeasures.csv`` are created for MMN, VEP, and FACE and contain the following output variables for each trial retained after processing: 
 
-	* ``MeanAmplitude``: Mean amplitude during specified measurement window
+MeanAmplitude
+: Mean amplitude during specified measurement window
 
-	* ``AvgPeak``: The average peak, or adaptive mean peak, is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
+AvgPeak
+: The average peak, or adaptive mean peak, is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
 
-	* ``Latency``: Latency in ms to the peak amplitude during the specified time window
+Latency
+: Latency in ms to the peak amplitude during the specified time window
 
 
 .. list-table:: FACE Trial Measures Output
