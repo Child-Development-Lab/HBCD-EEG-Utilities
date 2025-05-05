@@ -1,6 +1,7 @@
  Expected Outputs
 
 ## Derivatives
+
 # The following derivatives are provided for each task
 
 | Task | Derivative     |
@@ -18,6 +19,7 @@
 | RS   | Power          |
 
 ## ERP specifications
+
 # ERP derivatives contain the following components at the specified time windows and ROIs. 
 
 | Task | Component | Time window | ROI  | Age |
