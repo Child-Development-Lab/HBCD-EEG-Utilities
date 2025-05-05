@@ -24,6 +24,10 @@ json_settings_file = 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities2\supp
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
+task_list = {'FACE', 'MMN', 'VEP'};
+% This task list is auto-set to all tasks, if you would like to remove
+% tasks please follow the formatting above to indicate the tasks you want
+% to keep
 
 
 data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
@@ -36,8 +40,21 @@ eeglab;
 cd(data_path);
 datafile_names=dir(fullfile(data_path, '**\*filteredprocessed_eeg.set'));
 datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
-datafile_names=datafile_names(~(contains({datafile_names.name}, 'RS')));
+% datafile_names=datafile_names(~(contains({datafile_names.name}, 'RS')));
+% %keep RS for spectra/SME calculations!
 datafile_names(235) = []; % This participant file has unknown errors that the EEG Core is troubleshooting
+set_names={datafile_names.name};
+set_path = {datafile_names.folder};
+
+%Filter out which tasks you have selected
+for c=length(set_names):-1:1
+    task = extractBetween(set_names{c}, 'task-', '_acq');
+    if ~contains(task_list, task)
+        %remove the file
+        datafile_names(c) = [];
+    end
+end
+%remake the new list of filtered files
 set_names={datafile_names.name};
 set_path = {datafile_names.folder};
 
