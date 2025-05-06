@@ -82,7 +82,7 @@ allData = [];
 cutoff = 0;
 TrialNums = [];
 EEG=eeg_checkset(EEG);
-for subject=126:length(set_names)
+for subject=1:length(set_names)
     s = grab_settings(set_names{subject}, json_settings_file);
     participant_Id = set_names{subject}(1:14); %Get ID for data path to read set file
     output_location = [data_path filesep participant_Id filesep 'ses-V03' filesep 'eeg' filesep 'processed_data'];
@@ -612,14 +612,10 @@ for i=1:length(scoreTimes)
     else
         smeWide = join(smeWide, sme);
         try
-            tabWide = join(tabWide, tabFull, 'Keys','TrialNum');
+            tabWide = join(tabWide, tabFull);
         catch
-            % One participant has error in trial num -- catch and fix the
-            % error here
+            % One participant has error in trial num
             continue %continue past error and skip subject
-            % tabWide.TrialNum{78} = '94';
-            % tabFull.TrialNum{78} = '94';
-            % tabWide = join(tabWide, tabFull, 'Keys','TrialNum');
         end
     end
 
@@ -637,3 +633,5 @@ end %subject loop
 concatenate_files_summary(data_path, task_list, concat_location);
 
 
+%% Concatenate files for TrialMeasures.csvs
+concatenate_trial_measures(data_path, task_list, concat_location);
