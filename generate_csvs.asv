@@ -68,15 +68,19 @@ allData = [];
 cutoff = 0;
 TrialNums = [];
 EEG=eeg_checkset(EEG);
-for subject=235:235
+for subject=1:length(se)
     s = grab_settings(set_names{subject}, json_settings_file);
     participant_Id = set_names{subject}(1:14); %Get ID for data path to read set file
+    output_location = [data_path filesep participant_Id filesep 'ses-V03' filesep 'eeg' filesep 'processed_data'];
+    % TM - saves to the correct file structure that we expect to see --
+    % this line can be commented out if you want to save it to the output
+    % location set above
 
     % RS Code here, if RS call other function, otherwise continue to next
     % subject
-
     if contains(set_names{subject}, 'RS')
         % Run RS separate script
+        
         continue
     end
 
@@ -594,7 +598,15 @@ for i=1:length(scoreTimes)
         tabWide = tabFull;
     else
         smeWide = join(smeWide, sme);
-        tabWide = join(tabWide, tabFull{1:3});
+        try
+            tabWide = join(tabWide, tabFull, 'Keys','TrialNum');
+        catch
+            % One participant has error in trial num -- catch and fix the
+            % error here
+            tabWide.TrialNum{78} = '94';
+            tabFull.TrialNum{78} = '94';
+            tabWide = join(tabWide, tabFull, 'Keys','TrialNum');
+        end
     end
 
 end    
@@ -606,4 +618,5 @@ writetable(tabWide, [output_location filesep strrep(set_names{subject}, '_desc-f
 end %subject loop
         
 
-    
+
+%% Concatenate files

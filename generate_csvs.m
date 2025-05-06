@@ -71,10 +71,13 @@ EEG=eeg_checkset(EEG);
 for subject=1:length(set_names)
     s = grab_settings(set_names{subject}, json_settings_file);
     participant_Id = set_names{subject}(1:14); %Get ID for data path to read set file
+    output_location = [data_path filesep participant_Id filesep 'ses-V03' filesep 'eeg' filesep 'processed_data'];
+    % TM - saves to the correct file structure that we expect to see --
+    % this line can be commented out if you want to save it to the output
+    % location set above
 
     % RS Code here, if RS call other function, otherwise continue to next
     % subject
-
     if contains(set_names{subject}, 'RS')
         % Run RS separate script
         continue
@@ -614,4 +617,6 @@ writetable(tabWide, [output_location filesep strrep(set_names{subject}, '_desc-f
 end %subject loop
         
 
-    
+
+%% Concatenate files
+
