@@ -123,16 +123,16 @@ end
 st = datestr(now, 'yyyy-mm-dd');
 
 % only write out specified tasks
-if contains(task_list, 'RS')
+if any(contains(task_list, 'RS'))
     writetable(RS_power, fullfile(concat_location, ['RS_power_V03_' st '.csv']));
 end
-if contains(task_list, 'MMN')
+if any(contains(task_list, 'MMN'))
     writetable(MMN_ERP, fullfile(concat_location, ['MMN_ERP_V03_' st '.csv']));
 end
-if contains(task_list, 'FACE')
+if any(contains(task_list, 'FACE'))
     writetable(FACE_ERP, fullfile(concat_location, ['FACE_ERP_V03_' st '.csv']));
 end
-if contains(task_list, 'VEP')
+if any(contains(task_list, 'VEP'))
     writetable(VEP_ERP, fullfile(concat_location, ['VEP_ERP_V03_' st '.csv']));
 end
 

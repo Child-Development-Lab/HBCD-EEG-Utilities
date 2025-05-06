@@ -1,12 +1,7 @@
-% concatenate_trial_measures.m
-
+function concatenate_trial_measures(data_path, task_list, concat_location)
 %% Setup
 
 cd(data_path)
-
-% Get subject IDs
-dirInfo = dir(data_path);
-dccids = {dirInfo([dirInfo.isdir] & ~ismember({dirInfo.name}, {'.','..'})).name};
 
 % Initialize outputs
 FACE_trialmeasures = [];
@@ -38,28 +33,20 @@ VEP_path = {datafile_names_VEP.folder};
 % Loop over each ID
 
 % FACE
-for i = 1:length(FACE_names)
-    x = FACE_names{i};
-    file = fullfile([FACE_path{i} filesep x]);
+for j = 1:length(FACE_names)
+    x = FACE_names{j};
+    file = fullfile([FACE_path{j} filesep x]);
+    x = extractBefore(x, '_ses');
     if isfile(file)
         tmp = readtable(file);
         disp(['Compiling ' x]);
         mapping = {
             1, 'MeanAmp_N290_p8';
-            2, 'Peak_N290_p8';
-            3, 'Latency_N290_p8';
-            7, 'MeanAmp_P1_Oz';
-            8, 'Peak_P1_Oz';
-            9, 'Latency_P1_Oz';
-            10, 'MeanAmp_N290_Oz';
-            11, 'Peak_N290_Oz';
-            12, 'Latency_N290_Oz';
-            13, 'MeanAmp_P400_Oz';
-            14, 'Peak_P400_Oz';
-            15, 'Latency_P400_oz';
-            16, 'MeanAmp_Nc_fcz';
-            17, 'Peak_Nc_fcz';
-            18, 'Latency_Nc_fcz'
+            5, 'MeanAmp_N290_p7';
+            6, 'MeanAmp_P1_Oz';
+            7, 'MeanAmp_N290_Oz';
+            8, 'MeanAmp_P400_Oz';
+            9, 'MeanAmp_Nc_fcz'
         };
         tmp = rename_columns(tmp, mapping);
         FACE_trialmeasures = [FACE_trialmeasures; tmp];
@@ -69,22 +56,17 @@ for i = 1:length(FACE_names)
 end
 
 % MMN
-for i = 1:length(MMN_names)
-    x = MMN_names{i};
-    file = fullfile([MMN_path{i} filesep x]);
+for j = 1:length(MMN_names)
+    x = MMN_names{j};
+    file = fullfile([MMN_path{j} filesep x]);
+    x = extractBefore(x, '_ses');
     if isfile(file)
         tmp = readtable(file);
         disp(['Compiling ' x]);
         mapping = {
             1, 'MeanAmp_MMR_t7t8';
-            2, 'Peak_MMR_t7t8';
-            3, 'Latency_MMR_t7t8';
-            7, 'MeanAmp_MMR_f7f8';
-            8, 'Peak_MMR_f7f8';
-            9, 'Latency_MMR_f7f8';
-            10, 'MeanAmp_MMR_fcz';
-            11, 'Peak_MMR_fcz';
-            12, 'Latency_MMR_fcz'
+            5, 'MeanAmp_MMR_f7f8';
+            6, 'MeanAmp_MMR_fcz';
         };
         tmp = rename_columns(tmp, mapping);
         MMN_trialmeasures = [MMN_trialmeasures; tmp];
@@ -94,21 +76,22 @@ for i = 1:length(MMN_names)
 end
 
 % VEP
-for i = 1:length(VEP_names)
-    x = VEP_names{i};
-    file = fullfile([VEP_path{i} filesep x]);
+for j = 1:length(VEP_names)
+    x = VEP_names{j};
+    file = fullfile([VEP_path{j} filesep x]);
+    x = extractBefore(x, '_ses');
     if isfile(file)
         tmp = readtable(file);
         disp(['Compiling ' x]);
         mapping = {
             1, 'MeanAmp_N1_t7t8';
-            2, 'Peak_N1_oz';
+            2, 'AdaptiveMean_N1_oz';
             3, 'Latency_N1_oz';
             7, 'MeanAmp_P1_oz';
-            8, 'Peak_P1_oz';
+            8, 'AdaptiveMean_P1_oz';
             9, 'Latency_P1_oz';
             10, 'MeanAmp_N2_oz';
-            11, 'Peak_N2_oz';
+            11, 'AdaptiveMean_N2_oz';
             12, 'Latency_N2_oz'
         };
         tmp = rename_columns(tmp, mapping);
@@ -119,12 +102,22 @@ for i = 1:length(VEP_names)
 end
 
 % Reorder columns by index
-FACE_trialmeasures = FACE_trialmeasures(:, [4,5,6,1,2,3,7,8,9,10,11,12,13,14,15,16,17,18]);
-MMN_trialmeasures = MMN_trialmeasures(:, [4,5,6,1,2,3,7,8,9,10,11,12]);
+FACE_trialmeasures = FACE_trialmeasures(:, [2,3,4,1,5,6,7,8,9]);
+MMN_trialmeasures = MMN_trialmeasures(:, [2,3,4,1,5,6]);
 VEP_trialmeasures = VEP_trialmeasures(:, [4,5,6,1,2,3,7,8,9,10,11,12]);
 
 % Save .csv outputs 
 st = datestr(now, 'yyyy-mm-dd');
-writetable(FACE_trialmeasures, fullfile(output_path, ['FACE_trialMeasures_V03_' st '.csv']));
-writetable(MMN_trialmeasures, fullfile(output_path, ['MMN_trialMeasures_V03_' st '.csv']));
-writetable(VEP_trialmeasures, fullfile(output_path, ['VEP_trialMeasures_V03_' st '.csv']));
+
+if any(contains(task_list, 'MMN'))
+    writetable(MMN_trialmeasures, fullfile(concat_location, ['MMN_trialMeasures_V03_' st '.csv']));
+end
+if any(contains(task_list, 'FACE'))
+    writetable(FACE_trialmeasures, fullfile(concat_location, ['FACE_trialMeasures_V03_' st '.csv']));
+end
+if any(contains(task_list, 'VEP'))
+    writetable(VEP_trialmeasures, fullfile(concat_location, ['VEP_trialMeasures_V03_' st '.csv']));
+end
+
+
+end
