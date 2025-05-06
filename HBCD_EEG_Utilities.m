@@ -30,6 +30,7 @@
 % for k=1:length(datafile_names)
 %     delete([datafile_names(k).folder filesep datafile_names(k).name]);
 % end
+% rmdir('X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs\Concatenated outputs');
 
 
 %% Set your paths here!
