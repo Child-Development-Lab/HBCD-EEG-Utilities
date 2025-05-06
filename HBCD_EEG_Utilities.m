@@ -34,14 +34,22 @@
 
 
 %% Set your paths here!
-%Downloadable from the Github page, you can change this path to be wherever you have saved it!
+
+data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
+concat_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your concatenated outputs, ideally a new folder saved somewhere you remember!
+age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
+addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
+eeglab;
+
+
+%% Setup -- DO NOT CHANGE
 repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
 cd(repoPath)
 json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBCD.json');
-
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
+
 % Define the list of tasks
 task_options = {'FACE', 'MMN', 'VEP', 'RS'};
 
@@ -60,14 +68,6 @@ else
     disp('No tasks selected.');
 end
 
-data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
-concat_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your concatenated outputs, ideally a new folder saved somewhere you remember!
-age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
-addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
-eeglab;
-
-
-%% Setup -- DO NOT CHANGE
 addpath([repoPath filesep 'supplemental files']);
 % Path to supplemental files in repo
 
