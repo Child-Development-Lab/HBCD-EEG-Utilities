@@ -102,7 +102,7 @@ VEP Summary Statistics Output
 
 ### Resting State 
 
-RS Power Spectra Output
+RS Log Power Spectra Output
 `sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
    
 | Variable Name | Description                              |
@@ -113,6 +113,7 @@ RS Power Spectra Output
 | 3.0 Hz | Log power in μV from 2-3 Hz |
 | ... | and so on... |
 
+RS Absolute Power Spectra Output
 `sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
    
 | Variable Name | Description                              |
