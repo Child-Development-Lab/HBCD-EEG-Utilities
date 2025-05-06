@@ -3,7 +3,7 @@
 
 %% Generating ERP Summary Statistics and Trial Measures information for HBCD data release
 % This code is provided by the HBCD EEG Core team at the Child Development Lab, University of Maryland, College Park
-% This code is provided to be used in conjunction to the MADE pipeline
+% This code is provided to be used on HB
 % derivatives downloadable from the HBCD publically released data
 
 % Before using this code, please refer to the HBCD documentation available
@@ -36,9 +36,6 @@
 %% Set your paths here!
 
 age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
-addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
-eeglab;
-
 
 %% Setup -- DO NOT CHANGE
 repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
@@ -49,14 +46,26 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 %before running
 
 % Select where you downloaded your files from LASSO
-data_path = uigetdir('Select your folder to your downloaded LASSO data');
+box = msgbox('Select the location of where you downloaded your files from LASSO');
+uiwait(box);
+data_path = uigetdir();
 % Create new folder in your data path to save the new concatenated csvs
+
 concat_location = [data_path filesep 'Concatenated outputs'];
+if exist(concat_location, 'dir') == 0
+        mkdir(concat_location);
+end
 
 %Add the plugin path and start EEGLAB
-eeg_path = uigetdir('Select where you downloaded EEGLAB');
-addpath(eeg_path);
-eeglab;
+try
+    eeglab;
+catch
+    box = msgbox('Select the location of where you downloaded your EEGLAB plugin');
+    uiwait(box);
+    eeg_path = uigetdir('Select where you downloaded EEGLAB');
+    addpath(eeg_path);
+    eeglab;
+end
 
 
 % Define the list of tasks

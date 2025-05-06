@@ -3,11 +3,10 @@
 
 %% Generating ERP Summary Statistics and Trial Measures information for HBCD data release
 % This code is provided by the HBCD EEG Core team at the Child Development Lab, University of Maryland, College Park
-% This code is provided to be used in conjunction to the MADE pipeline
-% derivatives downloadable from the HBCD publically released data
+% This code is designed to be used on processed HBCD EEG data 
 
 % Before using this code, please refer to the HBCD documentation available
-% at this link: INSERT LINK HERE
+% here: https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/
 
 % Ongoing Contributors:
 % Trisha Maheshwari (tmahesh@umd.edu)
