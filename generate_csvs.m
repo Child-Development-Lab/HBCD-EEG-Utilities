@@ -24,6 +24,10 @@
 % for k=1:length(datafile_names)
 %     delete([datafile_names(k).folder filesep datafile_names(k).name]);
 % end
+% datafile_names=dir(fullfile(data_path, '**\*ERPTrialMeasures.csv'));
+% for k=1:length(datafile_names)
+%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
+% end
 
 
 %% Set your paths here!
@@ -32,7 +36,7 @@ json_settings_file = 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities\suppl
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
-task_list = {'FACE', 'MMN', 'VEP', 'RS'};
+task_list = {'FACE', 'MMN', 'VEP'};
 % This task list is auto-set to all tasks, if you would like to remove
 % tasks please follow the formatting above to indicate the tasks you want
 % to keep
@@ -78,7 +82,7 @@ allData = [];
 cutoff = 0;
 TrialNums = [];
 EEG=eeg_checkset(EEG);
-for subject=1:length(set_names)
+for subject=126:length(set_names)
     s = grab_settings(set_names{subject}, json_settings_file);
     participant_Id = set_names{subject}(1:14); %Get ID for data path to read set file
     output_location = [data_path filesep participant_Id filesep 'ses-V03' filesep 'eeg' filesep 'processed_data'];
@@ -612,9 +616,10 @@ for i=1:length(scoreTimes)
         catch
             % One participant has error in trial num -- catch and fix the
             % error here
-            tabWide.TrialNum{78} = '94';
-            tabFull.TrialNum{78} = '94';
-            tabWide = join(tabWide, tabFull, 'Keys','TrialNum');
+            continue %continue past error and skip subject
+            % tabWide.TrialNum{78} = '94';
+            % tabFull.TrialNum{78} = '94';
+            % tabWide = join(tabWide, tabFull, 'Keys','TrialNum');
         end
     end
 
@@ -691,7 +696,7 @@ for i = 1:length(MMN_names)
                 'SME_MMR_f7f8', 'MeanAmp_MMR_f7f8', ...
                 'SME_MMR_fcz', 'MeanAmp_MMR_fcz'
             };
-            MMN_ERP_sheet.Properties.VariableNames(3:9) = new_names;
+            MMN_ERP_sheet.Properties.VariableNames(1:6) = new_names;
             MMN_ERP = [MMN_ERP; MMN_ERP_sheet];
             disp(['Compiling MMN: ' x]);
         end
@@ -716,7 +721,7 @@ for i = 1:length(FACE_names)
                 'SME_P1', 'MeanAmp_P1', ...
                 'SME_N290_Oz', 'MeanAmp_N290_Oz', ...
                 'SME_P400', 'MeanAmp_P400', ...
-                'SME_P400', 'MeanAmp_Nc'
+                'SME_Nc', 'MeanAmp_Nc'
             };
             FACE_ERP_sheet.Properties.VariableNames(3:14) = new_names;
             FACE_ERP = [FACE_ERP; FACE_ERP_sheet];
@@ -753,7 +758,17 @@ end
 
 % Save .csv outputs 
 st = datestr(now, 'yyyy-mm-dd');
-writetable(RS_power, fullfile(concat_location, ['RS_power_V03_' st '.csv']));
-writetable(MMN_ERP, fullfile(concat_location, ['MMN_ERP_V03_' st '.csv']));
-writetable(FACE_ERP, fullfile(concat_location, ['FACE_ERP_V03_' st '.csv']));
-writetable(VEP_ERP, fullfile(concat_location, ['VEP_ERP_V03_' st '.csv']));
+
+% only write out specified tasks
+if contains(task_list, 'RS')
+    writetable(RS_power, fullfile(concat_location, ['RS_power_V03_' st '.csv']));
+end
+if contains(task_list, 'MMN')
+    writetable(MMN_ERP, fullfile(concat_location, ['MMN_ERP_V03_' st '.csv']));
+end
+if contains(task_list, 'FACE')
+    writetable(FACE_ERP, fullfile(concat_location, ['FACE_ERP_V03_' st '.csv']));
+end
+if contains(task_list, 'VEP')
+    writetable(VEP_ERP, fullfile(concat_location, ['VEP_ERP_V03_' st '.csv']));
+end
