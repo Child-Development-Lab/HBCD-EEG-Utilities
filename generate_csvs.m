@@ -18,13 +18,21 @@
 % addpath(genpath(('...')) % Enter the path of the EEGLAB folder in this line
 
 
+% %% TM- testing!
+% % remove all summary stats files from cbrain outputs for testing
+% datafile_names=dir(fullfile(data_path, '**\*SummaryStats.csv'));
+% for k=1:length(datafile_names)
+%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
+% end
+
+
 %% Set your paths here!
 %Downloadable from the Github page, you can change this path to be wherever you have saved it!
 json_settings_file = 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities\supplemental files\proc_settings_HBCD.json'; 
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
-task_list = {'FACE', 'MMN', 'VEP'};
+task_list = {'FACE', 'MMN', 'VEP', 'RS'};
 % This task list is auto-set to all tasks, if you would like to remove
 % tasks please follow the formatting above to indicate the tasks you want
 % to keep
@@ -33,13 +41,13 @@ addpath 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities\supplemental files
 
 
 data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
-output_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your outputs, ideally a new folder saved somewhere you remember!
+%output_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your outputs, ideally a new folder saved somewhere you remember!
 concat_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your concatenated outputs, ideally a new folder saved somewhere you remember!
 age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
 addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
 eeglab;
 
-% Here we will read in all the processed set files and ID paths
+%% Here we will read in all the processed set files and ID paths
 cd(data_path);
 datafile_names=dir(fullfile(data_path, '**\*filteredprocessed_eeg.set'));
 datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
@@ -60,6 +68,7 @@ end
 %remake the new list of filtered files
 set_names={datafile_names.name};
 set_path = {datafile_names.folder};
+
 
 %% Generate tables here
 % Run a loop for each set file to create output tables - if everything is

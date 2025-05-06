@@ -33,12 +33,13 @@ addpath 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities\supplemental files
 
 
 data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
-output_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your outputs, ideally a new folder saved somewhere you remember!
+%output_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your outputs, ideally a new folder saved somewhere you remember!
+concat_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your concatenated outputs, ideally a new folder saved somewhere you remember!
 age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
 addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
 eeglab;
 
-% Here we will read in all the processed set files and ID paths
+%% Here we will read in all the processed set files and ID paths
 cd(data_path);
 datafile_names=dir(fullfile(data_path, '**\*filteredprocessed_eeg.set'));
 datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
@@ -59,6 +60,12 @@ end
 %remake the new list of filtered files
 set_names={datafile_names.name};
 set_path = {datafile_names.folder};
+
+%% TM- testing!
+% remove all summary stats files from cbrain outputs for testing
+datafile_names=dir(fullfile(data_path, '**\*SummaryStats.csv'));
+for k=1:length(datafile_names.name)
+    delete([datafile_names.name{i} filesep])
 
 %% Generate tables here
 % Run a loop for each set file to create output tables - if everything is
@@ -618,8 +625,7 @@ end %subject loop
         
 
 
-%% Concatenate files fir SummaryStats.csvs
-
+%% Concatenate files for SummaryStats.csvs
 cd(data_path)
 
 % Get subject IDs
@@ -643,17 +649,18 @@ MMN_names = {datafile_names_MMN.name};
 MMN_path = {datafile_names_MMN.folder};
 datafile_names_FACE=datafile_names((contains({datafile_names.name}, 'FACE')));
 FACE_names = {datafile_names_FACE.name};
-FACE_p
+FACE_path = {datafile_names_FACE.folder};
 datafile_names_VEP=datafile_names((contains({datafile_names.name}, 'VEP')));
 VEP_names = {datafile_names_VEP.name};
+VEP_path = {datafile_names_VEP.folder};
 
 % Loop over each ID
 
 % RS
 for i = 1:length(RS_names)
     x = RS_names{i};
-    %processed_data = fullfile(x, 'ses-V03', 'eeg', 'processed_data');
     RS_power_file = fullfile([RS_path{i} filesep x]);
+    x = extractBefore(x, '_ses');
     if isfile(RS_power_file)
         RS_power_sheet = readtable(RS_power_file);
         if height(RS_power_sheet) > 0
@@ -670,8 +677,8 @@ end
 % MMN
 for i = 1:length(MMN_names)
     x = MMN_names{i};
-    processed_data = fullfile(x, 'ses-V03', 'eeg', 'processed_data');
-    MMN_ERP_file = fullfile(data_path, processed_data, x);
+    MMN_ERP_file = fullfile([MMN_path{i} filesep x]);
+    x = extractBefore(x, '_ses');
     if isfile(MMN_ERP_file)
         MMN_ERP_sheet = readtable(MMN_ERP_file);
         if height(MMN_ERP_sheet) > 0
@@ -681,7 +688,7 @@ for i = 1:length(MMN_names)
                 'SME_MMR_f7f8', 'MeanAmp_MMR_f7f8', ...
                 'SME_MMR_fcz', 'MeanAmp_MMR_fcz'
             };
-            MMN_ERP_sheet.Properties.VariableNames(3:14) = new_names;
+            MMN_ERP_sheet.Properties.VariableNames(3:9) = new_names;
             MMN_ERP = [MMN_ERP; MMN_ERP_sheet];
             disp(['Compiling MMN: ' x]);
         end
@@ -694,8 +701,8 @@ end
 % FACE
 for i = 1:length(FACE_names)
     x = FACE_names{i};
-    processed_data = fullfile(x, 'ses-V03', 'eeg', 'processed_data');
-    FACE_ERP_file = fullfile(data_path, processed_data, [x '_ses-V03_task-FACE_ERPSummaryStats.csv']);
+    FACE_ERP_file = fullfile([FACE_path{i} filesep x]);
+    x = extractBefore(x, '_ses');
     if isfile(FACE_ERP_file)
         FACE_ERP_sheet = readtable(FACE_ERP_file);
         if height(FACE_ERP_sheet) > 0
@@ -708,7 +715,7 @@ for i = 1:length(FACE_names)
                 'SME_P400', 'MeanAmp_P400', ...
                 'SME_P400', 'MeanAmp_Nc'
             };
-            FACE_ERP_sheet.Properties.VariableNames(3:18) = new_names;
+            FACE_ERP_sheet.Properties.VariableNames(3:14) = new_names;
             FACE_ERP = [FACE_ERP; FACE_ERP_sheet];
             disp(['Compiling FACE: ' x]);
         end
@@ -720,8 +727,8 @@ end
 % VEP
 for i = 1:length(VEP_names)
     x = VEP_names{i};
-    processed_data = fullfile(x, 'ses-V03', 'eeg', 'processed_data');
-    VEP_ERP_file = fullfile(data_path, processed_data, [x '_ses-V03_task-VEP_ERPSummaryStats.csv']);
+    VEP_ERP_file = fullfile([VEP_path{i} filesep x]);
+    x = extractBefore(x, '_ses');
     if isfile(VEP_ERP_file)
         VEP_ERP_sheet = readtable(VEP_ERP_file);
         if height(VEP_ERP_sheet) > 0
@@ -743,7 +750,7 @@ end
 
 % Save .csv outputs 
 st = datestr(now, 'yyyy-mm-dd');
-writetable(RS_power, fullfile(output_path, ['RS_power_V03_' st '.csv']));
-writetable(MMN_ERP, fullfile(output_path, ['MMN_ERP_V03_' st '.csv']));
-writetable(FACE_ERP, fullfile(output_path, ['FACE_ERP_V03_' st '.csv']));
-writetable(VEP_ERP, fullfile(output_path, ['VEP_ERP_V03_' st '.csv']));
+writetable(RS_power, fullfile(concat_location, ['RS_power_V03_' st '.csv']));
+writetable(MMN_ERP, fullfile(concat_location, ['MMN_ERP_V03_' st '.csv']));
+writetable(FACE_ERP, fullfile(concat_location, ['FACE_ERP_V03_' st '.csv']));
+writetable(VEP_ERP, fullfile(concat_location, ['VEP_ERP_V03_' st '.csv']));
