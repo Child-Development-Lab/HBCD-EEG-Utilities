@@ -35,12 +35,7 @@
 
 %% Set your paths here!
 
-data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
-concat_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your concatenated outputs, ideally a new folder saved somewhere you remember!
 age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
-addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
-eeglab;
-
 
 %% Setup -- DO NOT CHANGE
 repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
@@ -49,6 +44,21 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
+
+% Select where you downloaded your files from LASSO
+box = msgbox('Select the location of where you downloaded your files from LASSO');
+uiwait(box);
+data_path = uigetdir();
+% Create new folder in your data path to save the new concatenated csvs
+concat_location = [data_path filesep 'Concatenated outputs'];
+
+%Add the plugin path and start EEGLAB
+box = msgbox('Select the location of where you downloaded your EEGLAB plugin');
+uiwait(box);
+eeg_path = uigetdir('Select where you downloaded EEGLAB');
+addpath(eeg_path);
+eeglab;
+
 
 % Define the list of tasks
 task_options = {'FACE', 'MMN', 'VEP', 'RS'};

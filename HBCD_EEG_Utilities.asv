@@ -34,27 +34,51 @@
 
 
 %% Set your paths here!
-%Downloadable from the Github page, you can change this path to be wherever you have saved it!
-utils_path = 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities';
-task_list = {'FACE', 'MMN', 'VEP', 'RS'};
-% This task list is auto-set to all tasks, if you would like to remove
-% tasks please follow the formatting above to indicate the tasks you want
-% to keep
 
-data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
-concat_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your concatenated outputs, ideally a new folder saved somewhere you remember!
 age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
 addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
 eeglab;
 
 
 %% Setup -- DO NOT CHANGE
-json_settings_file = [utils_path filesep 'supplemental files' filesep 'proc_settings_HBCD.json']; 
+repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
+cd(repoPath)
+json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBCD.json');
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
-addpath([utils_path filesep 'supplemental files']);
-% Please add the path for the supplemental files here
+
+% Select where you downloaded your files from LASSO
+data_path = uigetdir('Select your folder to your downloaded LASSO data');
+% Create new folder in your data path to save the new concatenated csvs
+concat_location = [data_path filesep 'Concatenated outputs'];
+
+%Add the plugin path and start EEGLAB
+eeg_path = uigetdir('Select where you downloaded EEGLAB');
+addpath(eeg_path);
+eeglab;
+
+
+% Define the list of tasks
+task_options = {'FACE', 'MMN', 'VEP', 'RS'};
+
+% Use a GUI list dialog to let the user select tasks
+[selected, ok] = listdlg( ...
+    'PromptString', 'CTRL + click to select tasks:', ...
+    'SelectionMode', 'multiple', ...
+    'ListString', task_options);
+
+% Check if the user clicked OK
+if ok
+    task_list = task_options(selected);
+    disp('You selected:');
+    disp(task_list);
+else
+    disp('No tasks selected.');
+end
+
+addpath([repoPath filesep 'supplemental files']);
+% Path to supplemental files in repo
 
 
 
