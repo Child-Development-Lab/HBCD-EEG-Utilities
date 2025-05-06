@@ -12,9 +12,6 @@ VEP_ERP = [];
 % list files for each task
 datafile_names=dir(fullfile(data_path, '**\*SummaryStats.csv'));
 datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
-datafile_names_RS=datafile_names((contains({datafile_names.name}, 'RS')));
-RS_names = {datafile_names_RS.name};
-RS_path = {datafile_names_RS.folder};
 datafile_names_MMN=datafile_names((contains({datafile_names.name}, 'MMN')));
 MMN_names = {datafile_names_MMN.name};
 MMN_path = {datafile_names_MMN.folder};
@@ -26,24 +23,6 @@ VEP_names = {datafile_names_VEP.name};
 VEP_path = {datafile_names_VEP.folder};
 
 % Loop over each ID
-
-% RS
-for i = 1:length(RS_names)
-    x = RS_names{i};
-    RS_power_file = fullfile([RS_path{i} filesep x]);
-    x = extractBefore(x, '_ses');
-    if isfile(RS_power_file)
-        RS_power_sheet = readtable(RS_power_file);
-        if height(RS_power_sheet) > 0
-            RS_power_sheet.Properties.VariableNames(2:3) = {'SME_oz', 'Mean_Power_oz'};
-            RS_power_sheet.ID = repmat({x}, height(RS_power_sheet), 1);
-            RS_power = [RS_power; RS_power_sheet];
-            disp(['Compiling RS: ' x]);
-        end
-    else
-        disp(['RS Power file not found for ' x]);
-    end
-end
 
 % MMN
 for i = 1:length(MMN_names)
@@ -123,9 +102,6 @@ end
 st = datestr(now, 'yyyy-mm-dd');
 
 % only write out specified tasks
-if any(contains(task_list, 'RS'))
-    writetable(RS_power, fullfile(concat_location, ['RS_power_V03_' st '.csv']));
-end
 if any(contains(task_list, 'MMN'))
     writetable(MMN_ERP, fullfile(concat_location, ['MMN_ERP_V03_' st '.csv']));
 end
