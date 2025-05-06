@@ -4,28 +4,23 @@
 
 `HBCD-EEG-Utilities.m` computes the following derivatives for each task
 
-| Task | Derivative     |
+| Task | Derivatives     |
 |------|----------------|
-| FACE | SME            |
-| FACE | Mean amplitude |
-| MMN  | SME            |
-| MMN  | Mean amplitude |
-| VEP  | SME            |
-| VEP  | Mean amplitude |
-| VEP  | Adaptive mean  |
-| VEP  | Peak latency   |
-| RS   | Power          |
+| FACE | SME, Mean amplitude            |
+| MMN  | SME, Mean amplitude           |
+| VEP  | SME, Mean amplitude, Adaptive mean, Peak latency            |
+| RS   | SME, Power          |
 
 
-- **MeanAmplitude**: Mean amplitude during specified measurement window 
+- **Mean amplitude**: Mean amplitude during specified measurement window 
 
-- **AdaptiveMean**: Adaptive mean amplitude is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
+- **Adaptive mean**: Adaptive mean amplitude is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
 
-- **Latency**: Latency in ms to the peak amplitude during the specified time window
+- **Peak latency**: Latency in ms to the peak amplitude during the specified time window
 
-- **SME**: Standard Measurement error. The SME is a universal measure of data quality for ERP data. See [Luck2021]_ for more information.
+- **SME**: Standard Measurement Error. The SME is a universal measure of data quality for ERP data. See [Luck2021]_ for more information.
 
-- **Mean_Power**: mean power at each frequency bin ranging from 1-50Hz
+- **Power**: mean power at each frequency bin ranging from 1-50Hz
  
 ## ERP specifications
 
