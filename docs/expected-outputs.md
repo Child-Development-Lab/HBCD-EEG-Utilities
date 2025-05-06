@@ -102,11 +102,11 @@ VEP Summary Statistics Output
 ### Resting State 
 
 RS Summary Statistics Output
-`sub-<ID>_ses-V03_task-RS-PowerSummaryStats.csv`
+`sub-<ID>_ses-V03_task-RS-spectra.csv`
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
-| Frequency | 1 Hz bins from 1-50 Hz |
+| Row | Electrode |
 | SME | Standard Measurement Error in each frequency bin |
 | Mean_Power | Global average power in each frequency bin |
 | ID | subject ID |

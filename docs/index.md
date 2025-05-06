@@ -8,10 +8,12 @@ This script is designed for users of HBCD EEG data who wish to use derivatives d
 Functionality of `HBCD-EEG-Utilities.m` is as follows:
 
 - Loads HBCD EEG .set files
-- Computes derivatives for each task.
-- Saves trial-level and summary statistics output per participant, per task.
-- Relabels summary statistics to reflect names of ERP components and ROIs of interest.
-- Concatenates all summary statistics output into a single spreadsheet per task. 
+- Computes derivatives for each selected task.
+- Saves trial-level and summary statistics output per participant for the VEP, MMN, and FACE tasks.
+- Saves power spectrum output for the RS task. 
+- Relabels variable names to reflect names of ERP components and ROIs of interest.
+- Concatenates all subjects' summary statistics output into a single spreadsheet for each task. 
+- Concatenates all subjects' trial measures output into a single spreadsheet for each task. 
 
 ### Contents 
 
