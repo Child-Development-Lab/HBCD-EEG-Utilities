@@ -4,7 +4,6 @@ function concatenate_files_summary(data_path, task_list, concat_location)
 cd(data_path)
 
 % Initialize outputs
-RS_power = [];
 MMN_ERP = [];
 FACE_ERP = [];
 VEP_ERP = [];
