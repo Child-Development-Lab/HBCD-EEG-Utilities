@@ -39,6 +39,20 @@ Now that you have the required software, you can run the HBCD-EEG-Utilities scri
 4. Navigate to your downloads folder. Select the zipped "HBCD-EEG-Utilities" folder by left clicking. Right click. 
 5. Select the "Extract all" option from the drop down menu. This will unzip the repository to your downloads folder. 
 
-## Navigating Folder Structure
-Now, we will outline how to navigate your folder structure. The EEG data will be downloaded to a folder within a folder of all other outputs you download off of Lasso. To navigate to the EEG data to be used in the below scripts, in your Lasso download, navigate to the "bids > derivatives > made" folder. This should be a folder with folders named "sub-{unique ID}". Use the path to this folder as the directory path in the provided MATLAB script.
+## Download EEG data from Lasso 
 
+Add link to instructions for Lasso data transfer
+
+## Running the script 
+Enter the path to the EEG data as the directory path in `HBCD-EEG-Utilities.m`. The path should end in `bids\derivatives\made` in accordance with the following folder structure of the data transfer from Lasso. 
+
+```{r}
+`
+|__ hbcd/
+    |__ rawdata/ 
+    |__ derivatives/ 
+        |__ made/
+            |__ xyz #input data
+            |__ abc #output data 
+
+```
