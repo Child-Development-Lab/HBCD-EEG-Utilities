@@ -3,7 +3,7 @@
 `HBCD-EEG-Utilities.m` will write the following output files: 
 
  
-        `|__ outputdir/
+        |__ outputdir/
             |
             | # FACE
             |__ sub-<ID>_ses-V03_task-FACE-ERPSummaryStats.csv
@@ -18,16 +18,15 @@
             |__ sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv
             |
             | # RS
-            |__ sub-<ID>_ses-V03_task-RS-PowerSummaryStats.csv`
+            |__ sub-<ID>_ses-V03_task-RS-PowerSummaryStats.csv
 
-## Output file descriptions
+## Descriptions of output
 
 Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
 
 - ``trialMeasures.csv`` Derivatives are provided for each trial in MMN, VEP, and FACE.
-
 - ``summaryStats.csv`` Derivatives are provided as subject-level averages for each task. For tasks with multiple conditions, values are averaged by condition. 
-          
+
 # Output by task 
 
 ### FACE 
