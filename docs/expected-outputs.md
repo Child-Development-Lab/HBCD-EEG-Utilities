@@ -18,7 +18,8 @@
             |__ sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv
             |
             | # RS
-            |__ sub-<ID>_ses-V03_task-RS-PowerSummaryStats.csv
+            |__ sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv
+            |__ sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv
 
 ## Descriptions of output
 
@@ -101,7 +102,7 @@ VEP Summary Statistics Output
 
 ### Resting State 
 
-RS Summary Statistics Output
+RS Power Spectra Output
 `sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
    
 | Variable Name | Description                              |
@@ -110,4 +111,14 @@ RS Summary Statistics Output
 | 1.0 Hz | Log power in μV from 0.3-1 Hz |
 | 2.0 Hz | Log power in μV from 1-2 Hz |
 | 3.0 Hz | Log power in μV from 2-3 Hz |
+| ... | and so on... |
+
+`sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
+   
+| Variable Name | Description                              |
+|---------------|------------------------------------------|
+| Row | Electrode |
+| 1.0 Hz | Absolute power in μV from 0.3-1 Hz |
+| 2.0 Hz | Absolute power in μV from 1-2 Hz |
+| 3.0 Hz | Absolute power in μV from 2-3 Hz |
 | ... | and so on... |
