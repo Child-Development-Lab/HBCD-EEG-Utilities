@@ -1,15 +1,5 @@
 # Usage
 
-## `HBCD-EEG-Utilities.m`
-
-This script's functionality is as follows:
-
-- Loads HBCD EEG .set files
-- Computes derivatives for each task.
-- Saves trial-level and summary statistics output per participant, per task.
-- Relabels summary statistics to reflect names of ERP components and ROIs of interest.
-- Concatenates all summary statistics output into a single spreadsheet per task. 
-
 To use this script: 
 
 1. Open the script using MATLAB.
