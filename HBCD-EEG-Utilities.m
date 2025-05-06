@@ -1,3 +1,4 @@
+%% HBCD-EEG-Utilities
 %% Generating ERP Summary Statistics and Trial Measures information for HBCD data release
 % This code is provided by the HBCD EEG Core team at the Child Development Lab, University of Maryland, College Park
 % This code is provided to be used in conjunction to the MADE pipeline
@@ -45,7 +46,6 @@ addpath 'C:\Users\tmahesh\Documents\GitHub\HBCD-EEG-Utilities\supplemental files
 
 
 data_path = 'X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs'; %Set to where your data is saved after downloading
-%output_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your outputs, ideally a new folder saved somewhere you remember!
 concat_location = 'Z:\Dropboxes\tmahesh\test outputs for new sumstats+trialmeas\Concatenated files'; %Set to where you would like your concatenated outputs, ideally a new folder saved somewhere you remember!
 age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
 addpath 'Z:\HBCD\7. Undergrads\eeglab2023.0'; %Add your eeglab plugin path here
@@ -55,11 +55,7 @@ eeglab;
 cd(data_path);
 datafile_names=dir(fullfile(data_path, '**\*filteredprocessed_eeg.set'));
 datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
-% datafile_names=datafile_names(~(contains({datafile_names.name}, 'RS')));
-% %keep RS for spectra/SME calculations!
-%datafile_names(235) = []; % This participant file has unknown errors that the EEG Core is troubleshooting
 set_names={datafile_names.name};
-set_path = {datafile_names.folder};
 
 %Filter out which tasks you have selected
 for c=length(set_names):-1:1
@@ -86,9 +82,7 @@ for subject=235:length(set_names)
     s = grab_settings(set_names{subject}, json_settings_file);
     participant_Id = set_names{subject}(1:14); %Get ID for data path to read set file
     output_location = [data_path filesep participant_Id filesep 'ses-V03' filesep 'eeg' filesep 'processed_data'];
-    % TM - saves to the correct file structure that we expect to see --
-    % this line can be commented out if you want to save it to the output
-    % location set above
+    % Subject level csvs will be saved in the subject folder
 
     % RS Code here, if RS call other function, otherwise continue to next
     % subject
@@ -198,8 +192,6 @@ for i=1:length(scoreTimes)
     roi_ind = find(ismember({EEG.chanlocs.labels},ROI));
 
     if contains(set_names{subject}, 'FACE')
-        %directions = [-1, -1, 1, -1, 1, -1];
-        %direction = directions(i);
         tab=[];
         tab2=[];
         tab3=[];
@@ -361,8 +353,6 @@ for i=1:length(scoreTimes)
         tabFull.ID(:) = convertCharsToStrings(participant_Id);
 
     elseif contains(set_names{subject}, 'MMN')
-        directions = [1, 1, 1];
-        direction = directions(i);
         tab=[];
         tab2=[];
         tab3=[];
@@ -487,8 +477,6 @@ for i=1:length(scoreTimes)
         tabFull.ID(:) = convertCharsToStrings(participant_Id);
 
     elseif contains(set_names{subject}, 'VEP')
-        directions = [-1, 1, -1];
-        direction = directions(i);
         EEG_v = pop_selectevent(EEG, 'Condition', '1', 'deleteevents','on');
         EEG_v = eeg_checkset(EEG_v);
         if EEG_v.trials == 1
@@ -598,7 +586,6 @@ for i=1:length(scoreTimes)
     if contains(set_names{subject}, 'FACE')
         sme.(['MeanAmp_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = meanVals;
     elseif contains(set_names{subject}, 'MMN')
-        % add row for MMR
         sme.(['MeanAmp_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = meanVals;
     else
         sme.(['AdaptiveMean_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = peakVals;
@@ -618,7 +605,6 @@ for i=1:length(scoreTimes)
             tabWide.TrialNum{78} = '94';
             tabFull.TrialNum{78} = '94';
             tabWide = join(tabWide, tabFull);
-            %continue %continue past error and skip subject
         end
     end
 
