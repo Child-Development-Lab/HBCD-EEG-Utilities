@@ -50,14 +50,22 @@ box = msgbox('Select the location of where you downloaded your files from LASSO'
 uiwait(box);
 data_path = uigetdir();
 % Create new folder in your data path to save the new concatenated csvs
+
 concat_location = [data_path filesep 'Concatenated outputs'];
+if exist(concat_location, 'dir') == 0
+        mkdir(concat_location);
+end
 
 %Add the plugin path and start EEGLAB
-box = msgbox('Select the location of where you downloaded your EEGLAB plugin');
-uiwait(box);
-eeg_path = uigetdir('Select where you downloaded EEGLAB');
-addpath(eeg_path);
-eeglab;
+try
+    eeglab;
+catch
+    box = msgbox('Select the location of where you downloaded your EEGLAB plugin');
+    uiwait(box);
+    eeg_path = uigetdir('Select where you downloaded EEGLAB');
+    addpath(eeg_path);
+    eeglab;
+end
 
 
 % Define the list of tasks
