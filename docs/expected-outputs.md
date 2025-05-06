@@ -102,13 +102,12 @@ VEP Summary Statistics Output
 ### Resting State 
 
 RS Summary Statistics Output
-`sub-<ID>_ses-V03_task-RS-spectra.csv`
+`sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| SME | Standard Measurement Error in each frequency bin |
-| Mean_Power | Global average power in each frequency bin |
-| ID | subject ID |
-
-
+| 1.0 Hz | Log power in μV from 0.3-1 Hz |
+| 2.0 Hz | Log power in μV from 1-2 Hz |
+| 3.0 Hz | Log power in μV from 2-3 Hz |
+| ... | and so on... |
