@@ -116,15 +116,15 @@ for (x in VEP_files) {
       VEP_ERP_sheet$ID <- x #paste the DCCID for each row into VEP_ERP_sheet
       VEP_ERP_sheet <- VEP_ERP_sheet %>%
         rename(SME_N1 = 3,
-               Peak_N1 = 4,
+               AdaptiveMean_N1 = 4,
                Latency_N1 = 5, 
                MeanAmp_N1 = 6, 
                SME_P1 = 7,
-               Peak_P1 = 8,
+               AdaptiveMean_P1 = 8,
                Latency_P1 = 9, 
                MeanAmp_P1 = 10, 
                SME_N2 = 11,
-               Peak_N2 = 12,
+               AdaptiveMean_N2 = 12,
                Latency_N2 = 13, 
                MeanAmp_N2 = 14)
       row <- VEP_ERP_sheet[i, , drop = FALSE]
