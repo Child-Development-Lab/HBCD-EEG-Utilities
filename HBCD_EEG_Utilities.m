@@ -39,7 +39,7 @@ age_info = ''; %Set to where you have the scans.tsv files located, may be the sa
 
 %% Setup -- DO NOT CHANGE
 repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
-cd(repoPath)
+
 json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBCD.json');
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
@@ -668,3 +668,7 @@ concatenate_files_summary(data_path, task_list, concat_location);
 % This section will pull all the trialmeasures files together into one
 % larger csv file for each of the tasks you specified in the task list.
 concatenate_trial_measures(data_path, task_list, concat_location);
+
+
+%% Reset directory here
+cd(repoPath)
