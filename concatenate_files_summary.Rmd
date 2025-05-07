@@ -15,7 +15,7 @@ directory_path is where you have saved your summary stats or trial measures data
 output_path is where you would like the outputs to get saved
 ```{r}
 #SM set to the location you downloaded the EEG files to. If you are using a Windows computer, you will need to change the direction of the slashes from '\' to '/'
-directory_path <- "X:/Projects/hbcd/EEG/Main_Study/Lasso output/bids/derivatives/made/"
+directory_path <- "X:/Projects/hbcd/EEG/Main_Study/CBRAIN_Outputs/DataReleaseIDs/"
 output_path <- "Z:/Dropboxes/SMcNair/SMcNair_Playground/HBCD/Data Release/DataRelease_Githhub/test_lasso_deid/"
 ```
 
@@ -24,11 +24,15 @@ set cwd (current working directory) to file path, get a list of IDs
 setwd(directory_path) 
 cwd <- directory_path
 dccids <- list.files()
+MMN_files <- intersect(list.files(pattern = "\\ERPSummaryStats.csv$", recursive = TRUE), list.files(pattern = "MMN", recursive = TRUE))
+FACE_files <- intersect(list.files(pattern = "\\ERPSummaryStats.csv$", recursive = TRUE), list.files(pattern = "FACE", recursive = TRUE))
+VEP_files <- intersect(list.files(pattern = "\\ERPSummaryStats.csv$", recursive = TRUE), list.files(pattern = "VEP", recursive = TRUE))
+
+
 ```
 
 create sheets - these are the sheets this script will output
 ```{r}
-RS_power <- NULL
 VEP_ERP <- NULL
 MMN_ERP <- NULL
 FACE_ERP <- NULL
@@ -37,54 +41,24 @@ FACE_ERP <- NULL
 for each folder (ID), pull summary stats by task and condition
 There is one chunk for each task 
 
-RS: 
-```{r}
-#for x (each ID), pull out the RS summary stats data and paste it into a new sheet, storing ID in a new column
-for (x in dccids) {
-  processed_data <- paste(x, "/ses-V03/eeg/processed_data", sep="")
- 
-  RS_power_file <- paste(cwd, processed_data, "/", x, "_ses-V03_task-RS_powerSummaryStats.csv", sep="")
-  if (file.exists(RS_power_file)) {
-    RS_power_sheet <- read.csv(RS_power_file)
-    for (i in 1:nrow(RS_power_sheet)) {
-      RS_power_sheet <- RS_power_sheet %>%
-        rename(SME_oz = 2, 
-               Mean_Power_oz = 3)
-      row <- RS_power_sheet[i, , drop = FALSE]
-      RS_power <- rbind(RS_power, row)
-      message(paste("Compiling", x))
-    }
-  } else {
-    message(paste("RS Power file not found for", x))
-  }
-  
-}
-```
-
 MMN: 
 ```{r}
 #for x (each ID), pull out the MMN ERP data and paste it into a new sheet, storing ID in a new column
-for (x in dccids) {
-  processed_data <- paste(x, "/ses-V03/eeg/processed_data", sep="")
-  
- MMN_ERP_file <- paste(cwd, processed_data, "/", x, "_ses-V03_task-MMN_ERPSummaryStats.csv", sep="")
+for (x in MMN_files) {
+
+ MMN_ERP_file <- paste(cwd, x, sep="")
+ x = substring(x, 1, 14)
   if (file.exists(MMN_ERP_file)) {
     MMN_ERP_sheet <- read.csv(MMN_ERP_file)
     for (i in 1:nrow(MMN_ERP_sheet)) {
       MMN_ERP_sheet$ID <- x #paste the DCCID for each row into MMN_ERP_sheet
       MMN_ERP_sheet <- MMN_ERP_sheet %>%
-        rename(SME_MMR_t7t8 = 3, #rename cols
-               Peak_MMR_t7t8 = 4,
-               Latency_MMR_t7t8 = 5,
-               MeanAmp_MMR_t7t8 = 6,
-               SME_MMR_f7f8 = 7,
-               Peak_MMR_f7f8 = 8,
-               Latency_MMR_f7f8 = 9,
-               MeanAmp_MMR_f7f8 = 10,
-               SME_MMR_fcz = 11,
-               Peak_MMR_fcz = 12,
-               Latency_MMR_fcz = 13,
-               MeanAmp_MMR_fcz = 14)
+        rename(SME_MMR_t7t8 = 1, #rename cols
+               MeanAmp_MMR_t7t8 = 2,
+               SME_MMR_f7f8 = 3,
+               MeanAmp_MMR_f7f8 = 4,
+               SME_MMR_fcz = 5,
+               MeanAmp_MMR_fcz = 6)
       row <- MMN_ERP_sheet[i, , drop = FALSE]
       MMN_ERP <- rbind(MMN_ERP, row)
       message(paste("Compiling", x))
@@ -99,31 +73,26 @@ for (x in dccids) {
 FACE: 
 ```{r}
 #for x (each ID), pull out the FACE ERP data and paste it into a new sheet, storing ID in a new column
-for (x in dccids) {
-  processed_data <- paste(x, "/ses-V03/eeg/processed_data", sep="")
-  
- FACE_ERP_file <- paste(cwd, processed_data, "/", x, "_ses-V03_task-FACE_ERPSummaryStats.csv", sep="")
+for (x in FACE_files) {
+ FACE_ERP_file <- paste(cwd, x, sep="")
+  x = substring(x, 1, 14)
   if (file.exists(FACE_ERP_file)) {
     FACE_ERP_sheet <- read.csv(FACE_ERP_file)
     for (i in 1:nrow(FACE_ERP_sheet)) {
       FACE_ERP_sheet$ID <- x #paste the DCCID for each row into FACE_ERP_sheet
       FACE_ERP_sheet <- FACE_ERP_sheet %>%
         rename(SME_N290_p8 = 3,
-               Peak_N290_p8 = 4,
-               Latency_N290_p8 = 5, 
-               MeanAmp_N290_p8 = 6, 
+               MeanAmp_N290_p8 = 4, 
+               SME_N290_p7 = 5,
+               MeanAmp_N290_p7 = 6, 
                SME_P1 = 7,
-               Peak_P1 = 8,
-               Latency_P1 = 9, 
-               MeanAmp_P1 = 10,
-               SME_N290_Oz = 11,
-               Peak_N290_Oz = 12,
-               Latency_N290_Oz = 13, 
-               MeanAmp_N290_Oz = 14,
-               SME_P400 = 15,
-               Peak_P400 = 16,
-               Latency_P400 = 17, 
-               MeanAmp_P400 = 18)
+               MeanAmp_P1 = 8,
+               SME_N290_Oz = 9,
+               MeanAmp_N290_Oz = 10,
+               SME_P400 = 11,
+               MeanAmp_P400 = 12,
+               SME_N290_Nc = 13,
+               MeanAmp_N290_Nc = 14)
       row <- FACE_ERP_sheet[i, , drop = FALSE]
       FACE_ERP <- rbind(FACE_ERP, row)
       message(paste("Compiling", x))
@@ -138,10 +107,9 @@ for (x in dccids) {
 VEP: 
 ```{r}
 #for x (each ID), pull out the VEP ERP data and paste it into a new sheet, storing ID in a new column
-for (x in dccids) {
-  processed_data <- paste(x, "/ses-V03/eeg/processed_data", sep="")
-  
-  VEP_ERP_file <- paste(cwd, processed_data, "/", x, "_ses-V03_task-VEP_ERPSummaryStats.csv", sep="")
+for (x in VEP_files) {
+  VEP_ERP_file <- paste(cwd,x, sep="")
+   x = substring(x, 1, 14)
   if (file.exists(VEP_ERP_file)) {
     VEP_ERP_sheet <- read.csv(VEP_ERP_file)
     for (i in 1:nrow(VEP_ERP_sheet)) {
@@ -176,7 +144,6 @@ output the dataframe containing concatenated power data/summary stats as a csv
 st=format(Sys.time(), "%Y-%m-%d")
 
 #output dfs
-write.csv(RS_power,paste(output_path,"RS_power_V03_", st, ".csv", sep=""), row.names=FALSE) #Feel free to change the name of the file to however you would prefer it to be named, as a general example we have chosen "RS_Power_V03.csv"
 write.csv(MMN_ERP,paste(output_path,"MMN_ERP_V03_", st, ".csv", sep=""), row.names=FALSE) #Feel free to change the name of the file to however you would prefer it to be named, as a general example we have chosen "MMN_ERP_V03.csv"
 write.csv(FACE_ERP,paste(output_path,"FACE_ERP_V03_", st, ".csv", sep=""), row.names=FALSE) #Feel free to change the name of the file to however you would prefer it to be named, as a general example we have chosen "FACE_ERP_V03.csv"
 write.csv(VEP_ERP,paste(output_path,"VEP_ERP_V03_", st, ".csv", sep=""), row.names=FALSE) #Feel free to change the name of the file to however you would prefer it to be named, as a general example we have chosen "VEP_ERP_V03.csv"
@@ -184,13 +151,6 @@ write.csv(VEP_ERP,paste(output_path,"VEP_ERP_V03_", st, ".csv", sep=""), row.nam
 
 Output Guide:
 
-RS: 
-
-column X: rows for each table (generated by R)
-Frequency: frequency range for each single hertz bin 
-SME: Standard measurement error (varying by task, time windows, and region of interest)
-Mean_Power: the average power in the corresponding frequency bin
-ID: participant ID
 
 MMN: 
 
