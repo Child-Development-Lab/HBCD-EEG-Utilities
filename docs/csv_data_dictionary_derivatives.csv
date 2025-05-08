@@ -14,14 +14,14 @@ sub-<label>_ses-<label>_task-<label>_ERPTrialMeasures,"FACE, VEP, MMN",condition
 sub-<label>_ses-<label>_task-<label>_ERPTrialMeasures,"FACE, VEP, MMN",Peak_<time-window>_<ROI>,Peak/adpative mean amplitude within specified time window (in ms) at the specified region of interest. Values are provided for each trial.,Float
 sub-<label>_ses-<label>_task-<label>_ERPTrialMeasures,"FACE, VEP, MMN",trial_num,Trial number,Integer
 sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_electrode,Electrode label,String
-sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_1.0Hz,Absolute power from 0.3-1 Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_2.0Hz,Absolute power from1-2 Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_3.0Hz,Absolute power from 2-3 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_1.0Hz,Sum of absolute power centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site,Float
+sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_2.0Hz,Sum of absolute power centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site,Float
+sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_3.0Hz,Sum of absolute power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site,Float
 sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_electrode,Electrode label,String
-sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_1.0Hz,Average natural log power from 0.3-1 Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_2.0Hz,Average natural log power from1-2 Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_3.0Hz,Average natural log power from 2-3 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_1.0Hz,Sum of natural log power centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site,Float
+sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_2.0Hz,Sum of natural log power centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site,Float
+sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_3.0Hz,Sum of natural log power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site,Float
 sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_electrode,Electrode label,String
-sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_1.0Hz,Average power in decibels (db)  from 0.3-1 Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_2.0Hz,Average power in decibels (db) from 1-2 Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_3.0Hz,Average power in decibels (db) from 2-3 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_1.0Hz,Sum of power in db centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site,Float
+sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_2.0Hz,Sum of power in db centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site,Float
+sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_3.0Hz,Sum of power in db centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site,Float
