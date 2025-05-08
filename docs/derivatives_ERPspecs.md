@@ -60,3 +60,12 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | VEP  | P1        | 80-120 ms     | oz   | 6-9 |
 | VEP  | N2        | 121-170 ms    | oz   | 6-9 |
 
+
+### RS Power Derivatives
+| Task | Derivative | Age |
+|------|-----------|-------------|
+| RS  | Absolute power           | 3-9 |
+| RS  | Natural log power         | 3-9 | 
+| RS  | Power in decibels (db)        | 3-9 |
+
+
