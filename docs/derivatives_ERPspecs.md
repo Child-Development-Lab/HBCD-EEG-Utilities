@@ -64,8 +64,20 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 ### RS Power Derivatives
 | Task | Derivative | Age |
 |------|-----------|-------------|
-| RS  | Absolute power           | 3-9 |
+| RS  | Absolute power in µV²/Hz | 3-9 |
 | RS  | Natural log power         | 3-9 | 
 | RS  | Power in decibels (db)        | 3-9 |
 
+Power values are calculated as follows:
+
+```{r}
+
+Absolute Power = (μV^2^ / Hz)
+
+Log Power μV^2^ = log10 (1 + Absolute Power)
+
+dB Power = 10 ⋅ log10 (Power μV^2^ / Hz)
+
+
+```
 
