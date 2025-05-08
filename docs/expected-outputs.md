@@ -134,3 +134,24 @@ RS dB Power Spectra Output
 | 2.0 Hz | Power in dB from 1-2 Hz |
 | 3.0 Hz | Power in dB from 2-3 Hz |
 | ... | and so on... |
+
+RS Power Spectra .mat Output
+`sub-<ID>_ses-V03_task-RS_spectra.mat`
+   
+| Variable Name | Description                              |
+|---------------|------------------------------------------|
+| avg_abs_pow | average absolute power across epochs |
+| avg_log_pow | average natural log power across epochs |
+| avg_db_pow | average power in decibels (db) across epochs |
+| all_abs_power | chans x abs power x epochs |
+| all_log_power | chans x log power x epochs |
+| all_db_pow | chans x db power x epochs |
+| epoch_level_abs_pow | abs power for each epoch |
+| epoch_level_log_pow | log power for each epoch |
+| epoch_level_db_pow | db power for each epoch |
+| channel locations | ... |
+| freqs | frequency bins (1hz increments, 1-50hz) |
+| n_epochs | number of epochs |
+| Fs | sampling rate |
+| num_channels | number of channels |
+
