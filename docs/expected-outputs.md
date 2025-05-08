@@ -108,9 +108,9 @@ RS Log Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Natural log power in μV^2^/Hz from 0.3-1 Hz |
-| 2.0 Hz | Natural log power in μV^2^/Hz from 1-2 Hz |
-| 3.0 Hz | Natural log power in μV^2^/Hz from 2-3 Hz |
+| 1.0 Hz | Sum of natural log power in μV^2^/Hz centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
+| 2.0 Hz | Sum of natural log power in μV^2^/Hz centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
+| 3.0 Hz | Sum of natural log power in μV^2^/Hz centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
 RS Absolute Power Spectra Output
@@ -119,9 +119,9 @@ RS Absolute Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Absolute power in μV^2^/Hz from 0.3-1 Hz |
-| 2.0 Hz | Absolute power in μV^2^/Hz from 1-2 Hz |
-| 3.0 Hz | Absolute power in μV^2^/Hz from 2-3 Hz |
+| 1.0 Hz | Sum of absolute power in μV^2^/Hz centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site	 |
+| 2.0 Hz | Sum of absolute power in μV^2^/Hz centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site	 |
+| 3.0 Hz | Sum of absolute power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
 RS dB Power Spectra Output
@@ -130,9 +130,9 @@ RS dB Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Power in dB from 0.3-1 Hz |
-| 2.0 Hz | Power in dB from 1-2 Hz |
-| 3.0 Hz | Power in dB from 2-3 Hz |
+| 1.0 Hz | Sum of power in db centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site	 |
+| 2.0 Hz | Sum of power in db centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site	 |
+| 3.0 Hz | Sum of power in db centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site	 |
 | ... | and so on... |
 
 RS Power Spectra .mat Output
