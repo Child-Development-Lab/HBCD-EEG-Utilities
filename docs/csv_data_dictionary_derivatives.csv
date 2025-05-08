@@ -13,11 +13,15 @@ sub-<label>_ses-<label>_task-<label>_ERPTrialMeasures,"FACE, VEP, MMN",id,Subjec
 sub-<label>_ses-<label>_task-<label>_ERPTrialMeasures,"FACE, VEP, MMN",condition,"Stimulus condition: standard, deviant, predeviant in the MMN task.",String
 sub-<label>_ses-<label>_task-<label>_ERPTrialMeasures,"FACE, VEP, MMN",Peak_<time-window>_<ROI>,Peak/adpative mean amplitude within specified time window (in ms) at the specified region of interest. Values are provided for each trial.,Float
 sub-<label>_ses-<label>_task-<label>_ERPTrialMeasures,"FACE, VEP, MMN",trial_num,Trial number,Integer
-sub-<label>_ses-<label>_task-RS_powerSummaryStats,RS,frequency,1 Hz bins from 1-50 Hz in the resting state task.,Integer
-sub-<label>_ses-<label>_task-RS_powerSummaryStats,RS,SME,Standardized measurement error in each frequency bin in the resting state task.,Float
-sub-<label>_ses-<label>_task-RS_powerSummaryStats,RS,mean_power,Mean power in each frequency bin in the resting state task.,Float
-sub-<label>_ses-<label>_task-RS_powerSummaryStats,RS,id,Subject ID in the resting state task.,String
-sub-<label>_task-RS_spectra,RS,spectra_output_row,Electrode label,String
-sub-<label>_task-RS_spectra,RS,spectra_output_1.0Hz,Absolute power from 0.3-1Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_spectra,RS,spectra_output_2.0Hz,Absolute power from1-2Hz at corresponding electrode site ,Float
-sub-<label>_task-RS_spectra,RS,spectra_output_3.0Hz,Absolute power from 2-3Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_electrode,Electrode label,String
+sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_1.0Hz,Absolute power from 0.3-1 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_2.0Hz,Absolute power from1-2 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_AbsPowerSpectra,RS,spectra_output_3.0Hz,Absolute power from 2-3 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_electrode,Electrode label,String
+sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_1.0Hz,Average natural log power from 0.3-1 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_2.0Hz,Average natural log power from1-2 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_LogPowerSpectra,RS,spectra_output_3.0Hz,Average natural log power from 2-3 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_electrode,Electrode label,String
+sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_1.0Hz,Average power in decibels (db)  from 0.3-1 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_2.0Hz,Average power in decibels (db) from 1-2 Hz at corresponding electrode site ,Float
+sub-<label>_task-RS_dbPowerSpectra,RS,spectra_output_3.0Hz,Average power in decibels (db) from 2-3 Hz at corresponding electrode site ,Float
