@@ -108,9 +108,9 @@ RS Log Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Natural log power in μV from 0.3-1 Hz |
-| 2.0 Hz | Natural log power in μV from 1-2 Hz |
-| 3.0 Hz | Natural log power in μV from 2-3 Hz |
+| 1.0 Hz | Natural log power in μV^2^/Hz from 0.3-1 Hz |
+| 2.0 Hz | Natural log power in μV^2^/Hz from 1-2 Hz |
+| 3.0 Hz | Natural log power in μV^2^/Hz from 2-3 Hz |
 | ... | and so on... |
 
 RS Absolute Power Spectra Output
@@ -119,9 +119,9 @@ RS Absolute Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Absolute power in μV from 0.3-1 Hz |
-| 2.0 Hz | Absolute power in μV from 1-2 Hz |
-| 3.0 Hz | Absolute power in μV from 2-3 Hz |
+| 1.0 Hz | Absolute power in μV^2^/Hz from 0.3-1 Hz |
+| 2.0 Hz | Absolute power in μV^2^/Hz from 1-2 Hz |
+| 3.0 Hz | Absolute power in μV^2^/Hz from 2-3 Hz |
 | ... | and so on... |
 
 RS dB Power Spectra Output
@@ -140,18 +140,18 @@ RS Power Spectra .mat Output
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
-| avg_abs_pow | average absolute power across epochs |
-| avg_log_pow | average natural log power across epochs |
-| avg_db_pow | average power in decibels (db) across epochs |
-| all_abs_power | chans x abs power x epochs |
-| all_log_power | chans x log power x epochs |
-| all_db_pow | chans x db power x epochs |
-| epoch_level_abs_pow | abs power for each epoch |
-| epoch_level_log_pow | log power for each epoch |
-| epoch_level_db_pow | db power for each epoch |
-| channel locations | ... |
-| freqs | frequency bins (1hz increments, 1-50hz) |
-| n_epochs | number of epochs |
-| Fs | sampling rate |
-| num_channels | number of channels |
+| avg_abs_pow | Average absolute power across epochs |
+| avg_log_pow | Average natural log power across epochs |
+| avg_db_pow | Average power in decibels (db) across epochs |
+| all_abs_power | Chans x absolute power x epochs |
+| all_log_power | Chans x log power x epochs |
+| all_db_pow | Chans x dB power x epochs |
+| epoch_level_abs_pow | Abs power for each epoch |
+| epoch_level_log_pow | Log power for each epoch |
+| epoch_level_db_pow | dB power for each epoch |
+| channel locations | Channel locations |
+| freqs | Frequency bins (1hz increments, 1-50hz) |
+| n_epochs | Number of epochs |
+| Fs | Sampling rate |
+| num_channels | Number of channels |
 
