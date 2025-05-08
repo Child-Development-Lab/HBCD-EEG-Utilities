@@ -1,7 +1,7 @@
 %% HBCD_EEG_Utilities
 
 
-%% Generating ERP Summary Statistics and Trial Measures information for HBCD data release
+%% Generating ERP Summary Statistics, Trial Measures, and Power Spectra output information for HBCD data release
 % This code is provided by the HBCD EEG Core team at the Child Development Lab, University of Maryland, College Park
 % This code is designed to be used on processed HBCD EEG data 
 

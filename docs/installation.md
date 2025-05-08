@@ -9,7 +9,7 @@ You will need to check if your institution provides MATLAB licenses. If so, you 
 1. Download MATLAB [here](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html) 
 2. Select installation link appropriate to your operating system.
 3. When you click on the installation link for your device, you will be prompted to sign in to your MATLAB account. If you have an existing MATLAB account, use your existing log in information. If this is your first time using MATLAB, select the “create account” button on the bottom left.
-4. Once you have signed in, select the “download MATLAB” button. HBCD EEG Utilities scripts will work with any version of MATLAB. MATLAB will recommend you the most updated version of the program. We recommend using the version they recommend.
+4. Once you have signed in, select the “download MATLAB” button. HBCD EEG Utilities scripts will work with any version of MATLAB.
 5. The executable for MATLAB will appear in your computer’s downloads folder. Double click the executable file to launch it.
 6. The executable file will run and then prompt you to allow this program to make changes to your device. Click the “yes” button to proceed
 7. Once you log in, the licensing agreement will appear. You will need to select the “yes” button to agree with the license and the “next” button to begin using MATLAB.
