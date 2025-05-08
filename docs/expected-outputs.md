@@ -108,9 +108,9 @@ RS Log Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Log power in μV from 0.3-1 Hz |
-| 2.0 Hz | Log power in μV from 1-2 Hz |
-| 3.0 Hz | Log power in μV from 2-3 Hz |
+| 1.0 Hz | Natural log power in μV from 0.3-1 Hz |
+| 2.0 Hz | Natural log power in μV from 1-2 Hz |
+| 3.0 Hz | Natural log power in μV from 2-3 Hz |
 | ... | and so on... |
 
 RS Absolute Power Spectra Output
@@ -122,4 +122,15 @@ RS Absolute Power Spectra Output
 | 1.0 Hz | Absolute power in μV from 0.3-1 Hz |
 | 2.0 Hz | Absolute power in μV from 1-2 Hz |
 | 3.0 Hz | Absolute power in μV from 2-3 Hz |
+| ... | and so on... |
+
+RS dB Power Spectra Output
+`sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
+   
+| Variable Name | Description                              |
+|---------------|------------------------------------------|
+| Row | Electrode |
+| 1.0 Hz | Power in dB from 0.3-1 Hz |
+| 2.0 Hz | Power in dB from 1-2 Hz |
+| 3.0 Hz | Power in dB from 2-3 Hz |
 | ... | and so on... |
