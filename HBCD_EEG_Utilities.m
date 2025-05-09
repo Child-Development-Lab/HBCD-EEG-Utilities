@@ -38,7 +38,10 @@
 age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
 
 %% Setup -- DO NOT CHANGE
-repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
+if ~exist('repoPath', 'var')
+    repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
+end
+cd(repoPath);
 
 json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBCD.json');
 %This file is necessary, it will set up all time windows, ERP directions,
