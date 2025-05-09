@@ -54,8 +54,8 @@ if ~exist('data_path','var')
     uiwait(box);
     data_path = uigetdir();
 end
-% Create new folder in your data path to save the new concatenated csvs
 
+% Create new folder in your data path to save the new concatenated csvs
 concat_location = [data_path filesep 'Concatenated outputs for ERPs'];
 if exist(concat_location, 'dir') == 0
         mkdir(concat_location);
@@ -171,12 +171,13 @@ for subject=1:length(set_names)
     else
         age = 7; %one participant default to older bin
     end
-
+    
+    % Code for Age calculations/bins
     age_bin = 1;
     in_range = 0;
     scoreROIs = s.score_ROIs;
     scoreAges = s.score_ages;
-    erp_dirs = s.ERP_dirs; %NEW TM
+    erp_dirs = s.ERP_dirs; 
 
     if isempty(scoreAges)
         %Assert that the correct number of parameters are present
@@ -225,7 +226,7 @@ for i=1:length(scoreTimes)
     PeakStart = scoreTime(1);
     PeakEnd = scoreTime(2);
 
-    direction = erp_dirs(i); %NEW TM
+    direction = erp_dirs(i);
 
     PeakRange = find(EEG.times == PeakStart):find(EEG.times == PeakEnd);
 
@@ -571,6 +572,7 @@ for i=1:length(scoreTimes)
 
     %writetable(tabFull, [output_location filesep participant_label '_' session_label '_task-' task '_' num2str(PeakStart) '-' num2str(PeakEnd) '_ERP-Scores.csv']);
 
+    %new changes to keep original order of conditions
     tabFull = convertvars(tabFull,["Condition"],"categorical");
     % Group-wise sme calculations
     conditions2 = cellstr(unique(tabFull.Condition, 'stable'));
