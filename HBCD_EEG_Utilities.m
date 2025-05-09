@@ -46,9 +46,11 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 %before running
 
 % Select where you downloaded your files from LASSO
-box = msgbox('Select the location of where you downloaded your files from LASSO');
-uiwait(box);
-data_path = uigetdir();
+if ~exist('data_path','var')
+    box = msgbox('Select the location of where you downloaded your files from LASSO');
+    uiwait(box);
+    data_path = uigetdir();
+end
 % Create new folder in your data path to save the new concatenated csvs
 
 concat_location = [data_path filesep 'Concatenated outputs'];
@@ -118,7 +120,7 @@ allData = [];
 cutoff = 0;
 TrialNums = [];
 EEG=eeg_checkset(EEG);
-for subject=235:length(set_names)
+for subject=1:length(set_names)
     s = grab_settings(set_names{subject}, json_settings_file);
     participant_Id = set_names{subject}(1:14); %Get ID for data path to read set file
     output_location = [data_path filesep participant_Id filesep 'ses-V03' filesep 'eeg' filesep 'processed_data'];
@@ -128,6 +130,8 @@ for subject=235:length(set_names)
     % subject
     if contains(set_names{subject}, 'RS')
         % Run RS separate script
+        RS_ERP_Topo_Indv(output_location, set_names, subject, set_path, participant_Id);
+        cd(data_path)
         continue
     end
 
