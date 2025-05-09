@@ -53,7 +53,7 @@ if ~exist('data_path','var')
 end
 % Create new folder in your data path to save the new concatenated csvs
 
-concat_location = [data_path filesep 'Concatenated outputs'];
+concat_location = [data_path filesep 'Concatenated outputs for ERPs'];
 if exist(concat_location, 'dir') == 0
         mkdir(concat_location);
 end
