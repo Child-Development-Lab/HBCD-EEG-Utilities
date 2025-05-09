@@ -24,6 +24,7 @@ VEP_path = {datafile_names_VEP.folder};
 % Loop over each ID
 
 % MMN
+if any(contains(task_list, 'MMN'))
 for i = 1:length(MMN_names)
     x = MMN_names{i};
     MMN_ERP_file = fullfile([MMN_path{i} filesep x]);
@@ -45,9 +46,11 @@ for i = 1:length(MMN_names)
         disp(['MMN ERP file not found for ' x]);
     end
 end
+end
 
 
 % FACE
+if any(contains(task_list, 'FACE'))
 for i = 1:length(FACE_names)
     x = FACE_names{i};
     FACE_ERP_file = fullfile([FACE_path{i} filesep x]);
@@ -72,8 +75,10 @@ for i = 1:length(FACE_names)
         disp(['FACE ERP file not found for ' x]);
     end
 end
+end
 
 % VEP
+if any(contains(task_list, 'VEP'))
 for i = 1:length(VEP_names)
     x = VEP_names{i};
     VEP_ERP_file = fullfile([VEP_path{i} filesep x]);
@@ -94,6 +99,7 @@ for i = 1:length(VEP_names)
     else
         disp(['VEP ERP file not found for ' x]);
     end
+end
 end
 
 

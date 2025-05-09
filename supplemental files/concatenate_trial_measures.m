@@ -33,6 +33,7 @@ VEP_path = {datafile_names_VEP.folder};
 % Loop over each ID
 
 % FACE
+if any(contains(task_list, 'FACE'))
 for j = 1:length(FACE_names)
     x = FACE_names{j};
     file = fullfile([FACE_path{j} filesep x]);
@@ -54,8 +55,10 @@ for j = 1:length(FACE_names)
         disp(['FACE file not found for ' x]);
     end
 end
+end
 
 % MMN
+if any(contains(task_list, 'MMN'))
 for j = 1:length(MMN_names)
     x = MMN_names{j};
     file = fullfile([MMN_path{j} filesep x]);
@@ -74,8 +77,10 @@ for j = 1:length(MMN_names)
         disp(['MMN file not found for ' x]);
     end
 end
+end
 
 % VEP
+if any(contains(task_list, 'VEP'))
 for j = 1:length(VEP_names)
     x = VEP_names{j};
     file = fullfile([VEP_path{j} filesep x]);
@@ -100,22 +105,21 @@ for j = 1:length(VEP_names)
         disp(['VEP file not found for ' x]);
     end
 end
-
-% Reorder columns by index
-FACE_trialmeasures = FACE_trialmeasures(:, [2,3,4,1,5,6,7,8,9]);
-MMN_trialmeasures = MMN_trialmeasures(:, [2,3,4,1,5,6]);
-VEP_trialmeasures = VEP_trialmeasures(:, [4,5,6,1,2,3,7,8,9,10,11,12]);
+end
 
 % Save .csv outputs 
 st = datestr(now, 'yyyy-mm-dd');
 
 if any(contains(task_list, 'MMN'))
+    MMN_trialmeasures = MMN_trialmeasures(:, [2,3,4,1,5,6]);
     writetable(MMN_trialmeasures, fullfile(concat_location, ['MMN_trialMeasures_V03_' st '.csv']));
 end
 if any(contains(task_list, 'FACE'))
+    FACE_trialmeasures = FACE_trialmeasures(:, [2,3,4,1,5,6,7,8,9]);
     writetable(FACE_trialmeasures, fullfile(concat_location, ['FACE_trialMeasures_V03_' st '.csv']));
 end
 if any(contains(task_list, 'VEP'))
+    VEP_trialmeasures = VEP_trialmeasures(:, [4,5,6,1,2,3,7,8,9,10,11,12]);
     writetable(VEP_trialmeasures, fullfile(concat_location, ['VEP_trialMeasures_V03_' st '.csv']));
 end
 
