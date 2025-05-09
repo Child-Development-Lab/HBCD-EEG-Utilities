@@ -86,6 +86,7 @@ if ok
     disp(task_list);
 else
     disp('No tasks selected.');
+    return;
 end
 
 addpath([repoPath filesep 'supplemental files']);
