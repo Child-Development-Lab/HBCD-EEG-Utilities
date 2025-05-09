@@ -50,7 +50,7 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 
 % Select where you downloaded your files from LASSO
 if ~exist('data_path','var')
-    box = msgbox('Select the location of where you downloaded your files from LASSO');
+    box = msgbox('Select the location of where you downloaded your files from LASSO (select the made folder)');
     uiwait(box);
     data_path = uigetdir();
 end
