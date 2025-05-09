@@ -9,7 +9,7 @@
 | FACE | SME, Mean amplitude            |
 | MMN  | SME, Mean amplitude           |
 | VEP  | SME, Mean amplitude, Adaptive mean, Peak latency            |
-| RS   | SME, Power          |
+| RS   | SME, Absolute power, Log power, dB Power         |
 
 
 - **Mean amplitude**: Mean amplitude during specified measurement window 
