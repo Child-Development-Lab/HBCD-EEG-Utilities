@@ -29,11 +29,10 @@
 
 Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
 
-- ``TrialMeasures.csv`` Derivatives are provided for each trial in MMN, VEP, and FACE.
-- ``SummaryStatistics.csv`` Derivatives are provided as subject-level averages for each task. For tasks with multiple conditions, values are averaged by condition. 
-- ``LogpowerSpectra.csv`` 
-- ``AbsPowerSpectra.csv`` 
-- ``dbPowerSpectra.csv`` 
+- ``...ERPTrialMeasures.csv`` Trial-level derivatives for MMN, VEP, and FACE.
+- ``...SummaryStats.csv`` Subject-level derivatives for MMN, VEP, and FACE. Values are averaged by condition for MMN and FACE. 
+- ``...PowerSpectra.csv`` Subject-level derivatives for RS.  
+- ```...spectra.mat`` Epoch-level derivatives for RS.
 
 # Output by task 
 
