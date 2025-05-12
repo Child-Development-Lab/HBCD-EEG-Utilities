@@ -2,7 +2,9 @@
 
 ## Download EEG data from Lasso 
 
-Add link to instructions for Lasso data transfer
+Please see the central (HBCD Data Release Docs)[https://hbcd-docs.readthedocs.io/data_access/] for instructions to access and download HBCD data.
+
+When downloading EEG data from Lasso, ensure you download the ``scans.tsv`` file from the "Raw Data" tab of the File transfer interface. This file is necessary to run HBCD_EEG_Utilities.m 
 
 ## Running the script 
 
