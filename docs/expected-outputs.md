@@ -1,6 +1,6 @@
-# Expected Outputs from `HBCD_EEG_Utilities.m`
+# Expected Outputs from `HBCD-EEG-Utilities.m`
 
-`HBCD_EEG_Utilities.m` will write the following output files: 
+`HBCD-EEG-Utilities.m` will write the following output files: 
 
  
         |__ outputdir/
@@ -25,8 +25,10 @@
 
 Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
 
-- ``trialMeasures.csv`` Derivatives are provided for each trial in MMN, VEP, and FACE.
-- ``summaryStats.csv`` Derivatives are provided as subject-level averages for each task. For tasks with multiple conditions, values are averaged by condition. 
+- ``TrialMeasures.csv`` Derivatives are provided for each trial in MMN, VEP, and FACE.
+- ``SummaryStatistics.csv`` Derivatives are provided as subject-level averages for each task. For tasks with multiple conditions, values are averaged by condition. 
+- ``LogpowerSpectra.csv`` 
+- ``AbsPowerSpectra.csv`` 
 
 # Output by task 
 
@@ -107,10 +109,10 @@ RS Log Power Spectra Output
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
-| Row | Electrode |
-| 1.0 Hz | Sum of natural log power in μV^2^/Hz centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
-| 2.0 Hz | Sum of natural log power in μV^2^/Hz centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
-| 3.0 Hz | Sum of natural log power in μV^2^/Hz centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
+| Electrode | Electrode label |
+| 1.0 Hz | Log power in μV from 0.3-1 Hz |
+| 2.0 Hz | Log power in μV from 1-2 Hz |
+| 3.0 Hz | Log power in μV from 2-3 Hz |
 | ... | and so on... |
 
 RS Absolute Power Spectra Output
@@ -119,39 +121,7 @@ RS Absolute Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Sum of absolute power in μV^2^/Hz centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site	 |
-| 2.0 Hz | Sum of absolute power in μV^2^/Hz centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site	 |
-| 3.0 Hz | Sum of absolute power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
+| 1.0 Hz | Absolute power in μV from 0.3-1 Hz |
+| 2.0 Hz | Absolute power in μV from 1-2 Hz |
+| 3.0 Hz | Absolute power in μV from 2-3 Hz |
 | ... | and so on... |
-
-RS dB Power Spectra Output
-`sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
-   
-| Variable Name | Description                              |
-|---------------|------------------------------------------|
-| Row | Electrode |
-| 1.0 Hz | Sum of power in db centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site	 |
-| 2.0 Hz | Sum of power in db centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site	 |
-| 3.0 Hz | Sum of power in db centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site	 |
-| ... | and so on... |
-
-RS Power Spectra .mat Output
-`sub-<ID>_ses-V03_task-RS_spectra.mat`
-   
-| Variable Name | Description                              |
-|---------------|------------------------------------------|
-| avg_abs_pow | Average absolute power across epochs |
-| avg_log_pow | Average natural log power across epochs |
-| avg_db_pow | Average power in decibels (db) across epochs |
-| all_abs_power | Chans x absolute power x epochs |
-| all_log_power | Chans x log power x epochs |
-| all_db_pow | Chans x dB power x epochs |
-| epoch_level_abs_pow | Abs power for each epoch |
-| epoch_level_log_pow | Log power for each epoch |
-| epoch_level_db_pow | dB power for each epoch |
-| channel locations | Channel locations |
-| freqs | Frequency bins (1hz increments, 1-50hz) |
-| n_epochs | Number of epochs |
-| Fs | Sampling rate |
-| num_channels | Number of channels |
-
