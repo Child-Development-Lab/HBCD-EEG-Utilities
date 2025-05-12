@@ -21,6 +21,9 @@
             |__ sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv
             |__ sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv
             |__ sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv
+            |__ sub-<ID>_ses-V03_task-RS-spectra.mat
+            |__ sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg
+
 
 ## Descriptions of output
 
@@ -139,3 +142,28 @@ RS Log Power Spectra Output
 | 3.0 Hz | Sum of natural log power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
+RS Power Spectra .mat Output
+`sub-<ID>_ses-V03_task-RS_spectra.mat`
+   
+| Variable Name | Description                              |
+|---------------|------------------------------------------|
+| avg_abs_pow | Average absolute power (μV²) across epochs |
+| avg_log_pow | Average natural log power across epochs |
+| avg_db_pow | Average absolute power (dB) across epochs |
+| all_abs_power | Channels x abs power x epochs |
+| all_log_power | Channels x log power x epochs |
+| all_db_pow | Channels x dB power x epochs |
+| epoch_level_abs_pow | Absolute power (μV²) for each epoch |
+| epoch_level_log_pow | Log power for each epoch |
+| epoch_level_db_pow | Absolute power (dB)  for each epoch |
+| channel locations | ... |
+| freqs | Frequency bins (1hz increments, 1-50hz) |
+| n_epochs | Number of epochs |
+| Fs | Sampling rate |
+| num_channels | Number of channels |
+
+RS Power Spectra Figure 
+`sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg`
+
+Subject-level plot visualizing power spectral density for each channel across the 1-50Hz frequency range. Data for this plot originates from `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`. See below for an example:
+ ![PSD plot](PSDplot.png)
