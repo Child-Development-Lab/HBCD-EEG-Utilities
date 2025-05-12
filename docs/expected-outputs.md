@@ -134,8 +134,8 @@ RS Log Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Electrode | Electrode label |
-| 1.0 Hz | Log power in μV from 0.3-1 Hz |
-| 2.0 Hz | Log power in μV from 1-2 Hz |
-| 3.0 Hz | Log power in μV from 2-3 Hz |
+| 1.0 Hz | Log power from 0.3-1 Hz |
+| 2.0 Hz | Log power from 1-2 Hz |
+| 3.0 Hz | Log power from 2-3 Hz |
 | ... | and so on... |
 
