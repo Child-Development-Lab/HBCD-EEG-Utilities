@@ -111,21 +111,21 @@ RS Absolute Power Spectra Output
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
-| Row | Electrode |
-| 1.0 Hz | Absolute power in μV² from 0.3-1 Hz |
-| 2.0 Hz | Absolute power in μV² from 1-2 Hz |
-| 3.0 Hz | Absolute power in μV² from 2-3 Hz |
+| Row | Electrode | 
+| 1.0 Hz | Sum of absolute power in μV² centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
+| 2.0 Hz | Sum of absolute power in μV² centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
+| 3.0 Hz | Sum of absolute power in μV² centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-Power (dB) Spectra Output
+RS Power (dB) Spectra Output
 `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Row | Electrode |
-| 1.0 Hz | Absolute power in dB from 0.3-1 Hz |
-| 2.0 Hz | Absolute power in dB from 1-2 Hz |
-| 3.0 Hz | Absolute power in dB from 2-3 Hz |
+| 1.0 Hz | Sum of power in dB centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
+| 2.0 Hz | Sum of power in dB centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
+| 3.0 Hz | Sum of power in dB centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
 RS Log Power Spectra Output
@@ -134,8 +134,8 @@ RS Log Power Spectra Output
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Electrode | Electrode label |
-| 1.0 Hz | Log power from 0.3-1 Hz |
-| 2.0 Hz | Log power from 1-2 Hz |
-| 3.0 Hz | Log power from 2-3 Hz |
+| 1.0 Hz | Sum of natural log power centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
+| 2.0 Hz | Sum of natural log power centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
+| 3.0 Hz | Sum of natural log power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
