@@ -9,7 +9,7 @@
 | FACE | SME, Mean amplitude            |
 | MMN  | SME, Mean amplitude           |
 | VEP  | SME, Mean amplitude, Adaptive mean, Peak latency            |
-| RS   | SME, Absolute power, Log power, dB Power         |
+| RS   | SME, Absolute power (μV²), Absolute power (dB), Natural log power |
 
 
 - **Mean amplitude**: Mean amplitude during specified measurement window 
@@ -18,7 +18,7 @@
 
 - **Peak latency**: Latency in ms to the peak amplitude during the specified time window
 
-- **SME**: Standard Measurement Error. The SME is a universal measure of data quality for ERP data. See [Luck2021]_ for more information.
+- **SME**: Standard Measurement Error. The SME is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
 
 - **Power**: mean power at each frequency bin ranging from 1-50Hz
  
