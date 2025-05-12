@@ -77,17 +77,12 @@ Power (dB) = 10 × log10 (Power (μV² / Hz))
 
 ```
 
-## ROIs
+## Regions of Interest for ERPs
 
-test1
+See below for the ROIs that are used to compute ERPs. The full list of ROIs can also be found on the [GitHub repository for HBCD-MADE](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json).
 
  ![ROI clusters](ROIs.png)
  
- test2
- 
- .. image:: "C:/Users/kasenetz/Documents/GitHub/HBCD-EEG-Utilities/docs/ROIs.png"
-  :width: 400
-  :alt: test
- 
+
  
  
