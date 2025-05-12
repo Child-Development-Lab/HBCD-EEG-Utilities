@@ -20,6 +20,7 @@
             | # RS
             |__ sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv
             |__ sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv
+            |__ sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv
 
 ## Descriptions of output
 
@@ -29,6 +30,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 - ``SummaryStatistics.csv`` Derivatives are provided as subject-level averages for each task. For tasks with multiple conditions, values are averaged by condition. 
 - ``LogpowerSpectra.csv`` 
 - ``AbsPowerSpectra.csv`` 
+- ``dbPowerSpectra.csv`` 
 
 # Output by task 
 
@@ -104,6 +106,28 @@ VEP Summary Statistics Output
 
 ### Resting State 
 
+RS Absolute Power Spectra Output
+`sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
+   
+| Variable Name | Description                              |
+|---------------|------------------------------------------|
+| Row | Electrode |
+| 1.0 Hz | Absolute power in μV² from 0.3-1 Hz |
+| 2.0 Hz | Absolute power in μV² from 1-2 Hz |
+| 3.0 Hz | Absolute power in μV² from 2-3 Hz |
+| ... | and so on... |
+
+Power (dB) Spectra Output
+`sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
+   
+| Variable Name | Description                              |
+|---------------|------------------------------------------|
+| Row | Electrode |
+| 1.0 Hz | Absolute power in dB from 0.3-1 Hz |
+| 2.0 Hz | Absolute power in dB from 1-2 Hz |
+| 3.0 Hz | Absolute power in dB from 2-3 Hz |
+| ... | and so on... |
+
 RS Log Power Spectra Output
 `sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
    
@@ -115,13 +139,3 @@ RS Log Power Spectra Output
 | 3.0 Hz | Log power in μV from 2-3 Hz |
 | ... | and so on... |
 
-RS Absolute Power Spectra Output
-`sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
-   
-| Variable Name | Description                              |
-|---------------|------------------------------------------|
-| Row | Electrode |
-| 1.0 Hz | Absolute power in μV from 0.3-1 Hz |
-| 2.0 Hz | Absolute power in μV from 1-2 Hz |
-| 3.0 Hz | Absolute power in μV from 2-3 Hz |
-| ... | and so on... |
