@@ -42,6 +42,10 @@
 % for k=1:length(datafile_names)
 %     delete([datafile_names(k).folder filesep datafile_names(k).name]);
 % end
+% datafile_names=dir(fullfile(data_path, '**\*desc-allChAvg_PSD.jpg'));
+% for k=1:length(datafile_names)
+%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
+% end
 % rmdir('X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs\Concatenated outputs');
 
 
@@ -155,7 +159,7 @@ for subject=1:length(set_names)
     end
 
 
-    % ADD IN AGE INFO HERE!!! - test TM when real scans.tsv drops
+    % Age calculations
     try
         % look for scans.tsv for the participant
         tsvpath= [age_info filesep participant_Id filesep 'ses-V03'];
