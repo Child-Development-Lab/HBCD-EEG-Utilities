@@ -32,9 +32,6 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | MMN  | MMR       | 200-400 ms    | t7t8 | 3-9 |
 | MMN  | MMR       | 200-400 ms    | f7f8 | 3-9 |
 | MMN  | MMR       | 200-400 ms    | fcz  | 3-9 |
-| MMN  | N1 (?)        | 40-79 ms      | t7t8 | 3-9 |
-| MMN  | P1 (?)       | 80-100 ms     | t7t8 | 3-9 |
-| MMN  | N2 (?)       | 100-180 ms    | t7t8 | 3-9 |
 
 ### FACE ERP Derivatives
 | Task | Component | Time window | ROI  | Age |
@@ -72,12 +69,11 @@ Power values are calculated as follows:
 
 ```{r}
 
-Absolute Power = (μV^2 / Hz)
+Absolute Power = (μV²  / Hz)
 
-Log Power μV^2 = log10 (1 + Absolute Power)
+Log Power μV²  = log10 (1 + Absolute Power)
 
-dB Power = 10 ⋅ log10 (Power μV^2 / Hz)
-
+Power (dB) = 10 × log10 (Power (μV² / Hz))
 
 ```
 
