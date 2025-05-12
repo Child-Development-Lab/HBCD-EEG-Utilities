@@ -30,12 +30,20 @@
 % for k=1:length(datafile_names)
 %     delete([datafile_names(k).folder filesep datafile_names(k).name]);
 % end
+% datafile_names=dir(fullfile(data_path, '**\*spectra.csv'));
+% for k=1:length(datafile_names)
+%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
+% end
+% datafile_names=dir(fullfile(data_path, '**\*spectra.mat'));
+% for k=1:length(datafile_names)
+%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
+% end
+% datafile_names=dir(fullfile(data_path, '**\*desc-oz_PSD.jpg'));
+% for k=1:length(datafile_names)
+%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
+% end
 % rmdir('X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs\Concatenated outputs');
 
-
-%% Set your paths here!
-
-age_info = ''; %Set to where you have the scans.tsv files located, may be the same as the data_path
 
 %% Setup -- DO NOT CHANGE
 if ~exist('repoPath', 'var')
@@ -50,9 +58,16 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 
 % Select where you downloaded your files from LASSO
 if ~exist('data_path','var')
-    box = msgbox('Select the location of where you downloaded your files from LASSO (select the made folder)');
+    box = msgbox('Select the location of where you downloaded your files from LASSO (select the made folder under derivatives)');
     uiwait(box);
     data_path = uigetdir();
+end
+
+% Select where you downloaded your raw files from LASSO -- for age
+if ~exist('age_info','var')
+    box = msgbox('Select the location of where you downloaded your raw files from LASSO (select the rawdata folder)');
+    uiwait(box);
+    age_info = uigetdir();
 end
 
 % Create new folder in your data path to save the new concatenated csvs
@@ -140,37 +155,37 @@ for subject=1:length(set_names)
     end
 
 
-    % % ADD IN AGE INFO HERE!!! - test TM when real scans.tsv drops
-    % try
-    %     % on cbrain, look for scans.tsv
-    %     tsvpath= [data_path filesep participant_Id filesep 'ses-V03'];
-    %     agetable = readtable([tsvpath filesep participant_label '_ses-V03_scans.tsv'],"Filetype","text",'Delimiter','\t');
-    %     try
-    %         taskages=agetable.age(contains(agetable.filename,'eeg'));
-    %         age = taskages(1)*12;   
-    %     catch
-    %         error("Age data is missing!")
-    %     end
-    % 
-    % catch
-    %     %default to older age bin if age scans.tsv file is missing!
-    %     age = 7;
-    % end
+    % ADD IN AGE INFO HERE!!! - test TM when real scans.tsv drops
+    try
+        % look for scans.tsv for the participant
+        tsvpath= [age_info filesep participant_Id filesep 'ses-V03'];
+        agetable = readtable([tsvpath filesep participant_Id '_ses-V03_scans.tsv'],"Filetype","text",'Delimiter','\t');
+        try
+            taskages=agetable.age(contains(agetable.filename,'eeg'));
+            age = taskages(1)*12;   
+        catch
+            error("Age data is missing!")
+        end
 
-
-    %TEST CODE TO MAKE SURE IT WORKS - TM
-    sumname = extractBefore(set_names{subject}, '_acq-eeg');
-    task = extractBetween(set_names{subject}, 'task-', '_acq');
-    agetab = readtable('C:\Users\tmahesh\Downloads\age_bin_information.xlsx');
-    idx = find(strcmp(agetab.Subject_IDS, participant_Id));
-    age_bin = agetab.Younger_Older(idx);
-    if strcmp(age_bin, 'younger')
-        age = 4;
-    elseif strcmp(age_bin, 'older')
+    catch
+        %default to older age bin if age scans.tsv file is missing!
         age = 7;
-    else
-        age = 7; %one participant default to older bin
     end
+
+
+    % %TEST CODE TO MAKE SURE IT WORKS - TM
+    % sumname = extractBefore(set_names{subject}, '_acq-eeg');
+    % task = extractBetween(set_names{subject}, 'task-', '_acq');
+    % agetab = readtable('C:\Users\tmahesh\Downloads\age_bin_information.xlsx');
+    % idx = find(strcmp(agetab.Subject_IDS, participant_Id));
+    % age_bin = agetab.Younger_Older(idx);
+    % if strcmp(age_bin, 'younger')
+    %     age = 4;
+    % elseif strcmp(age_bin, 'older')
+    %     age = 7;
+    % else
+    %     age = 7; %one participant default to older bin
+    % end
     
     % Code for Age calculations/bins
     age_bin = 1;
