@@ -9,7 +9,7 @@
 | FACE | SME, Mean amplitude            |
 | MMN  | SME, Mean amplitude           |
 | VEP  | SME, Mean amplitude, Adaptive mean, Peak latency            |
-| RS   | SME, Absolute power (μV²), Absolute power (dB), Natural log power |
+| RS   | Absolute power (μV²), Absolute power (dB), Natural log power |
 
 
 - **Mean amplitude**: Mean amplitude during specified measurement window 
@@ -24,6 +24,10 @@
  
 ## ERP specifications
 
+See below for the ROIs that are used to compute ERPs. The full list of ROIs can also be found on the [GitHub repository for HBCD-MADE](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json).
+
+ ![ROI clusters](ROIs.png)
+ 
 ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs:
 
 ### MMN ERP Derivatives
@@ -59,11 +63,6 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 
 
 ### RS Power Derivatives
-| Task | Derivative | Age |
-|------|-----------|-------------|
-| RS  | Absolute power in µV²/Hz | 3-9 |
-| RS  | Log power         | 3-9 | 
-| RS  | Power in decibels (dB)     | 3-9 |
 
 Power values are calculated as follows:
 
@@ -76,13 +75,6 @@ Log Power  = log10 (1 + Absolute Power)
 Power (dB) = 10 × log10 (Power (μV² / Hz))
 
 ```
-
-## Regions of Interest for ERPs
-
-See below for the ROIs that are used to compute ERPs. The full list of ROIs can also be found on the [GitHub repository for HBCD-MADE](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json).
-
- ![ROI clusters](ROIs.png)
- 
 
  
  
