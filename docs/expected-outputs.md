@@ -108,7 +108,7 @@ VEP Summary Statistics Output
 
 ### Resting State 
 
-RS Absolute Power Spectra Output
+RS Absolute Power (μV²) Spectra Output
 `sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
    
 | Variable Name | Description                              |
@@ -148,13 +148,13 @@ RS Power Spectra .mat Output
 |---------------|------------------------------------------|
 | avg_abs_pow | Average absolute power (μV²) across epochs |
 | avg_log_pow | Average natural log power across epochs |
-| avg_db_pow | Average absolute power (dB) across epochs |
+| avg_db_pow | Average power (dB) across epochs |
 | all_abs_power | Channels x abs power x epochs |
 | all_log_power | Channels x log power x epochs |
 | all_db_pow | Channels x dB power x epochs |
 | epoch_level_abs_pow | Absolute power (μV²) for each epoch |
 | epoch_level_log_pow | Log power for each epoch |
-| epoch_level_db_pow | Absolute power (dB)  for each epoch |
+| epoch_level_db_pow | Power (dB)  for each epoch |
 | channel locations | ... |
 | freqs | Frequency bins (1hz increments, 1-50hz) |
 | n_epochs | Number of epochs |

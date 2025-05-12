@@ -15,7 +15,6 @@ docs_dir: docs
 nav: 
   - About: index.md
   - Installation: installation.md
-  - Usage: usage.md
   - Derivatives and ERP specifications: derivatives_ERPspecs.md
   - Expected outputs: expected-outputs.md
   - Tutorial: tutorial.md

@@ -9,25 +9,26 @@
 | FACE | SME, Mean amplitude            |
 | MMN  | SME, Mean amplitude           |
 | VEP  | SME, Mean amplitude, Adaptive mean, Peak latency            |
-| RS   | Absolute power (μV²), Absolute power (dB), Natural log power |
+| RS   | Absolute power (μV²), Power (dB), Natural log power |
 
 
 - **Mean amplitude**: Mean amplitude during specified measurement window 
 
 - **Adaptive mean**: Adaptive mean amplitude is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak. 
 
-- **Peak latency**: Latency in ms to the peak amplitude during the specified time window
+- **Peak latency**: Latency in ms to the peak amplitude during the specified time window.
 
 - **SME**: Standard Measurement Error. The SME is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
 
-- **Power**: mean power at each frequency bin ranging from 1-50Hz
+- **Power**: Absolute power (μV²), power (dB), and natural log power for each frequency bin ranging from 1-50Hz. 
  
-## ERP specifications
+## ROIs
 
 See below for the ROIs that are used to compute ERPs. The full list of ROIs can also be found on the [GitHub repository for HBCD-MADE](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json).
 
  ![ROI clusters](ROIs.png)
  
+ ## Task Derivatives
 ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs:
 
 ### MMN ERP Derivatives
@@ -68,11 +69,11 @@ Power values are calculated as follows:
 
 ```{r}
 
-Absolute Power = (μV²  / Hz)
+Absolute Power (μV²) = (μV²  / Hz)
 
-Log Power  = log10 (1 + Absolute Power)
+Log Power  = log10 (1 + (μV²  / Hz))
 
-Power (dB) = 10 × log10 (Power (μV² / Hz))
+Power (dB) = 10 × log10 (μV² / Hz)
 
 ```
 
