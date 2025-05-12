@@ -33,7 +33,7 @@ You will need to check if your institution provides MATLAB licenses. If so, you 
 ## Download GitHub Repository
 Now that you have the required software, you can run the HBCD-EEG-Utilities script to compute and save the derivatives. First, you will need to download the repository to your local computer. This can be done in a number of ways, but for a first time user we recommend downloading as a zip file. 
 
-1. Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/tree/mainScroll) to access the repository. 
+1. Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) to access the repository. 
 2. Select the green "Code <>" button at the top right. 
 3. From the dropdown menu, select "Download ZIP" at the bottom. This will download the entire repository to your downloads folder. 
 4. Navigate to your downloads folder. Select the zipped "HBCD-EEG-Utilities" folder by left clicking. Right click. 
