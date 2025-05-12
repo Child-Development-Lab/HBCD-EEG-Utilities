@@ -77,3 +77,17 @@ Power (dB) = 10 × log10 (Power (μV² / Hz))
 
 ```
 
+## ROIs
+
+test1
+
+ ![ROI clusters](ROIs.png)
+ 
+ test2
+ 
+ .. image:: "C:/Users/kasenetz/Documents/GitHub/HBCD-EEG-Utilities/docs/ROIs.png"
+  :width: 400
+  :alt: test
+ 
+ 
+ 
