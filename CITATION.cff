@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: HBCD-EEG-data-release-notes
+title: HBCD-EEG-Utilities
 message: >-
   If you use these resources, please cite it using the
   metadata from this file.
@@ -25,7 +25,7 @@ authors:
     city: 'College Park, MD'
     post-code: '20740'
     alias: '@ChildDevLab'
-repository-code: 'https://github.com/ChildDevLab/HBCD-EEG-data-release-notes'
+repository-code: 'https://github.com/Child-Development-Lab/HBCD-EEG-Utilities'
 abstract: >-
   README instructions and scripts for working with the EEG
   data in the March 1 HBCD public data release.
