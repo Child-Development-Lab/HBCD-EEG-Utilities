@@ -38,7 +38,7 @@ for i = 1:length(MMN_names)
                 'SME_MMR_f7f8', 'MeanAmp_MMR_f7f8', ...
                 'SME_MMR_fcz', 'MeanAmp_MMR_fcz'
             };
-            MMN_ERP_sheet.Properties.VariableNames(1:6) = new_names;
+            MMN_ERP_sheet.Properties.VariableNames(3:8) = new_names;
             MMN_ERP = [MMN_ERP; MMN_ERP_sheet];
             disp(['Compiling MMN: ' x]);
         end
