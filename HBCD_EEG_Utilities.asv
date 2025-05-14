@@ -62,16 +62,27 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 
 % Select where you downloaded your files from LASSO
 if ~exist('data_path','var')
-    box = msgbox('Select the location of where you downloaded your files from LASSO (select the made folder under derivatives)');
+    box = msgbox('Select location of derivative data from LASSO download (select the "made" folder)');
     uiwait(box);
     data_path = uigetdir();
 end
 
 % Select where you downloaded your raw files from LASSO -- for age
 if ~exist('age_info','var')
-    box = msgbox('Select location of LASSO download (select the rawdata folder)');
+    box = msgbox('Select location of raw data from LASSO download (select the "rawdata" folder)');
     uiwait(box);
     age_info = uigetdir();
+end
+
+% ADD BLOCK TO CHECK RIGHT FOLDERS OR BREAK
+if ~strcmp(data_path(end-3:end), 'made')
+    clear
+    error('You have not selected the made folder, please restart! NOTE: If you renamed the folder this error will pop up.')
+end
+
+if ~strcmp(age_info(end-6:end), 'rawdata')
+    clear
+    error('You have not selected the rawdata folder, please restart! NOTE: If you renamed the folder this error will pop up.')
 end
 
 % Create new folder in your data path to save the new concatenated csvs

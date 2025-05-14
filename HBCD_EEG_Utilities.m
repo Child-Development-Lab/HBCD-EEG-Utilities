@@ -74,6 +74,17 @@ if ~exist('age_info','var')
     age_info = uigetdir();
 end
 
+% ADD BLOCK TO CHECK RIGHT FOLDERS OR BREAK
+if ~strcmp(data_path(end-3:end), 'made')
+    clear
+    error('You have not selected the made folder, please restart! NOTE: If you renamed the folder this error will pop up.')
+end
+
+if ~strcmp(age_info(end-6:end), 'rawdata')
+    clear
+    error('You have not selected the rawdata folder, please restart! NOTE: If you renamed the folder this error will pop up.')
+end
+
 % Create new folder in your data path to save the new concatenated csvs
 concat_location = [data_path filesep 'Concatenated outputs for ERPs'];
 if exist(concat_location, 'dir') == 0
