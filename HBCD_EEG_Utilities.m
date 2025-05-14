@@ -62,14 +62,18 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 
 % Select where you downloaded your files from LASSO
 if ~exist('data_path','var')
-    box = msgbox('Select location of derivative data from LASSO download (select the "made" folder)');
+    CreateStruct.Interpreter = 'tex';
+    CreateStruct.WindowStyle = 'modal';
+    box = msgbox('\fontsize{16} Select location of derivative data from LASSO download (select the "made" folder)', CreateStruct);
     uiwait(box);
     data_path = uigetdir();
 end
 
 % Select where you downloaded your raw files from LASSO -- for age
 if ~exist('age_info','var')
-    box = msgbox('Select location of raw data from LASSO download (select the "rawdata" folder)');
+    CreateStruct.Interpreter = 'tex';
+    CreateStruct.WindowStyle = 'modal';
+    box = msgbox('\fontsize{16} Select location of raw data from LASSO download (select the "rawdata" folder)', CreateStruct);
     uiwait(box);
     age_info = uigetdir();
 end
