@@ -4,11 +4,19 @@
 
 Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io/data_access/) for instructions to access and download HBCD data.
 
-When downloading EEG data from Lasso, ensure you download the ``scans.tsv`` file from the "Raw Data" tab of the File transfer interface in addition to the EEG made processed data you wish to use. The ``scans.tsv`` file is necessary to run HBCD_EEG_Utilities.m 
+1- In the Lasso 'Query Data' tab, select "Choose Files For Download" from the Download File Based Data menu. 
+
+ ![Select file based download](filedownload.png)
+ 
+2- Download the ``scans.tsv`` file for each participant. 
 
  ![Select scans.tsv](scanstsv.png)
  
+3- Download eeg ``.set`` files. 
+ 
  ![Select eeg.set](eegset.png)
+ 
+4- Download using [Globus Share](https://hbcd-docs.readthedocs.io/data_access/lasso/#globus-share-download) or the [Lasso Download Client](https://hbcd-docs.readthedocs.io/data_access/lasso/#download-client-user-guide-macos-version). 
  
 ## Running the script 
 
