@@ -31,13 +31,6 @@ See below for the ROIs that are used to compute ERPs. The full list of ROIs can 
  ## Task Derivatives
 ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs:
 
-### MMN ERP Derivatives
-| Task | Component | Time window | ROI  | Age |
-|------|-----------|-------------|------|-----|
-| MMN  | MMR       | 200-400 ms    | t7t8 | 3-9 |
-| MMN  | MMR       | 200-400 ms    | f7f8 | 3-9 |
-| MMN  | MMR       | 200-400 ms    | FCz  | 3-9 |
-
 ### FACE ERP Derivatives
 | Task | Component | Time window | ROI  | Age |
 |------|-----------|-------------|------|-----|
@@ -51,6 +44,13 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | FACE | P400      | 355-625 ms    | Oz   | 3-6 |                              
 | FACE | P400      | 350-600 ms    | Oz   | 6-9 |
 | FACE | Nc        | 300-650 ms    | FCz  | 3-9 |
+
+### MMN ERP Derivatives
+| Task | Component | Time window | ROI  | Age |
+|------|-----------|-------------|------|-----|
+| MMN  | MMR       | 200-400 ms    | t7t8 | 3-9 |
+| MMN  | MMR       | 200-400 ms    | f7f8 | 3-9 |
+| MMN  | MMR       | 200-400 ms    | FCz  | 3-9 |
 
 ### VEP ERP Derivatives
 | Task | Component | Time window | ROI  | Age |
