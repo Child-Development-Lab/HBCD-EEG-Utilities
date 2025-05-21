@@ -4,30 +4,30 @@
 
 Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io/data_access/) for instructions to access and download HBCD data.
 
-1- In the Lasso 'Query Data' tab, select "Choose Files For Download" from the Download File Based Data menu. 
+1. In the Lasso 'Query Data' tab, select "Choose Files For Download" from the Download File Based Data menu. 
 
  ![Select file based download](filedownload.png)
  
-2- Download the ``scans.tsv`` file for each participant. 
+2. Download the ``scans.tsv`` file for each participant. 
 
  ![Select scans.tsv](scanstsv.png)
  
-3- Download eeg ``.set`` files. 
+3. Download eeg ``.set`` files. 
  
  ![Select eeg.set](eegset.png)
  
-4- Download using [Globus Share](https://hbcd-docs.readthedocs.io/data_access/lasso/#globus-share-download) or the [Lasso Download Client](https://hbcd-docs.readthedocs.io/data_access/lasso/#download-client-user-guide-macos-version). 
+4. Download using [Globus Share](https://hbcd-docs.readthedocs.io/data_access/lasso/#globus-share-download) or the [Lasso Download Client](https://hbcd-docs.readthedocs.io/data_access/lasso/#download-client-user-guide-macos-version). 
  
 ## Running the script 
 
-Please make sure to set up matlab, EEGLAB, and Github folder before running the script. To set up these softwares, visit the 'Installation' tab on the left. 
+1. Install HBCD-EEG-Utilities and its depedencies: see [Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/).
 
-1. Open `HBCD-EEG-Utilities.m` and press the green 'Run' button on the 'Editor' toolbar. To open the `HBCD-EEG-Utilities.m`, double click on the file.
+2. Open `HBCD-EEG-Utilities.m` and press the green 'Run' button on the 'Editor' toolbar. To open the `HBCD-EEG-Utilities.m`, double click on the file.
 
-2. Follow the prompts to select the file path to the ``rawdata`` and ``derivatives/made`` folders downloaded from Lasso. If prompted, select the path to where you downloaded EEGLAB. Then, select the tasks for which you wish to compute derivatives. 
+3. Follow the prompts to select the file path to the ``rawdata`` and ``derivatives/made`` folders downloaded from Lasso. If prompted, select the path to where you downloaded EEGLAB. Then, select the tasks for which you wish to compute derivatives. 
 
-3. Wait for the script to finish. This could take up to 2 hours if processing all tasks for all release subjects. 
+4. Wait for the script to finish. This could take up to 2 hours if processing all tasks for all release subjects. 
 
-4. Find derivative output in the output location you selected. 
+5. Find derivative output in the output location you selected. 
 
 
