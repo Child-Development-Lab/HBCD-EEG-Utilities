@@ -1,30 +1,43 @@
 # Expected Outputs from `HBCD-EEG-Utilities.m`
 
 `HBCD-EEG-Utilities.m` will write the following output files: 
-
  
-        |__ outputdir/
-            |
-            | # FACE
-            |__ sub-<ID>_ses-V03_task-FACE-ERPSummaryStats.csv
-            |__ sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv
+    |__ made/
+        |__ sub-<label>/
+        |    |
+        |    | # FACE
+        |    |__ sub-<ID>_ses-V03_task-FACE-ERPSummaryStats.csv
+        |    |__ sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv
+        |    |
+        |    | # MMN
+        |    |__ sub-<ID>_ses-V03_task-MMN-ERPSummaryStats.csv
+        |    |__ sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv
+        |    |
+        |    | # VEP
+        |    |__ sub-<ID>_ses-V03_task-VEP-SummaryStats.csv
+        |    |__ sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv
+        |    |
+        |    | # RS
+        |    |__ sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv
+        |    |__ sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv
+        |    |__ sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv
+        |    |__ sub-<ID>_ses-V03_task-RS-spectra.mat
+        |    |__ sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg
+        |
+        |__ Concatenated outputs for ERPs/
             |
             | # MMN
-            |__ sub-<ID>_ses-V03_task-MMN-ERPSummaryStats.csv
-            |__ sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv
+            |__MMN_ERP_V03_<yyyy-mm-dd>.csv
+            |__MMN_trialMeasures_V03_<yyyy-mm-dd>.csv
+            |
+            | # FACE
+            |__FACE_ERP_V03_<yyyy-mm-dd>.csv
+            |__FACE_trialMeasures_V03_<yyyy-mm-dd>.csv
             |
             | # VEP
-            |__ sub-<ID>_ses-V03_task-VEP-SummaryStats.csv
-            |__ sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv
-            |
-            | # RS
-            |__ sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv
-            |__ sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv
-            |__ sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv
-            |__ sub-<ID>_ses-V03_task-RS-spectra.mat
-            |__ sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg
-
-
+            |__VEP_ERP_V03_<yyyy-mm-dd>.csv
+            |__VEP_trialMeasures_V03_<yyyy-mm-dd>.csv
+            
 ## Descriptions of output
 
 Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
@@ -32,7 +45,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 - ``...ERPTrialMeasures.csv`` Trial-level derivatives for MMN, VEP, and FACE.
 - ``...SummaryStats.csv`` Subject-level derivatives for MMN, VEP, and FACE. Values are averaged by condition for MMN and FACE. 
 - ``...PowerSpectra.csv`` Subject-level derivatives for RS.  
-- ```...spectra.mat`` Epoch-level derivatives for RS.
+- ``...spectra.mat`` Epoch-level derivatives for RS.
 
 # Output by task 
 
