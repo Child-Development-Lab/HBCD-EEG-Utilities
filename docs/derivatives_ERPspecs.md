@@ -41,14 +41,14 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 ### FACE ERP Derivatives
 | Task | Component | Time window | ROI  | Age |
 |------|-----------|-------------|------|-----|
+| FACE | P1        | 75-125 ms     | Oz   | 3-9 |
 | FACE | N290      | 200-390 ms    | P8   | 3-6 |
+| FACE | N290      | 200-340 ms    | P8   | 6-9 |    
 | FACE | N290      | 200-390 ms    | P7   | 3-6 |
-| FACE | N290      | 400-600 ms    | Oz   | 3-6 |                              
-| FACE | P400      | 355-625 ms    | Oz   | 3-6 |                              
-| FACE | N290      | 200-340 ms    | P8   | 6-9 |                           
-| FACE | N290      | 200-340 ms    | P7   | 6-9 |                             
-| FACE | P1        | 75-125 ms     | Oz   | 6-9 |
+| FACE | N290      | 200-340 ms    | P7   | 6-9 | 
+| FACE | N290      | 400-600 ms    | Oz   | 3-6 |
 | FACE | N290      | 200-340 ms    | Oz   | 6-9 |
+| FACE | P400      | 355-625 ms    | Oz   | 3-6 |                              
 | FACE | P400      | 350-600 ms    | Oz   | 6-9 |
 | FACE | Nc        | 300-650 ms    | FCz  | 3-9 |
 
@@ -56,10 +56,10 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | Task | Component | Time window | ROI  | Age |
 |------|-----------|-------------|------|-----|
 | VEP  | N1        | 40-79 ms      | Oz   | 3-6 |
-| VEP  | P1        | 80-140 ms     | Oz   | 3-6 | 
-| VEP  | N2        | 141-300 ms    | Oz   | 3-6 |
 | VEP  | N1        | 40-79 ms      | Oz   | 6-9 |
+| VEP  | P1        | 80-140 ms     | Oz   | 3-6 | 
 | VEP  | P1        | 80-120 ms     | Oz   | 6-9 |
+| VEP  | N2        | 141-300 ms    | Oz   | 3-6 |
 | VEP  | N2        | 121-170 ms    | Oz   | 6-9 |
 
 
