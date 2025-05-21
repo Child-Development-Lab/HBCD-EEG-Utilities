@@ -6,6 +6,10 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
 
 When downloading EEG data from Lasso, ensure you download the ``scans.tsv`` file from the "Raw Data" tab of the File transfer interface in addition to the EEG made processed data you wish to use. The ``scans.tsv`` file is necessary to run HBCD_EEG_Utilities.m 
 
+ ![Select scans.tsv](scanstsv.png)
+ 
+ ![Select eeg.set](eegset.png)
+ 
 ## Running the script 
 
 Please make sure to set up matlab, EEGLAB, and Github folder before running the script. To set up these softwares, visit the 'Installation' tab on the left. 
