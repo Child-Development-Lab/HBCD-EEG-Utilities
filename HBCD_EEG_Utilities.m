@@ -19,36 +19,6 @@
 % EEGLab:  https://sccn.ucsd.edu/eeglab/downloadtoolbox.php/download.php
 % addpath(genpath(('...')) % Enter the path of the EEGLAB folder in this line
 
-
-% %% TM- testing!
-% % remove all summary stats files from cbrain outputs for testing
-% datafile_names=dir(fullfile(data_path, '**\*SummaryStats.csv'));
-% for k=1:length(datafile_names)
-%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
-% end
-% datafile_names=dir(fullfile(data_path, '**\*ERPTrialMeasures.csv'));
-% for k=1:length(datafile_names)
-%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
-% end
-% datafile_names=dir(fullfile(data_path, '**\*spectra.csv'));
-% for k=1:length(datafile_names)
-%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
-% end
-% datafile_names=dir(fullfile(data_path, '**\*spectra.mat'));
-% for k=1:length(datafile_names)
-%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
-% end
-% datafile_names=dir(fullfile(data_path, '**\*desc-oz_PSD.jpg'));
-% for k=1:length(datafile_names)
-%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
-% end
-% datafile_names=dir(fullfile(data_path, '**\*desc-allChAvg_PSD.jpg'));
-% for k=1:length(datafile_names)
-%     delete([datafile_names(k).folder filesep datafile_names(k).name]);
-% end
-% rmdir('X:\Projects\hbcd\EEG\Main_Study\CBRAIN_Outputs\DataReleaseIDs\Concatenated outputs');
-
-
 %% Setup -- DO NOT CHANGE
 if ~exist('repoPath', 'var')
     repoPath = fileparts(matlab.desktop.editor.getActiveFilename);
@@ -190,21 +160,6 @@ for subject=1:length(set_names)
         %default to older age bin if age scans.tsv file is missing!
         age = 7;
     end
-
-
-    % %TEST CODE TO MAKE SURE IT WORKS - TM
-    % sumname = extractBefore(set_names{subject}, '_acq-eeg');
-    % task = extractBetween(set_names{subject}, 'task-', '_acq');
-    % agetab = readtable('C:\Users\tmahesh\Downloads\age_bin_information.xlsx');
-    % idx = find(strcmp(agetab.Subject_IDS, participant_Id));
-    % age_bin = agetab.Younger_Older(idx);
-    % if strcmp(age_bin, 'younger')
-    %     age = 4;
-    % elseif strcmp(age_bin, 'older')
-    %     age = 7;
-    % else
-    %     age = 7; %one participant default to older bin
-    % end
     
     % Code for Age calculations/bins
     age_bin = 1;
