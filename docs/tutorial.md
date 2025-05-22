@@ -35,12 +35,12 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
 
 4- If prompted, select the path to where you downloaded EEGLAB. 
 
-5. Select the tasks for which you wish to compute derivatives. 
+5- Select the tasks for which you wish to compute derivatives. 
  ![task selection](taskselect.png)
 
-4- Wait for the script to finish. **This could take up to 2 hours if processing all tasks for all release subjects.**
+6- Wait for the script to finish. **This could take up to 2 hours if processing all tasks for all release subjects.**
 
-5- Find derivative output in the following folders:
+7- Find derivative output in the following folders:
  
     |__ made/
         |__ sub-<label>/ #subject-level output
