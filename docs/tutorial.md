@@ -30,9 +30,10 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
 4- Wait for the script to finish. This could take up to 2 hours if processing all tasks for all release subjects. 
 
 5- Find derivative output in the following folders:
-
-|__ made/
-    |__ sub-<label>/
-    |__ Concatenated outputs for ERPs/
-
+ 
+    |__ made/
+        |__ sub-<label>/ #subject-level output
+        |__ Concatenated outputs for ERPs/ #concatenated output
+    
+            
 See [Descriptions of output](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/) for details. 
