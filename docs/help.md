@@ -1,6 +1,6 @@
 # Help
 
-Please direct any inquiries regarding these utilities by emailing [eegdata@umd.edu](eegdata@umd.edu) or posting an issue to the [GitHub Repository](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/issues). Questions about the HBCD EEG data release can be sent by creating a help desk ticket on the Lasso platform - see instructions [here](https://docs.hbcdstudy.org/reportissue/) (will be available once data is officially released).
+Please direct any inquiries regarding these utilities by emailing <eegdata@umd.edu> or posting an issue to the [GitHub Repository](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/issues). Questions about the HBCD EEG data release can be sent by creating a help desk ticket on the Lasso platform - see instructions [here](https://docs.hbcdstudy.org/reportissue/) (will be available once data is officially released).
 
 Authorship for this repository is as follows: 
 
