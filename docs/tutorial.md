@@ -28,12 +28,10 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
  ![Press Run](Run.png)
  
 3- Select file path to ``derivatives/made`` folder downloaded from Lasso. This folder contains eeg ``.set`` files.
- ![ok derivatives](ok_derivatives.png)
- ![dirs derivatives](dir_derivatives.png)
+ ![dirs derivatives](selectdir_derivatives.png)
 
 3- Select file path to the ``rawdata`` folder downloaded from Lasso. This folder contains ``scans.tsv `` files. 
- ![ok raw](ok_raw.png)
- ![dirs raw](dir_raw.png)
+ ![dirs raw](selectdir_raw.png)
 
 4- If prompted, select the path to where you downloaded EEGLAB. 
 
