@@ -4,19 +4,21 @@
 
 Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io/data_access/) for instructions to access and download HBCD data.
 
-1. In the Lasso 'Query Data' tab, select "Choose Files For Download". 
+1. Log into Lasso
+
+2. In the Lasso 'Query Data' tab, select "Choose Files For Download". 
 
  ![Select file based download](filedownload.png)
  
-2. Under "Raw", download the ``scans.tsv`` file for each participant. 
+3. Under "Raw", download the ``scans.tsv`` file for each participant. 
 
  ![Select scans.tsv](scanstsv.png)
  
-3. Under "Derivatives", download the eeg ``.set`` files. 
+4. Under "Derivatives", download the eeg ``.set`` files. 
  
  ![Select eeg.set](eegset.png)
  
-4. Select "Trigger Transfer". Download using [Globus Share](https://hbcd-docs.readthedocs.io/data_access/lasso/#globus-share-download) or the [Lasso Download Client](https://hbcd-docs.readthedocs.io/data_access/lasso/#download-client-user-guide-macos-version). 
+5. Select "Trigger Transfer". Download using [Globus Share](https://hbcd-docs.readthedocs.io/data_access/lasso/#globus-share-download) or the [Lasso Download Client](https://hbcd-docs.readthedocs.io/data_access/lasso/#download-client-user-guide-macos-version). 
  
 ## Running the script 
 
