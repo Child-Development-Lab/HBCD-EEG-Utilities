@@ -23,7 +23,7 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
 
 1- Install HBCD-EEG-Utilities and its depedencies: see [Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/).
 
-2- Open `HBCD-EEG-Utilities.m` and press the green 'Run' button on the 'Editor' toolbar. To open the `HBCD-EEG-Utilities.m`, double click on the file.
+2- Open `HBCD-EEG-Utilities.m` by double-clicking the file, and press the green 'Run' button on the 'Editor' toolbar.
 
  ![Press Run](Run.png)
  

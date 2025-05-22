@@ -12,17 +12,17 @@
 | RS   | Absolute power (μV²), Power (dB), Natural log power |
 
 
-- **Mean amplitude**: Mean amplitude during specified measurement window.
+- **Mean amplitude**: Mean amplitude (μV) during specified measurement window.
 
 - **Adaptive mean**: Adaptive mean amplitude is calculated by finding the peak during the specified time window and averaging the amplitude across all sampling points within 1 standard deviation of the peak.
 
-- **Peak latency**: Latency in ms to the peak amplitude during the specified time window.
+- **Peak latency**: Latency (ms) to the peak amplitude during the specified time window.
 
-- **SME**: Standard Measurement Error. The SME is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
+- **SME**: Standard Measurement Error (SME) is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
 
 - **Power**: Absolute power (μV²), power (dB), and natural log power for each frequency bin ranging from 1-50Hz.
  
-## ROIs
+## Regions of Interest (ROIs)
 
 See below for the ROIs that are used to compute ERPs. The full list of ROIs can also be found on the [GitHub repository for HBCD-MADE](https://github.com/DCAN-Labs/HBCD-MADE/blob/main/proc_settings_HBCD.json).
 

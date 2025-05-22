@@ -38,22 +38,20 @@
             |__VEP_ERP_V03_<yyyy-mm-dd>.csv
             |__VEP_trialMeasures_V03_<yyyy-mm-dd>.csv
             
-## Descriptions of output
-
-Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
-
-- ``...ERPTrialMeasures.csv`` Trial-level derivatives for MMN, VEP, and FACE.
-- ``...SummaryStats.csv`` Subject-level derivatives for MMN, VEP, and FACE. Values are averaged by condition for MMN and FACE. 
-- ``...PowerSpectra.csv`` Subject-level derivatives for RS.  
-- ``...spectra.mat`` Epoch-level derivatives for RS.
 
 # Output by task 
 
-### FACE 
+Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
 
-1- FACE Trial Measures Output
+
+### Faces task (FACE)
+
+**1- FACE Trial Measures Output**
+
 `sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv`
 
+Trial-level derivatives for the FACE task include mean amplitude.
+
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
@@ -61,9 +59,12 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
 
 
-2- FACE Summary Statistics Output
+**2- FACE Summary Statistics Output**
+
 `sub-<ID>_ses-V03_task-FACE-ERPSummaryStatistics.csv`
- 
+
+Subject-level derivatives for the FACE task include mean amplitude and SME.
+
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
@@ -72,19 +73,25 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
 
 
-### MMN
+### Mismatch Negativity (MMN)
 
-1- MMN Trial Measures Output
+**1- MMN Trial Measures Output**
+
 `sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv`
 
+Trial-level derivatives for the MMN task include mean amplitude.
+
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | TrialNum | trial index |
 | MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
 
-2- MMN Summary Statistics Output
+**2- MMN Summary Statistics Output**
+
 `sub-<ID>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
+
+Subject-level derivatives for the MMN task include mean amplitude and SME.
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -94,10 +101,13 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
 
 
-### Visual Evoked Potential  
+### Visual Evoked Potential (VEP)
 
-1- VEP Trial Measures Output
+**1- VEP Trial Measures Output**
+
 `sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv`
+
+Trial-level derivatives for the VEP task include mean amplitude, adaptive mean (peak), and latency.
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -107,8 +117,11 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | Peak_<WindowStart-WindowEnd>_ROI | Adaptive mean amplitude within specified time window at specified ROI |
 | Latency_<WindowStart-WindowEnd>_ROI | Latency to peak within specified time window at specified ROI |
 
-2- VEP Summary Statistics Output
+**2- VEP Summary Statistics Output**
+
 `sub-<ID>_ses-V03_task-VEP-ERPSummaryStatistics.csv`
+
+Subject-level derivatives for the VEP task include SME, mean amplitude, adaptive mean (peak), and latency.
 
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -121,8 +134,11 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 
 ### Resting State 
 
-1- RS Absolute Power (μV²) Spectra Output
+**1- RS Absolute Power (μV²) Spectra Output**
+
 `sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
+
+Subject-level absolute power values for RS.  
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -132,8 +148,11 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | 3.0 Hz | Sum of absolute power in μV² centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-2- RS Power (dB) Spectra Output
+**2- RS Power (dB) Spectra Output**
+
 `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
+
+Subject-level dB power values for RS.  
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -143,8 +162,11 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | 3.0 Hz | Sum of power in dB centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-3- RS Log Power Spectra Output
+**3- RS Log Power Spectra Output**
+
 `sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
+
+Subject-level log power values for RS.  
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -154,8 +176,11 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | 3.0 Hz | Sum of natural log power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-4- RS Power Spectra .mat Output
+**4- RS Power Spectra .mat Output**
+
 `sub-<ID>_ses-V03_task-RS_spectra.mat`
+
+Epoch-level derivatives for RS.
    
 | Variable Name | Description                              |
 |---------------|------------------------------------------|
@@ -174,7 +199,8 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 | Fs | Sampling rate |
 | num_channels | Number of channels |
 
-5- RS Power Spectra Figure 
+**5- RS Power Spectra Figure** 
+
 `sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg`
 
 Subject-level plot visualizing power spectral density for each channel across the 1-50Hz frequency range. Data for this plot originates from `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`. See below for an example:
