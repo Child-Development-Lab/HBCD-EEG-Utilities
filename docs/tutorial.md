@@ -1,5 +1,7 @@
 #Tutorial
 
+Required inputs are EEG ``.set`` files and ``scans.tsv`` files for each subject. See below for instructions to download these files.
+
 ## Download EEG data from Lasso 
 
 Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io/data_access/) for instructions to access and download HBCD data.
@@ -34,6 +36,5 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
     |__ made/
         |__ sub-<label>/ #subject-level output
         |__ Concatenated outputs for ERPs/ #concatenated output
-    
             
 See [Descriptions of output](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/) for details. 
