@@ -2,11 +2,11 @@
 
 Required inputs are EEG ``.set`` files and ``scans.tsv`` files for each subject. See below for instructions to download these files.
 
-## Download EEG data from Lasso 
+## Downloading EEG data from Lasso 
 
 Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io/data_access/) for instructions to access and download HBCD data.
 
-1- Log into Lasso
+1- Log into Lasso.
 
 2- In the 'Query Data' tab, select "Choose Files For Download". 
  ![Select file based download](filedownload.png)
