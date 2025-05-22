@@ -18,7 +18,7 @@ Functionality of the software is as follows:
 - Concatenates all subjects' summary statistics output into a single spreadsheet for each task 
 - Concatenates all subjects' trial measures output into a single spreadsheet for each task.
 
-## Functions
+## Functionality
 
 The following MATLAB scripts and .json files are in the HBCD-EEG-Utilities repository and are required for processing. 
 
