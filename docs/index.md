@@ -18,6 +18,26 @@ Functionality of the software is as follows:
 - Concatenates all subjects' summary statistics output into a single spreadsheet for each task (`concatenate_files_summary.m`) 
 - Concatenates all subjects' trial measures output into a single spreadsheet for each task. (`concatenate_trial_measures.m`)
 
+## Functions
+
+The following MATLAB scripts are in the HBCD-EEG-Utilities repository and are required for processing. 
+
+    |__ HBCD-EEG-Utilities/
+        |
+        |__ HBCD_EEG_Utilities.m #load data, compute mean amplitude, generate output tables
+        |
+        |__ supplemental files/
+            |
+            |__compute_peaks_latencies.m #compute adaptive mean and latency measures for VEP
+            |__concatenate_files_summary.m #combine subject-level summary statistics into one spreadsheet for all subjects
+            |__concatenate_trial_measures.m #combine trial-level ERP into one spreadsheet for all subjects
+            |__get_Cluster.m #define clusters used for ROIs
+            |__grab_settings.m #read in processing settings from proc_settings_HBCD.json
+            |__RS_ERP_Topo_Indv.m #calculates power values for RS and save output to .csv files
+            |
+            |__proc_settings_HBCD.json #specify processing settings
+            
+            
 ### Contents 
 
 - [Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
