@@ -46,9 +46,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 
 ### Faces task (FACE)
 
-**1- FACE Trial Measures Output**
-
-`sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv`
+**1- FACE Trial Measures Output**: `sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv`
 
 Trial-level derivatives for the FACE task include mean amplitude.
 
@@ -59,9 +57,7 @@ Trial-level derivatives for the FACE task include mean amplitude.
 | MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
 
 
-**2- FACE Summary Statistics Output**
-
-`sub-<ID>_ses-V03_task-FACE-ERPSummaryStatistics.csv`
+**2- FACE Summary Statistics Output**: `sub-<ID>_ses-V03_task-FACE-ERPSummaryStatistics.csv`
 
 Subject-level derivatives for the FACE task include mean amplitude and SME.
 
@@ -75,9 +71,7 @@ Subject-level derivatives for the FACE task include mean amplitude and SME.
 
 ### Mismatch Negativity (MMN)
 
-**1- MMN Trial Measures Output**
-
-`sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv`
+**1- MMN Trial Measures Output**: `sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv`
 
 Trial-level derivatives for the MMN task include mean amplitude.
 
@@ -87,9 +81,7 @@ Trial-level derivatives for the MMN task include mean amplitude.
 | TrialNum | trial index |
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 
-**2- MMN Summary Statistics Output**
-
-`sub-<ID>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
+**2- MMN Summary Statistics Output**: `sub-<ID>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
 
 Subject-level derivatives for the MMN task include mean amplitude and SME.
 
@@ -103,9 +95,7 @@ Subject-level derivatives for the MMN task include mean amplitude and SME.
 
 ### Visual Evoked Potential (VEP)
 
-**1- VEP Trial Measures Output**
-
-`sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv`
+**1- VEP Trial Measures Output**: `sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv`
 
 Trial-level derivatives for the VEP task include mean amplitude, adaptive mean (peak), and latency.
 
@@ -117,9 +107,7 @@ Trial-level derivatives for the VEP task include mean amplitude, adaptive mean (
 | Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
 | Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
-**2- VEP Summary Statistics Output**
-
-`sub-<ID>_ses-V03_task-VEP-ERPSummaryStatistics.csv`
+**2- VEP Summary Statistics Output**: `sub-<ID>_ses-V03_task-VEP-ERPSummaryStatistics.csv`
 
 Subject-level derivatives for the VEP task include SME, mean amplitude, adaptive mean (peak), and latency.
 
@@ -134,9 +122,7 @@ Subject-level derivatives for the VEP task include SME, mean amplitude, adaptive
 
 ### Resting State 
 
-**1- RS Absolute Power (μV²) Spectra Output**
-
-`sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
+**1- RS Absolute Power (μV²) Spectra Output**: `sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
 
 Subject-level absolute power values for RS.  
    
@@ -148,9 +134,7 @@ Subject-level absolute power values for RS.
 | 3.0 Hz | Sum of absolute power in μV² centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-**2- RS Power (dB) Spectra Output**
-
-`sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
+**2- RS Power (dB) Spectra Output**: `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
 
 Subject-level dB power values for RS.  
    
@@ -162,9 +146,7 @@ Subject-level dB power values for RS.
 | 3.0 Hz | Sum of power in dB centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-**3- RS Log Power Spectra Output**
-
-`sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
+**3- RS Log Power Spectra Output**: `sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
 
 Subject-level log power values for RS.  
    
@@ -176,9 +158,7 @@ Subject-level log power values for RS.
 | 3.0 Hz | Sum of natural log power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-**4- RS Power Spectra .mat Output**
-
-`sub-<ID>_ses-V03_task-RS_spectra.mat`
+**4- RS Power Spectra .mat Output**: `sub-<ID>_ses-V03_task-RS_spectra.mat`
 
 Epoch-level derivatives for RS.
    
@@ -199,9 +179,7 @@ Epoch-level derivatives for RS.
 | Fs | Sampling rate |
 | num_channels | Number of channels |
 
-**5- RS Power Spectra Figure** 
-
-`sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg`
+**5- RS Power Spectra Figure** : `sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg`
 
 Subject-level plot visualizing power spectral density for each channel across the 1-50Hz frequency range. Data for this plot originates from `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`. See below for an example:
  ![PSD plot](PSDplot.png)
