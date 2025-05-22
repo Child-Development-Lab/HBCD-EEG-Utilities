@@ -26,7 +26,9 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
 
 2. Open `HBCD-EEG-Utilities.m` and press the green 'Run' button on the 'Editor' toolbar. To open the `HBCD-EEG-Utilities.m`, double click on the file.
 
-3. Follow the prompts to select the file path to the ``rawdata`` and ``derivatives/made`` folders downloaded from Lasso. If prompted, select the path to where you downloaded EEGLAB. Then, select the tasks for which you wish to compute derivatives. 
+ ![Press Run](Run.png)
+ 
+3. Follow the prompts to select the tasks you wish to use, and the file path to the ``rawdata`` and ``derivatives/made`` folders downloaded from Lasso. If prompted, select the path to where you downloaded EEGLAB. Then, select the tasks for which you wish to compute derivatives. 
 
 4. Wait for the script to finish. This could take up to 2 hours if processing all tasks for all release subjects. 
 
