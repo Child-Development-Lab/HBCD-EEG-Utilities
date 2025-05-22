@@ -1,9 +1,9 @@
 # Expected Outputs from `HBCD-EEG-Utilities.m`
 
-`HBCD-EEG-Utilities.m` will write the following output files: 
+`HBCD-EEG-Utilities.m` writes the following output files: 
  
     |__ made/
-        |__ sub-<label>/
+        |__ sub-<label>/ #individual subject folder
         |    |
         |    | # FACE
         |    |__ sub-<ID>_ses-V03_task-FACE-ERPSummaryStats.csv
@@ -24,7 +24,7 @@
         |    |__ sub-<ID>_ses-V03_task-RS-spectra.mat
         |    |__ sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg
         |
-        |__ Concatenated outputs for ERPs/
+        |__ Concatenated outputs for ERPs/ #output folder created by HBCD-EEG-Utilities.m
             |
             | # MMN
             |__MMN_ERP_V03_<yyyy-mm-dd>.csv
@@ -41,7 +41,7 @@
 
 # Output by task 
 
-Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) to see a data dictionary defining the fields in each .csv output file. 
+Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/main/docs/csv_data_dictionary_derivatives.csv) for a data dictionary defining the fields in each .csv output file. 
 
 
 ### Faces task (FACE)
@@ -69,8 +69,8 @@ Subject-level derivatives for the FACE task include mean amplitude and SME.
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | NTrials | number of trials retained per condition |
-| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
-| SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
 
 ### Mismatch Negativity (MMN)
@@ -85,7 +85,7 @@ Trial-level derivatives for the MMN task include mean amplitude.
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | TrialNum | trial index |
-| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 
 **2- MMN Summary Statistics Output**
 
@@ -97,8 +97,8 @@ Subject-level derivatives for the MMN task include mean amplitude and SME.
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | NTrials | number of trials retained per condition |
-| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
-| SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
 
 
 ### Visual Evoked Potential (VEP)
@@ -113,9 +113,9 @@ Trial-level derivatives for the VEP task include mean amplitude, adaptive mean (
 |---------------|------------------------------------------|
 | Condition | VEP |
 | TrialNum | trial index |
-| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
-| Peak_<WindowStart-WindowEnd>_ROI | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_<WindowStart-WindowEnd>_ROI | Latency to peak within specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
 **2- VEP Summary Statistics Output**
 
@@ -127,10 +127,10 @@ Subject-level derivatives for the VEP task include SME, mean amplitude, adaptive
 |---------------|------------------------------------------|
 | Condition | VEP |
 | NTrials | number of trials retained per condition |
-| SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
-| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
-| Peak_<WindowStart-WindowEnd>_ROI | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_<WindowStart-WindowEnd>_ROI | Latency to peak within specified time window at specified ROI |
+| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
 ### Resting State 
 

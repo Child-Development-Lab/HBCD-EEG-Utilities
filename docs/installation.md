@@ -4,7 +4,7 @@ Users will need MATLAB and EEGLAB to run these scripts. Below are instructions f
 
 You will need to check if your institution provides MATLAB licenses. If so, you can use your institution log in to set up a MATLAB account. If your institution does not provide MATLAB licenses, you will need to purchase one to install MATLAB.
 
-### Install MATLAB: 
+### Install MATLAB
 
 1. Download MATLAB [here](https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html).
 2. Select installation link appropriate to your operating system.
@@ -20,7 +20,7 @@ You will need to check if your institution provides MATLAB licenses. If so, you 
 12. Once the installation is complete, select the “close” button.
 13. You now have MATLAB installed on your device!
 
-### Install EEGLAB:
+### Install EEGLAB
 
 1. Download EEGLAB [here](https://sccn.ucsd.edu/eeglab/download.php).
 2. Unlike MATLAB, you do not need a license to install EEGLAB. You will need to fill out the form using your name and institution email, and agree to their terms. Then select the submit button.

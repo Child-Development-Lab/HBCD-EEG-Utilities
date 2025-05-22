@@ -30,7 +30,7 @@ See below for the ROIs that are used to compute ERPs. The full list of ROIs can 
  
 ## Task Derivatives
 
-Please note that most ERPs are scored using age-dependent time-windows. See tables below for details. 
+**Please note that most ERPs are scored using age-dependent time-windows.** See tables below for details. 
 ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs:
 
 ### FACE ERP Derivatives
