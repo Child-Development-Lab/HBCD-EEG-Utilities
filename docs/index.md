@@ -20,7 +20,7 @@ Functionality of the software is as follows:
 
 ## Functions
 
-The following MATLAB scripts are in the HBCD-EEG-Utilities repository and are required for processing. 
+The following MATLAB scripts and .json files are in the HBCD-EEG-Utilities repository and are required for processing. 
 
     |__ HBCD-EEG-Utilities/
         |
