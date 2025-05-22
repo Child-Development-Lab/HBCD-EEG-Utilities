@@ -51,7 +51,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 
 ### FACE 
 
-FACE Trial Measures Output
+1. FACE Trial Measures Output
 `sub-<ID>_ses-V03_task-FACE-ERPTrialMeasures.csv`
 
 | Variable Name | Description                              |
@@ -61,7 +61,7 @@ FACE Trial Measures Output
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 
 
-FACE Summary Statistics Output
+2. FACE Summary Statistics Output
 `sub-<ID>_ses-V03_task-FACE-ERPSummaryStatistics.csv`
  
 | Variable Name | Description                              |
@@ -74,7 +74,7 @@ FACE Summary Statistics Output
 
 ### MMN
 
-MMN Trial Measures Output
+1. MMN Trial Measures Output
 `sub-<ID>_ses-V03_task-MMN-ERPTrialMeasures.csv`
 
 | Variable Name | Description                              |
@@ -83,7 +83,7 @@ MMN Trial Measures Output
 | TrialNum | trial index |
 | MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
 
-MMN Summary Statistics Output
+2. MMN Summary Statistics Output
 `sub-<ID>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
 
 | Variable Name | Description                              |
@@ -96,7 +96,7 @@ MMN Summary Statistics Output
 
 ### Visual Evoked Potential  
 
-VEP Trial Measures Output
+1. VEP Trial Measures Output
 `sub-<ID>_ses-V03_task-VEP-ERPTrialMeasures.csv`
 
 | Variable Name | Description                              |
@@ -107,7 +107,7 @@ VEP Trial Measures Output
 | Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
 | Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
 
-VEP Summary Statistics Output
+2. VEP Summary Statistics Output
 `sub-<ID>_ses-V03_task-VEP-ERPSummaryStatistics.csv`
 
 | Variable Name | Description                              |
@@ -121,7 +121,7 @@ VEP Summary Statistics Output
 
 ### Resting State 
 
-RS Absolute Power (μV²) Spectra Output
+1. RS Absolute Power (μV²) Spectra Output
 `sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
    
 | Variable Name | Description                              |
@@ -132,7 +132,7 @@ RS Absolute Power (μV²) Spectra Output
 | 3.0 Hz | Sum of absolute power in μV² centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-RS Power (dB) Spectra Output
+2. RS Power (dB) Spectra Output
 `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
    
 | Variable Name | Description                              |
@@ -143,7 +143,7 @@ RS Power (dB) Spectra Output
 | 3.0 Hz | Sum of power in dB centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-RS Log Power Spectra Output
+3. RS Log Power Spectra Output
 `sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
    
 | Variable Name | Description                              |
@@ -154,7 +154,7 @@ RS Log Power Spectra Output
 | 3.0 Hz | Sum of natural log power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
 | ... | and so on... |
 
-RS Power Spectra .mat Output
+4. RS Power Spectra .mat Output
 `sub-<ID>_ses-V03_task-RS_spectra.mat`
    
 | Variable Name | Description                              |
@@ -174,7 +174,7 @@ RS Power Spectra .mat Output
 | Fs | Sampling rate |
 | num_channels | Number of channels |
 
-RS Power Spectra Figure 
+5. RS Power Spectra Figure 
 `sub-<ID>_ses-V03_task-RS-desc-allCh_PSD.jpg`
 
 Subject-level plot visualizing power spectral density for each channel across the 1-50Hz frequency range. Data for this plot originates from `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`. See below for an example:
