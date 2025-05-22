@@ -28,7 +28,8 @@ See below for the ROIs that are used to compute ERPs. The full list of ROIs can 
 
  ![ROI clusters](ROIs.png)
  
- ## Task Derivatives
+## Task Derivatives
+
 ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs:
 
 ### FACE ERP Derivatives
