@@ -9,14 +9,14 @@ This script is designed for users of HBCD EEG data who wish to use derivatives d
 `HBCD_EEG_Utilities.m` calls on a series of functions contained in `HBCD-EEG-Utilities/supplemental files`.
 Functionality of the software is as follows:
 
-- Load HBCD EEG .set files (`HBCD_EEG_Utilities.m`)
-- Computes derivatives for each selected task. (`HBCD_EEG_Utilities.m`, `compute_peaks_latencies.m`)
-- Saves trial-level and summary statistics output per participant for the VEP, MMN, and FACE tasks (`concatenate_files_summary.m`, `concatenate_trial_measures.m`)
-- Saves power spectrum output for the RS task (`RS_ERP_Topo_Indv`) 
-- Relabels variable names to reflect names of ERP components and ROIs of interest (`concatenate_files_summary.m`, `concatenate_trial_measures.m`)
-- Writes subject-level summary statistics and trial measures output tables as .csv files (`HBCD_EEG_Utilities.m`)
-- Concatenates all subjects' summary statistics output into a single spreadsheet for each task (`concatenate_files_summary.m`) 
-- Concatenates all subjects' trial measures output into a single spreadsheet for each task. (`concatenate_trial_measures.m`)
+- Load HBCD EEG .set files 
+- Computes derivatives for each selected task. 
+- Saves trial-level and summary statistics output per participant for the VEP, MMN, and FACE tasks 
+- Saves power spectrum output for the RS task 
+- Relabels variable names to reflect names of ERP components and ROIs of interest 
+- Writes subject-level summary statistics and trial measures output tables as .csv files 
+- Concatenates all subjects' summary statistics output into a single spreadsheet for each task 
+- Concatenates all subjects' trial measures output into a single spreadsheet for each task.
 
 ## Functions
 
