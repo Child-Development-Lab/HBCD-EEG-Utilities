@@ -21,7 +21,7 @@ Functionality of the software is as follows:
 ### Contents 
 
 - [Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
-- [Usage](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/usage/)
 - [Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
 - [Expected Outputs](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
+- [Tutorial](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/tutorial/)
 - [Help](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
