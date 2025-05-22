@@ -29,8 +29,8 @@ The following MATLAB scripts are in the HBCD-EEG-Utilities repository and are re
         |__ supplemental files/
             |
             |__compute_peaks_latencies.m #compute adaptive mean and latency measures for VEP
-            |__concatenate_files_summary.m #combine subject-level summary statistics into one spreadsheet for all subjects
-            |__concatenate_trial_measures.m #combine trial-level ERP into one spreadsheet for all subjects
+            |__concatenate_files_summary.m #combine all subjects' summary statistics into one .csv
+            |__concatenate_trial_measures.m #combine all subjects' trial data into one .csv
             |__get_Cluster.m #define clusters used for ROIs
             |__grab_settings.m #read in processing settings from proc_settings_HBCD.json
             |__RS_ERP_Topo_Indv.m #calculates power values for RS and save output to .csv files
