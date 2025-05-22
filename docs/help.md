@@ -8,6 +8,7 @@ Authorship for this repository is as follows:
 - Trisha Maheshwari, tmahesh@umd.edu, @trisham16 (GitHub username)
 - Whitney Kasenetz, kasenetz@umd.edu, @kasenetz (GitHub username) 
 - Jess Norris, jnorri10@umd.edu, @jnorri10 (GitHub username) 
+- Marco McSweeney, mmcsw1@umd.edu
 - Child Development Lab affiliates, @ChildDevLab (GitHub account)
 
 To copy the full citation of this repository, click "Cite this repository" in the top right of the GitHub repository, under "About".
