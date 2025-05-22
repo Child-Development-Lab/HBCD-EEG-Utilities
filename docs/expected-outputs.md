@@ -58,7 +58,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | TrialNum | trial index |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
 
 
 2- FACE Summary Statistics Output
@@ -68,8 +68,8 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 |---------------|------------------------------------------|
 | Condition | inverted, object, uprightInv, uprightObj |
 | NTrials | number of trials retained per condition |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
+| SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
 
 
 ### MMN
@@ -81,7 +81,7 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | TrialNum | trial index |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
+| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
 
 2- MMN Summary Statistics Output
 `sub-<ID>_ses-V03_task-MMN-ERPSummaryStatistics.csv`
@@ -90,8 +90,8 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 |---------------|------------------------------------------|
 | Condition | deviant, predeviant, standard |
 | NTrials | number of trials retained per condition |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
+| SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
 
 
 ### Visual Evoked Potential  
@@ -103,9 +103,9 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 |---------------|------------------------------------------|
 | Condition | VEP |
 | TrialNum | trial index |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
+| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
+| Peak_<WindowStart-WindowEnd>_ROI | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_<WindowStart-WindowEnd>_ROI | Latency to peak within specified time window at specified ROI |
 
 2- VEP Summary Statistics Output
 `sub-<ID>_ses-V03_task-VEP-ERPSummaryStatistics.csv`
@@ -114,10 +114,10 @@ Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities/blob/ma
 |---------------|------------------------------------------|
 | Condition | VEP |
 | NTrials | number of trials retained per condition |
-| SME_WindowStart-WindowEnd_ROI | Standard measurement error during specified time window at specified ROI |
-| MeanAmplitude_WindowStart-WindowEnd_ROI | Mean amplitude within specified time window at specified ROI |
-| Peak_WindowStart-WindowEnd_ROI | Adaptive mean amplitude within specified time window at specified ROI |
-| Latency_WindowStart-WindowEnd_ROI | Latency to peak within specified time window at specified ROI |
+| SME_<WindowStart-WindowEnd>_ROI | Standard measurement error during specified time window at specified ROI |
+| MeanAmplitude_<WindowStart-WindowEnd>_ROI | Mean amplitude within specified time window at specified ROI |
+| Peak_<WindowStart-WindowEnd>_ROI | Adaptive mean amplitude within specified time window at specified ROI |
+| Latency_<WindowStart-WindowEnd>_ROI | Latency to peak within specified time window at specified ROI |
 
 ### Resting State 
 
