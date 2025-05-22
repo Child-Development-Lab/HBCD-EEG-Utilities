@@ -27,9 +27,20 @@ Please see the central [HBCD Data Release Docs](https://hbcd-docs.readthedocs.io
 
  ![Press Run](Run.png)
  
-3- Follow the prompts to select the tasks you wish to use, and the file path to the ``rawdata`` and ``derivatives/made`` folders downloaded from Lasso. If prompted, select the path to where you downloaded EEGLAB. Then, select the tasks for which you wish to compute derivatives. 
+3- Select file path to ``derivatives/made`` folder downloaded from Lasso. This folder contains eeg ``.set`` files.
+ ![ok derivatives](ok_derivatives.png)
+ ![dirs derivatives](dir_derivatives.png)
 
-4- Wait for the script to finish. This could take up to 2 hours if processing all tasks for all release subjects. 
+3- Select file path to the ``rawdata`` folder downloaded from Lasso. This folder contains ``scans.tsv `` files. 
+ ![ok raw](ok_raw.png)
+ ![dirs raw](dir_raw.png)
+
+4- If prompted, select the path to where you downloaded EEGLAB. 
+
+5. Select the tasks for which you wish to compute derivatives. 
+ ![task selection](taskselect.png)
+
+4- Wait for the script to finish. **This could take up to 2 hours if processing all tasks for all release subjects.**
 
 5- Find derivative output in the following folders:
  
