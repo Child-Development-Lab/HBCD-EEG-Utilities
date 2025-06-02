@@ -1,6 +1,6 @@
 # Installation
 
-Users will need MATLAB and EEGLAB to run these scripts. Below are instructions for downloading these interfaces. 
+Users will need MATLAB and EEGLAB to run these scripts. Below are instructions for downloading these interfaces. MATLAB version 2024a and EEGLAB version 2023.0 were used for testing these scripts.
 
 You will need to check if your institution provides MATLAB licenses. If so, you can use your institution log in to set up a MATLAB account. If your institution does not provide MATLAB licenses, you will need to purchase one to install MATLAB.
 

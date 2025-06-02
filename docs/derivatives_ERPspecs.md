@@ -19,7 +19,7 @@ Click [here](https://docs.hbcdstudy.org/measures/eeg/) to view descriptions of e
 
 - **Peak latency**: Latency (ms) to the peak amplitude during the specified time window.
 
-- **SME**: Standard Measurement Error (SME) is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
+- **SME**: Standardized Measurement Error (SME) is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
 
 - **Power**: Absolute power (μV²), power (dB), and natural log power for each frequency bin ranging from 1-50Hz.
  
@@ -44,7 +44,7 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | FACE | N290      | 200-340 ms    | P7   | 6-9 | 
 | FACE | N290      | 400-600 ms    | Oz   | 3-6 |
 | FACE | N290      | 200-340 ms    | Oz   | 6-9 |
-| FACE | P400      | 355-625 ms    | Oz   | 3-6 |                              
+| FACE | P400      | 400-600 ms    | Oz   | 3-6 |                              
 | FACE | P400      | 350-600 ms    | Oz   | 6-9 |
 | FACE | Nc        | 300-650 ms    | FCz  | 3-9 |
 
