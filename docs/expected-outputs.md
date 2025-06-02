@@ -122,6 +122,8 @@ Subject-level derivatives for the VEP task include SME, mean amplitude, adaptive
 
 ### Resting State 
 
+- When interpreting the 50.0 Hz bin in RS output, please be aware that the data are low-pass filtered at 50Hz. 
+
 **1- RS Absolute Power (μV²) Spectra Output**: `sub-<ID>_ses-V03_task-RS-AbsPowerSpectra.csv`
 
 Subject-level absolute power values for RS.  
@@ -132,7 +134,7 @@ Subject-level absolute power values for RS.
 | 1.0 Hz | Sum of absolute power in μV² centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
 | 2.0 Hz | Sum of absolute power in μV² centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
 | 3.0 Hz | Sum of absolute power in μV² centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
-| ... | and so on... |
+| 50.0 Hz | Sum of absolute power in μV² centered at 50 Hz (within the 49.5hz to 50.5hz freq range) at corresponding electrode site |
 
 **2- RS Power (dB) Spectra Output**: `sub-<ID>_ses-V03_task-RS-dbPowerSpectra.csv`
 
@@ -144,7 +146,7 @@ Subject-level dB power values for RS.
 | 1.0 Hz | Sum of power in dB centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
 | 2.0 Hz | Sum of power in dB centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
 | 3.0 Hz | Sum of power in dB centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
-| ... | and so on... |
+| 50.0 Hz | Sum of absolute power in μV² centered at 50 Hz (within the 49.5hz to 50.5hz freq range) at corresponding electrode site |
 
 **3- RS Log Power Spectra Output**: `sub-<ID>_ses-V03_task-RS-LogPowerSpectra.csv`
 
@@ -156,7 +158,7 @@ Subject-level log power values for RS.
 | 1.0 Hz | Sum of natural log power centered at 1 Hz (within the 0.5hz to 1.5hz freq range) at corresponding electrode site |
 | 2.0 Hz | Sum of natural log power centered at 2 Hz (within the 1.5hz to 2.5hz freq range) at corresponding electrode site |
 | 3.0 Hz | Sum of natural log power centered at 3 Hz (within the 2.5hz to 3.5hz freq range) at corresponding electrode site |
-| ... | and so on... |
+| 50.0 Hz | Sum of absolute power in μV² centered at 50 Hz (within the 49.5hz to 50.5hz freq range) at corresponding electrode site |
 
 **4- RS Power Spectra .mat Output**: `sub-<ID>_ses-V03_task-RS_spectra.mat`
 

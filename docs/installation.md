@@ -20,7 +20,6 @@ You will need to check if your institution provides MATLAB licenses. If so, you 
 12. Once the installation is complete, select the “close” button.
 13. You now have MATLAB installed on your device!
 
-### Install EEGLAB
 
 1. Download EEGLAB [here](https://sccn.ucsd.edu/eeglab/download.php).
 2. Unlike MATLAB, you do not need a license to install EEGLAB. You will need to fill out the form using your name and institution email, and agree to their terms. Then select the submit button.
