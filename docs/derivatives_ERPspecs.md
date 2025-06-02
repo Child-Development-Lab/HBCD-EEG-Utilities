@@ -42,7 +42,7 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | FACE | N290      | 200-340 ms    | P8   | 6-9 |    
 | FACE | N290      | 200-390 ms    | P7   | 3-6 |
 | FACE | N290      | 200-340 ms    | P7   | 6-9 | 
-| FACE | N290      | 400-600 ms    | Oz   | 3-6 |
+| FACE | N290      | 200-390 ms    | Oz   | 3-6 |
 | FACE | N290      | 200-340 ms    | Oz   | 6-9 |
 | FACE | P400      | 400-600 ms    | Oz   | 3-6 |                              
 | FACE | P400      | 350-600 ms    | Oz   | 6-9 |
