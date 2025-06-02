@@ -1,0 +1,1 @@
+These R scripts are not necessary for processing using HBCD-EEG-Utilities but are provided as a supplement. The functionality of these scripts is contained within HBCD-EEG-Utilities.m. 

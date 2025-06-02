@@ -2,7 +2,7 @@
 
 ## Derivatives by task
 
-`HBCD-EEG-Utilities.m` computes the following derivatives for each task
+`HBCD-EEG-Utilities.m` computes the following derivatives for each task: 
 
 | Task | Derivatives     |
 |------|----------------|
@@ -11,6 +11,7 @@
 | VEP  | SME, Mean amplitude, Adaptive mean, Peak latency            |
 | RS   | Absolute power (μV²), Power (dB), Natural log power |
 
+Click [here](https://docs.hbcdstudy.org/measures/eeg/) to view descriptions of each task. 
 
 - **Mean amplitude**: Mean amplitude (μV) during specified measurement window.
 
@@ -18,7 +19,7 @@
 
 - **Peak latency**: Latency (ms) to the peak amplitude during the specified time window.
 
-- **SME**: Standard Measurement Error (SME) is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
+- **SME**: Standardized Measurement Error (SME) is a universal measure of data quality for ERP data. See [Luck et al., 2021](https://onlinelibrary.wiley.com/doi/full/10.1111/psyp.13793) for more information.
 
 - **Power**: Absolute power (μV²), power (dB), and natural log power for each frequency bin ranging from 1-50Hz.
  
@@ -30,7 +31,7 @@ See below for the ROIs that are used to compute ERPs. The full list of ROIs can 
  
 ## Task Derivatives
 
-**Please note that most ERPs are scored using age-dependent time-windows.** See tables below for details. 
+**Please note that most ERPs are scored using age-dependent time-windows.** ERPs are computed separately for all task conditions in the FACE and MMN task. See tables below for details. 
 ERP derivatives for the MMN, FACE, and VEP tasks contain the following components at the specified time windows and ROIs:
 
 ### FACE ERP Derivatives
@@ -41,18 +42,20 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | FACE | N290      | 200-340 ms    | P8   | 6-9 |    
 | FACE | N290      | 200-390 ms    | P7   | 3-6 |
 | FACE | N290      | 200-340 ms    | P7   | 6-9 | 
-| FACE | N290      | 400-600 ms    | Oz   | 3-6 |
+| FACE | N290      | 200-390 ms    | Oz   | 3-6 |
 | FACE | N290      | 200-340 ms    | Oz   | 6-9 |
-| FACE | P400      | 355-625 ms    | Oz   | 3-6 |                              
+| FACE | P400      | 400-600 ms    | Oz   | 3-6 |                              
 | FACE | P400      | 350-600 ms    | Oz   | 6-9 |
 | FACE | Nc        | 300-650 ms    | FCz  | 3-9 |
 
 ### MMN ERP Derivatives
-| Task | Component | Time window | ROI  | Age |
+| Task | Conditions | Time window | ROI  | Age |
 |------|-----------|-------------|------|-----|
-| MMN  | MMR       | 200-400 ms    | t7t8 | 3-9 |
-| MMN  | MMR       | 200-400 ms    | f7f8 | 3-9 |
-| MMN  | MMR       | 200-400 ms    | FCz  | 3-9 |
+| MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | t7t8 | 3-9 |
+| MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | f7f8 | 3-9 |
+| MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | FCz  | 3-9 |
+
+- Users are advised to score the amplitude of the Mismatch Response (MMR) component by subtracting the amplitude of Deviant trials from PreDeviant trials.
 
 ### VEP ERP Derivatives
 | Task | Component | Time window | ROI  | Age |
