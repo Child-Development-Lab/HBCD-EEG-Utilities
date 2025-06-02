@@ -103,6 +103,17 @@ addpath([repoPath filesep 'supplemental files']);
 
 %% Here we will read in all the processed set files and ID paths
 cd(data_path);
+
+% Delete out any RS powerSummaryStat.csv files -- this should not be used
+% as they contain stale and inaccurate calculations
+datafile_names=dir(fullfile(data_path, '**\*powerSummaryStats.csv'));
+datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
+if ~isempty(datafile_names)
+    for k=1:length(datafile_names)
+        delete([datafile_names(k).folder filesep datafile_names(k).name]);
+    end
+end
+
 datafile_names=dir(fullfile(data_path, '**\*filteredprocessed_eeg.set'));
 datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
 set_names={datafile_names.name};
