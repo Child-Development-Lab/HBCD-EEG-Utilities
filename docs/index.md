@@ -1,6 +1,6 @@
 # HBCD EEG Utilities
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15483798.svg)](https://doi.org/10.5281/zenodo.15483798)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15484576.svg)](https://doi.org/10.5281/zenodo.15484576)
 
 The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) repository contains `HBCD-EEG-Utilities.m`, a MATLAB script that computes EEG derivatives from HBCD EEG .set files that have been processed with the HBCD-MADE pipeline. 
 
