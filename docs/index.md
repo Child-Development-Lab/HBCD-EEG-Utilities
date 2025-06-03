@@ -10,7 +10,7 @@ This script is designed for users of HBCD EEG data who wish to use derivatives d
 Functionality of the software is as follows:
 
 - Load HBCD EEG .set files 
-- Computes [derivatives](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/) for each selected task 
+- Computes [derivatives](https://hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/) for each selected task 
 - Saves trial-level and summary statistics output per participant for the VEP, MMN, and FACE tasks 
 - Saves power spectrum output for the RS task 
 - Writes subject-level summary statistics and trial measures output tables as .csv files 
@@ -39,8 +39,8 @@ The following MATLAB scripts and .json files in the HBCD-EEG-Utilities repositor
             
 ### Contents 
 
-- [Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
-- [Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
-- [Expected Outputs](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
-- [Tutorial](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/tutorial/)
-- [Help](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
+- [Installation](https://hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
+- [Derivatives and ERP Specifications](https://hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
+- [Expected Outputs](https://hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
+- [Tutorial](https://hbcd-eeg-utilities.readthedocs.io/en/latest/tutorial/)
+- [Help](https://hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
