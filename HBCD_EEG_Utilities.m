@@ -31,7 +31,7 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 
 CreateStruct.Interpreter = 'tex';
 CreateStruct.WindowStyle = 'modal';
-box = msgbox('\fontsize{16} Please remember to read the data warnings, available here: https://hbcd-docs.readthedocs.io/changelog/knownissues/', CreateStruct);
+box = msgbox('\fontsize{16}Please remember to read the data warnings, available here: https://hbcd-docs.readthedocs.io/changelog/knownissues/', CreateStruct);
 uiwait(box);
 
 % Select where you downloaded your files from LASSO
