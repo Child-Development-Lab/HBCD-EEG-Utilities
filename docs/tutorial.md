@@ -21,7 +21,7 @@ Please see the central [HBCD Data Release Docs](https://docs.hbcdstudy.org/data_
  
 ## Running the script 
 
-1- Install HBCD-EEG-Utilities and its dependencies: see [Installation](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/installation/).
+1- Install HBCD-EEG-Utilities and its dependencies: see [Installation](https://hbcd-eeg-utilities.readthedocs.io/en/latest/installation/).
 
 2- Open `HBCD-EEG-Utilities.m` by double-clicking the file, and press the green 'Run' button on the 'Editor' toolbar.
 
@@ -46,4 +46,4 @@ Please see the central [HBCD Data Release Docs](https://docs.hbcdstudy.org/data_
         |__ sub-<label>/ #subject-level output
         |__ Concatenated outputs for ERPs/ #concatenated output
             
-See [Descriptions of output](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/) for details. 
+See [Descriptions of output](https://hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/) for details. 
