@@ -6,7 +6,7 @@
 % This code is designed to be used on processed HBCD EEG data 
 
 % Before using this code, please refer to the HBCD documentation available
-% here: https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/
+% here: https://hbcd-eeg-utilities.readthedocs.io/en/latest/
 
 % Ongoing Contributors:
 % Trisha Maheshwari (tmahesh@umd.edu)
@@ -29,6 +29,11 @@ json_settings_file = fullfile(repoPath, 'supplemental files', 'proc_settings_HBC
 %This file is necessary, it will set up all time windows, ERP directions,
 %and ROIs-- please make sure you download the file from the Github page
 %before running
+
+CreateStruct.Interpreter = 'tex';
+CreateStruct.WindowStyle = 'modal';
+box = msgbox('\fontsize{16} Please remember to read the data warnings, available here: https://hbcd-docs.readthedocs.io/changelog/knownissues/', CreateStruct);
+uiwait(box);
 
 % Select where you downloaded your files from LASSO
 if ~exist('data_path','var')
