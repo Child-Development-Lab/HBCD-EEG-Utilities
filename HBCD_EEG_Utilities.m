@@ -12,12 +12,11 @@
 % Trisha Maheshwari (tmahesh@umd.edu)
 % Whitney Kasenetz (kazenetz@umd.edu)
 % Savannah McNair (smcnair1@umd.edu)
-% For specific questions, contact eeghelp@umd.edu
+% For specific questions, contact eegdata@umd.edu
 
 
 % This code uses EEGLAB toolbox and some of its plugins. Before running the pipeline, you have to install the following:
-% EEGLab:  https://sccn.ucsd.edu/eeglab/downloadtoolbox.php/download.php
-% addpath(genpath(('...')) % Enter the path of the EEGLAB folder in this line
+% EEGLab: https://sccn.ucsd.edu/eeglab/download.php
 
 %% Setup -- DO NOT CHANGE
 if ~exist('repoPath', 'var')
