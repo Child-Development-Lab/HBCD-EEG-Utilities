@@ -1,4 +1,6 @@
-#Tutorial
+#Usage & Tutorial
+
+## Required inputs
 
 Required inputs are ``scans.tsv`` files and EEG ``.set`` and ``.fdt`` files for each subject. See below for instructions to download these files.
 
