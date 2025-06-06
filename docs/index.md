@@ -40,7 +40,7 @@ The following MATLAB scripts and .json files in the HBCD-EEG-Utilities repositor
 ### Contents 
 
 - [Installation](https://hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
+- [Usage & Tutorial](https://hbcd-eeg-utilities.readthedocs.io/en/latest/tutorial/)
 - [Derivatives and ERP Specifications](https://hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/)
 - [Expected Outputs](https://hbcd-eeg-utilities.readthedocs.io/en/latest/expected-outputs/)
-- [Tutorial](https://hbcd-eeg-utilities.readthedocs.io/en/latest/tutorial/)
 - [Help](https://hbcd-eeg-utilities.readthedocs.io/en/latest/help/)
