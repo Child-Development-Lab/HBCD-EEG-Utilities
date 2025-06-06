@@ -20,7 +20,7 @@ You will need to check if your institution provides MATLAB licenses. If so, you 
 12. Once the installation is complete, select the “close” button.
 13. You now have MATLAB installed on your device!
 
-
+### Install EEGLAB
 1. Download EEGLAB [here](https://sccn.ucsd.edu/eeglab/download.php).
 2. Unlike MATLAB, you do not need a license to install EEGLAB. You will need to fill out the form using your name and institution email, and agree to their terms. Then select the submit button.
 3. Select the first link that says (“click here”) on the Download EEGLAB page.
@@ -29,7 +29,7 @@ You will need to check if your institution provides MATLAB licenses. If so, you 
 6. You will now have an unzipped folder containing the most recent version of EEGLAB. 
 7. You may want to move this out of your “downloads” folder and into another location where you can easily find it. You can do this by right clicking on the folder and selecting “copy”. Then, open the folder you would like to move it to and select “paste”.
 
-## Download GitHub Repository
+## Installing HCBD-EEG-Utilities
 Now that you have the required software, you can run the HBCD-EEG-Utilities script to compute and save the derivatives. First, you will need to download the repository to your local computer. This can be done in a number of ways, but for a first time user we recommend downloading as a zip file. 
 
 1. Click [here](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) to access the repository. 
