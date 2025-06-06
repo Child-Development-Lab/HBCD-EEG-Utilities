@@ -55,7 +55,7 @@ ERP derivatives for the MMN, FACE, and VEP tasks contain the following component
 | MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | f7f8 | 3-9 |
 | MMN  | PreDeviant, Deviant, Standard       | 200-400 ms    | FCz  | 3-9 |
 
-- Users are advised to score the amplitude of the Mismatch Response (MMR) component by subtracting the amplitude of Deviant trials from PreDeviant trials.
+- Users are advised to score the amplitude of the Mismatch Response (MMR) component by subtracting the amplitude of PreDeviant trials from Deviant trials.
 
 ### VEP ERP Derivatives
 | Task | Component | Time window | ROI  | Age |
