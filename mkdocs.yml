@@ -15,6 +15,7 @@ docs_dir: docs
 nav: 
   - About: index.md
   - Installation: installation.md
+  - How to download HBCD EEG Data: downloading-data.md
   - Usage & Tutorial: tutorial.md 
   - Derivatives and ERP specifications: derivatives_ERPspecs.md
   - Expected outputs: expected-outputs.md

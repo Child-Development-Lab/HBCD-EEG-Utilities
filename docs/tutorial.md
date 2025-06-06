@@ -1,6 +1,6 @@
 #Usage & Tutorial
 
-## Required inputs
+## Required BIDS Input Data
 
 Required inputs are ``scans.tsv`` files and EEG ``.set`` and ``.fdt`` files for each subject. See below for instructions to download these files.
 
@@ -21,7 +21,7 @@ Please see the central [HBCD Data Release Docs](https://docs.hbcdstudy.org/data_
  
 5- Select "Trigger Transfer". Download using [Globus Share](https://docs.hbcdstudy.org/data_access/lasso/#globus-share-download) or the [Lasso Download Client](https://hbcd-docs.readthedocs.io/data_access/lasso/#download-client-user-guide-macos-version). 
  
-## Running the script 
+## Execution in Matlab
 
 1- Install HBCD-EEG-Utilities and its dependencies: see [Installation](https://hbcd-eeg-utilities.readthedocs.io/en/latest/installation/).
 
