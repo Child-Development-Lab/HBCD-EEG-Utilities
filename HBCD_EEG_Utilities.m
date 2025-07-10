@@ -264,7 +264,7 @@ for i=1:length(scoreTimes)
 
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_ui, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_ui, PeakRange, roi_ind, direction);%NEW TM
                 %tab.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -279,7 +279,7 @@ for i=1:length(scoreTimes)
                 tab = renamevars(tab,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_ui, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_ui, PeakRange, roi_ind, direction);%NEW TM
                 %tab.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -300,7 +300,7 @@ for i=1:length(scoreTimes)
                 tab2 = renamevars(tab2,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_i, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_i, PeakRange, roi_ind, direction);%NEW TM
                 %tab2.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab2.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -316,7 +316,7 @@ for i=1:length(scoreTimes)
                 tab2 = renamevars(tab2,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_i, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_i, PeakRange, roi_ind, direction);%NEW TM
                 %tab2.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab2.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -338,7 +338,7 @@ for i=1:length(scoreTimes)
                 tab3 = renamevars(tab3,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % TODO: Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_o, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_o, PeakRange, roi_ind, direction);%NEW TM
                 %tab3.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab3.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -354,7 +354,7 @@ for i=1:length(scoreTimes)
                 tab3 = renamevars(tab3,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_o, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_o, PeakRange, roi_ind, direction);%NEW TM
                 %tab3.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab3.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -376,7 +376,7 @@ for i=1:length(scoreTimes)
                 tab4 = renamevars(tab4,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 %Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_uo, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_uo, PeakRange, roi_ind, direction);%NEW TM
                 %tab4.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab4.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -392,7 +392,7 @@ for i=1:length(scoreTimes)
                 tab4 = renamevars(tab4,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_uo, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_uo, PeakRange, roi_ind, direction);%NEW TM
                 %tab4.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab4.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -424,7 +424,7 @@ for i=1:length(scoreTimes)
                 tab = renamevars(tab,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_s, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_s, PeakRange, roi_ind, direction);%NEW TM
                 %tab.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -440,7 +440,7 @@ for i=1:length(scoreTimes)
                 tab = renamevars(tab,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_s, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_s, PeakRange, roi_ind, direction);%NEW TM
                 %tab.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -462,7 +462,7 @@ for i=1:length(scoreTimes)
                 tab2 = renamevars(tab2,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_p, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_p, PeakRange, roi_ind, direction);%NEW TM
                 %tab2.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab2.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -478,7 +478,7 @@ for i=1:length(scoreTimes)
                 tab2 = renamevars(tab2,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_p, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_p, PeakRange, roi_ind, direction);%NEW TM
                 %tab2.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab2.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -500,7 +500,7 @@ for i=1:length(scoreTimes)
                 tab3 = renamevars(tab3,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_d, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_d, PeakRange, roi_ind, direction);%NEW TM
                 %tab3.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab3.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
@@ -516,7 +516,7 @@ for i=1:length(scoreTimes)
                 tab3 = renamevars(tab3,["Scores"], ['MeanAmplitude_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]); %label table
 
                 % Insert peak latency function here
-                [AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_d, PeakRange, roi_ind, direction);%NEW TM
+                %[AvgPeakScores, PeakLatencies] =  compute_peaks_latencies(EEG_d, PeakRange, roi_ind, direction);%NEW TM
                 %tab3.(['Peak_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = AvgPeakScores;
                 %tab3.(['Latency_' num2str(PeakStart) '-' num2str(PeakEnd) '_' char(Cluster)]) = PeakLatencies;
 
