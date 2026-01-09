@@ -2,9 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15483798.svg)](https://doi.org/10.5281/zenodo.15483798) [![HBCD_EEG_Utilities](https://img.shields.io/badge/NMIND-17%2F42-orange?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNDRDdGMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTMuMzc3NTIgNS4wODI0MUMzIDUuNjIwMjggMyA3LjIxOTA3IDMgMTAuNDE2N1YxMS45OTE0QzMgMTcuNjI5NCA3LjIzODk2IDIwLjM2NTUgOS44OTg1NiAyMS41MjczQzEwLjYyIDIxLjg0MjQgMTAuOTgwNyAyMiAxMiAyMkMxMy4wMTkzIDIyIDEzLjM4IDIxLjg0MjQgMTQuMTAxNCAyMS41MjczQzE2Ljc2MSAyMC4zNjU1IDIxIDE3LjYyOTQgMjEgMTEuOTkxNFYxMC40MTY3QzIxIDcuMjE5MDcgMjEgNS42MjAyOCAyMC42MjI1IDUuMDgyNDFDMjAuMjQ1IDQuNTQ0NTQgMTguNzQxNyA0LjAyOTk2IDE1LjczNTEgMy4wMDA3OUwxNS4xNjIzIDIuODA0NzJDMTMuNTk1IDIuMjY4MjQgMTIuODExNCAyIDEyIDJDMTEuMTg4NiAyIDEwLjQwNSAyLjI2ODI0IDguODM3NzIgMi44MDQ3Mkw4LjI2NDkxIDMuMDAwNzlDNS4yNTgzMiA0LjAyOTk2IDMuNzU1MDMgNC41NDQ1NCAzLjM3NzUyIDUuMDgyNDFaIi8+Cjwvc3ZnPgo=)](https://www.nmind.org/proceedings/hbcd-eeg-utilities/)
 
-The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) repository contains `HBCD-EEG-Utilities.m`, a MATLAB script that computes EEG derivatives from HBCD EEG .set files that have been processed with the HBCD-MADE pipeline. 
+The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) repository contains MATLAB scripts to compute EEG derivatives (`HBCD-EEG-Utilities.m`) and to plot these derivatives (`hbcd_checkderivatives.m, facePipeline.m, mmnPipeline.m, rsPipeline.m, vepPipeline.m`) from HBCD EEG .set files that have been processed with the HBCD-MADE pipeline. An additional script (hbcd_createfilelist.R) can be used to generate a random list of files for plotting.
 
-This script is designed for users of HBCD EEG data who wish to use derivatives developed by the HBCD EEG Working Group. See [Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/) for a description of outputs.  
+These utilities are designed for users of HBCD EEG data who wish to examine or use derivatives code developed by the HBCD EEG Working Group. See [Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/) for a description of outputs.  
 
 `HBCD_EEG_Utilities.m` calls on a series of functions contained in `HBCD-EEG-Utilities/supplemental files`.
 Functionality of the software is as follows:
@@ -16,6 +16,12 @@ Functionality of the software is as follows:
 - Writes subject-level summary statistics and trial measures output tables as .csv files 
 - Concatenates all subjects' summary statistics output into a single spreadsheet for each task 
 - Concatenates all subjects' trial measures output into a single spreadsheet for each task
+
+`hbcd_checkderivatives.m` calls functions to automatically plot derivatives for each task at each assessment. The script assumes the user is providing a list of files for plotting (`hbcd_createfilelist.R` can be used to generate such a list). Users can define which tasks they would like to plot if they do not wish to plot all tasks. `hbcd_checkderivatives.m` will:
+
+- Load HBCD EEG derivatives .set files
+- Automatically generate output folders by task and assessment
+- Create and export appropriate plots for each task (ex: ERPs, topoplots, power spectral density plots)
 
 ## Functionality
 
@@ -33,10 +39,23 @@ The following MATLAB scripts and .json files in the HBCD-EEG-Utilities repositor
             |__get_Cluster.m #define clusters used for ROIs
             |__grab_settings.m #read in processing settings from proc_settings_HBCD.json
             |__RS_ERP_Topo_Indv.m #calculates power values for RS and save output to .csv files
-            |
             |__proc_settings_HBCD.json #specify processing settings
             
             
+The following MATLAB scripts in the HBCD-EEG-Utilities repository are required for plotting.
+
+    |__ HBCD-EEG-Utilities/
+        |__ hbcd_checkderivatives.m #primary script calling task functions
+        |__ facePipeline.m #function to plot face task
+        |__ mmnPipeline.m #function to plot mmn task
+        |__ rsPipeline.m #function to plot resting state task
+        |__ vepPipeline.m #function to plot vep task
+
+The following R script in the HBCD-EEG-Utilities repository can be used to generate a random list of files for plotting.
+
+    |__ HBCD-EEG-Utilities/
+        |__ hbcd_createfilelist.R #generate a random list of files for plotting
+
 ### Contents 
 
 - [Installation](https://hbcd-eeg-utilities.readthedocs.io/en/latest/installation/)
