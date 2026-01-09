@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15483798.svg)](https://doi.org/10.5281/zenodo.15483798) [![HBCD_EEG_Utilities](https://img.shields.io/badge/NMIND-17%2F42-orange?logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IiNDRDdGMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTMuMzc3NTIgNS4wODI0MUMzIDUuNjIwMjggMyA3LjIxOTA3IDMgMTAuNDE2N1YxMS45OTE0QzMgMTcuNjI5NCA3LjIzODk2IDIwLjM2NTUgOS44OTg1NiAyMS41MjczQzEwLjYyIDIxLjg0MjQgMTAuOTgwNyAyMiAxMiAyMkMxMy4wMTkzIDIyIDEzLjM4IDIxLjg0MjQgMTQuMTAxNCAyMS41MjczQzE2Ljc2MSAyMC4zNjU1IDIxIDE3LjYyOTQgMjEgMTEuOTkxNFYxMC40MTY3QzIxIDcuMjE5MDcgMjEgNS42MjAyOCAyMC42MjI1IDUuMDgyNDFDMjAuMjQ1IDQuNTQ0NTQgMTguNzQxNyA0LjAyOTk2IDE1LjczNTEgMy4wMDA3OUwxNS4xNjIzIDIuODA0NzJDMTMuNTk1IDIuMjY4MjQgMTIuODExNCAyIDEyIDJDMTEuMTg4NiAyIDEwLjQwNSAyLjI2ODI0IDguODM3NzIgMi44MDQ3Mkw4LjI2NDkxIDMuMDAwNzlDNS4yNTgzMiA0LjAyOTk2IDMuNzU1MDMgNC41NDQ1NCAzLjM3NzUyIDUuMDgyNDFaIi8+Cjwvc3ZnPgo=)](https://www.nmind.org/proceedings/hbcd-eeg-utilities/)
 
-The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) repository contains MATLAB scripts to compute EEG derivatives (`HBCD-EEG-Utilities.m`) and to plot these derivatives (`hbcd_checkderivatives.m, facePipeline.m, mmnPipeline.m, rsPipeline.m, vepPipeline.m`) from HBCD EEG .set files that have been processed with the HBCD-MADE pipeline. An additional script (hbcd_createfilelist.R) can be used to generate a random list of files for plotting.
+The [HBCD EEG Utilities](https://github.com/Child-Development-Lab/HBCD-EEG-Utilities) repository contains MATLAB scripts to compute EEG derivatives (`HBCD-EEG-Utilities.m`) and to plot these derivatives (`hbcd_checkderivatives.m, facePipeline.m, mmnPipeline.m, rsPipeline.m, vepPipeline.m`) from HBCD EEG .set files that have been processed with the HBCD-MADE pipeline. An additional script (`hbcd_createfilelist.R`) can be used to generate a random list of files for plotting.
 
 These utilities are designed for users of HBCD EEG data who wish to examine or use derivatives code developed by the HBCD EEG Working Group. See [Derivatives and ERP Specifications](https://childdevlab-hbcd-eeg-utilities.readthedocs.io/en/latest/derivatives_ERPspecs/) for a description of outputs.  
 
@@ -25,7 +25,7 @@ Functionality of the software is as follows:
 
 ## Functionality
 
-The following MATLAB scripts and .json files in the HBCD-EEG-Utilities repository are required for processing. 
+The following MATLAB scripts and .json files in the HBCD-EEG-Utilities repository are required for computing derivatives. 
 
     |__ HBCD-EEG-Utilities/
         |
