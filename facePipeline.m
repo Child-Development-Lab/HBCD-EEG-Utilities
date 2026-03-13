@@ -16,6 +16,7 @@ chanNames = fieldnames(chanGroups);
 
 %% Loop over tasks
 for t = 1:numel(taskList)
+
     taskName = taskList{t};
     EEG_all = EEG_all_tasks.(taskName);
 
@@ -27,6 +28,14 @@ for t = 1:numel(taskList)
 
     fprintf('Processing task %s with %d subjects\n', taskName, numel(EEG_all));
 
+    % --- NEW: find first valid EEG dataset for reference ---
+    validIdx = find(~cellfun(@isempty, EEG_all), 1);
+    if isempty(validIdx)
+        warning('No valid EEG datasets found for task %s', taskName);
+        continue
+    end
+    EEG_ref = EEG_all{validIdx};
+
     pIdx = 0; % participant index
     allData = [];
     TrialNums = struct();
@@ -36,8 +45,10 @@ for t = 1:numel(taskList)
 
     %% Loop over subjects
     for subject = 1:numel(EEG_all)
+
         EEG = EEG_all{subject};
-        if isempty(EEG)
+
+        if isempty(EEG) || ~isfield(EEG,'data')
             warning('Skipping empty EEG for subject %d', subject);
             continue
         end
@@ -57,82 +68,122 @@ for t = 1:numel(taskList)
         for f = 1:4
             val = TrialNums(subject).(condNames{f});
             if numel(val) > 1
-                val = val(1); % just in case
+                val = val(1);
             end
             trialCounts(f) = val;
         end
 
         if all(trialCounts > cutoff)
+
             pIdx = pIdx + 1;
+
             % Compute ERP per condition
             for c = 1:4
                 EEGc = pop_selectevent(EEG, 'Condition', conditions{c}, 'deleteevents','on');
                 EEGc = eeg_checkset(EEGc);
-                allData(pIdx,c,:,:) = mean(EEGc.data,3); % store averaged ERP per condition
+
+                allData(pIdx,c,:,:) = mean(EEGc.data,3);
             end
+
             TrialNums(subject).IncludedERP = 1;
+
         else
             TrialNums(subject).IncludedERP = 0;
         end
+
     end
 
     %% Save ERP data
     param.date = datestr(now,'mm_dd_yyyy');
-    save(fullfile(Output_Dir, ['FACE_erp_allData_' param.date '.mat']),'allData');
+
+    save(fullfile(Output_Dir, ['FACE_erp_allData_' param.date '.mat']), 'allData');
+
     table_events = struct2table(TrialNums);
-    writetable(table_events, fullfile(Output_Dir, ['FACE_TrialNums_' param.date '.csv']));
+
+    writetable(table_events, ...
+        fullfile(Output_Dir, ['FACE_TrialNums_' param.date '.csv']));
 
     %% Generate ERPs for all sites
     for ch = 1:numel(chanNames)
+
         chName = chanNames{ch};
-        ind = find(ismember({EEG.chanlocs.labels}, chanGroups.(chName)));
+
+        ind = find(ismember({EEG_ref.chanlocs.labels}, chanGroups.(chName)));
 
         if isempty(ind)
             warning('No channels found for %s', chName);
             continue
         end
 
-        ERP_mat = squeeze(mean(allData(:,:,ind,:),3)); % average across channels
-        ERP_mat = squeeze(mean(ERP_mat,1));            % average across participants
-        ERP_mat(5,:) = ERP_mat(1,:) - ERP_mat(2,:);   % diff Upright - Inverted
-        ERP_mat(6,:) = ERP_mat(4,:) - ERP_mat(3,:);   % diff Upright2 - Object
+        ERP_mat = squeeze(mean(allData(:,:,ind,:),3));
+        ERP_mat = squeeze(mean(ERP_mat,1));
+
+        ERP_mat(5,:) = ERP_mat(1,:) - ERP_mat(2,:);
+        ERP_mat(6,:) = ERP_mat(4,:) - ERP_mat(3,:);
 
         % Plot ERP
         erpFig = figure;
         erpFig.Name = [taskName '.' chName];
+
         hold on
-        grey = [.5 .5 .5 .5];
-        time = EEG.times; % time vector
+
+        time = EEG_ref.times;
+
         plot(time, ERP_mat(:,:), 'LineWidth', 1.5);
+
         title(erpFig.Name, 'FontSize', 20);
+
         legend('Upright1','Inverted','Object','Upright2','up1-inv','up2-obj');
-        xlabel('Time (ms)'); ylabel('Amplitude (\muV)');
-        set(gcf,'Color',[1 1 1]);
-        saveas(erpFig, fullfile(Output_Dir, [erpFig.Name '_GrandAverage_erp.jpg']));
-        hold off;
+
+        xlabel('Time (ms)')
+        ylabel('Amplitude (\muV)')
+
+        set(gcf,'Color',[1 1 1])
+
+        saveas(erpFig, ...
+            fullfile(Output_Dir, ...
+            [erpFig.Name '_GrandAverage_erp.jpg']))
+
+        hold off
+
     end
 
     %% Topoplots
-    timeWindows = [200 350; 350 600]; % adjust as needed
+    timeWindows = [200 350; 350 600];
     climValues = [-15 15; -15 15];
 
     for w = 1:size(timeWindows,1)
-        PeakRange = find(abs(EEG.times - timeWindows(w,1)) < 1e-4) : ...
-            find(abs(EEG.times - timeWindows(w,2)) < 1e-4);
+
+        PeakRange = find(abs(EEG_ref.times - timeWindows(w,1)) < 1e-4) : ...
+                    find(abs(EEG_ref.times - timeWindows(w,2)) < 1e-4);
 
         PeakData = squeeze(mean(allData(:,:,:,PeakRange),4));
         PeakData = squeeze(mean(PeakData,1));
 
         plt = figure;
+
         set(plt,'Name',[taskName '.' num2str(timeWindows(w,1)) '-' num2str(timeWindows(w,2))]);
+
         for c = 1:4
-            subplot(2,2,c);
-            topoplot(PeakData(c,:), EEG.chanlocs, 'maplimits', climValues(w,:), ...
+
+            subplot(2,2,c)
+
+            topoplot(PeakData(c,:), EEG_ref.chanlocs, ...
+                'maplimits', climValues(w,:), ...
                 'electrodes','off','numcontour',0);
+
             title(condNames{c});
+
         end
-        set(gcf,'color','w');
-        saveas(plt, fullfile(Output_Dir, ['FACE_Topoplots_Window' num2str(w) '_' taskName '.jpg']));
+
+        set(gcf,'color','w')
+
+        saveas(plt, ...
+            fullfile(Output_Dir, ...
+            ['FACE_Topoplots_Window' num2str(w) '_' taskName '.jpg']));
+
     end
+
 end
+
 end
