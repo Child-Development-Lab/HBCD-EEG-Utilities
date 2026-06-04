@@ -1,5 +1,5 @@
 ﻿Output File Name,Relevant Task(s),Name,Description,Data Type
-sub-<label>_ses-<label>_task-<label>_ERPSummaryStats,FACE,condition,"Stimulus condition: inverted, object, uprightInv, uprightObj in the Faces task.",String
+sub-<label>_ses-<label>_task-<label>_ERPSummaryStats,FACE,condition,"Stimulus condition: inverted (Block 1- inverted faces), uprightInv (Block 1- upright faces), object (Block 2- objects), uprightObj (Block 2- upright faces) in the Faces task.",String
 sub-<label>_ses-<label>_task-<label>_ERPSummaryStats,MMN,condition,"Stimulus condition: standard, deviant, predeviant in the MMN task.",String
 sub-<label>_ses-<label>_task-<label>_ERPSummaryStats,"FACE, VEP, MMN",Latency_<time-window>_<ROI>,Latency to peak/adaptive mean amplitude within specified time window (in ms) at the specified region of interest. Values are averaged across trials for each condition.,Integer
 sub-<label>_ses-<label>_task-<label>_ERPSummaryStats,"FACE, VEP, MMN",ntrials,Number of trials per condition retained after processing.,Integer
